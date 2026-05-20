@@ -34,4 +34,455 @@ public class SlowNodDignifiedPlan extends aos.jack.jak.plan.Plan {
     public aos.jack.util.thread.Semaphore mutex;
     private static aos.jack.jak.plan.ExMap[] __exMap_body = {
             new aos.jack.jak.plan.ExMap(10,10,11,__exClass_0),
-            new aos.jack.jak.plan
+            new aos.jack.jak.plan.ExMap(10,12,13,null)};
+    private static java.lang.String[] __tt__body = {
+            "NeonAffect/SlowNodDignifiedPlan.plan",
+            "body",
+            "41",
+            "43",
+            "45",
+            "49",
+            "48",
+            "36"};
+    private final static java.lang.String[] __planVariableNames = {
+            "$name",
+            "ev1",
+            "planContextName",
+            "behaviorName",
+            "mutex"};
+    private final static java.lang.String[] __planVariableTypes = {
+            "logical String",
+            "Level2PosAffectEvent",
+            "PlanContextName",
+            "NeonAffect.Behavior",
+            "aos.jack.util.thread.Semaphore"};
+    private final static java.lang.String[] __reasoningMethods = {
+            "body"};
+    private final static java.lang.String[] __logSignatureVariableNames = {
+            "$name"};
+    private final static java.lang.String[] __logSignatureVariableTypes = {
+            "logical String"};
+    private final static java.lang.String[] __fsmVariableNames_body = {
+            "e"};
+    private final static java.lang.String[] __fsmTypes_body = {
+            "BeliefSetException"};
+    private final static java.lang.String[] __fsmLocalNames_body = {
+            "__local__2788_0"};
+    static boolean relevant(NeonAffect.Level2PosAffectEvent ev1)
+    {
+        return ev1.iAffect == NeonAffect.AffectEnum.DIGNIFIED;
+    }
+    
+    public java.lang.String getDocumentation()
+    {
+        return "/**\n * \n */\n";
+    }
+    
+    public SlowNodDignifiedPlan()
+    {
+    }
+    
+    private SlowNodDignifiedPlan(aos.jack.jak.task.Task __t, NeonAffect.SlowNodDignifiedPlan __env)
+    {
+        __agent = __env.__agent;
+        __ns = __env.__ns;
+        __planTask = __t;
+        __logic = __t.logic;
+        ev1 = __env.ev1;
+        planContextName = __env.planContextName;
+        behaviorName = __env.behaviorName;
+        mutex = __env.mutex;
+        $name = (aos.jack.jak.logic.StringVariable) __logic.new_variable(java.lang.String.class);
+    }
+    
+    public boolean init_sentinel(aos.jack.jak.agent.NameSpace __a)
+    {
+        ev1 = (NeonAffect.Level2PosAffectEvent) __a.findEvent("NeonAffect.Level2PosAffectEvent");
+        if (ev1 == null) {
+            warning("Level2PosAffectEvent ev1: is not found in the capability/agent this plan comes from");
+            return false;
+        }
+        planContextName = (NeonAffect.PlanContextName) lookupNamedObject("planContextName","NeonAffect.PlanContextName",0);
+        if (planContextName == null) {
+            warning("PlanContextName planContextName: is not found in the capability/agent this plan comes from");
+            return false;
+        }
+        behaviorName = (NeonAffect.Behavior) lookupNamedObject("behaviorName","NeonAffect.Behavior",0);
+        if (behaviorName == null) {
+            warning("Behavior behaviorName: is not found in the capability/agent this plan comes from");
+            return false;
+        }
+        mutex = (aos.jack.util.thread.Semaphore) lookupNamedObject("mutex","aos.jack.util.thread.Semaphore",0);
+        if (mutex == null) {
+            warning("Semaphore mutex: is not found in the capability/agent this plan comes from");
+            return false;
+        }
+        return true;
+    }
+    
+    public aos.jack.jak.plan.Plan freeze()
+    {
+        return this;
+    }
+    
+    public aos.jack.jak.plan.Plan unfreeze()
+    {
+        return this;
+    }
+    
+    public java.lang.Object genObject(int __index)
+    {
+        switch (__index) {
+        }
+        aos.jack.jak.core.Jak.error("illegal Object Construction");
+        return null;
+    }
+    
+    public aos.jack.jak.cursor.Cursor genCursor(int __index)
+        throws java.lang.Exception
+    {
+        switch (__index) {
+            case 0: 
+            {
+                return (planContextName.get(0,$name));
+            }
+            case 1: 
+            {
+                return (new aos.jack.jak.cursor.BinaryBoolOp(this,__logic,aos.jack.jak.cursor.BinaryBoolOp.AND,(short) 0,true,(short) 0,false));
+            }
+        }
+        aos.jack.jak.core.Jak.error("illegal Cursor Construction");
+        return null;
+    }
+    
+    public aos.jack.jak.fsm.FSM genFSM(int __index)
+        throws java.lang.Exception
+    {
+        switch (__index) {
+        }
+        aos.jack.jak.core.Jak.error("illegal FSM Construction");
+        return null;
+    }
+    
+    public boolean testCondition(int __index)
+        throws java.lang.Exception
+    {
+        switch (__index) {
+            case 0: 
+            {
+                return (($name.as_string().equals(NeonAffect.PlanConstants.ALL_PLANS) || $name.as_string().equals(getPlanName())));
+            }
+        }
+        aos.jack.jak.core.Jak.error("illegal test Construction");
+        return false;
+    }
+    
+    public aos.jack.jak.plan.PlanFSM body()
+    {
+        return new NeonAffect.SlowNodDignifiedPlan.__bodyFSM();
+    }
+    
+    private SlowNodDignifiedPlan(NeonAffect.Level2PosAffectEvent __ev, aos.jack.jak.task.Task __t, NeonAffect.SlowNodDignifiedPlan __env)
+    {
+        this(__t,__env);
+        this.ev1 = __ev;
+    }
+    
+    protected aos.jack.jak.logic.Signature eventSignature(int __log)
+    {
+        return ev1.getSignature(__log);
+    }
+    
+    public java.lang.String handledEvent()
+    {
+        return "NeonAffect.Level2PosAffectEvent";
+    }
+    
+    public boolean __relevant(aos.jack.jak.event.Event __e)
+    {
+        return __ns.isEnabled() && relevant(((NeonAffect.Level2PosAffectEvent) __e));
+    }
+    
+    public aos.jack.jak.plan.Plan createPlan(aos.jack.jak.event.Event __e, aos.jack.jak.task.Task __t)
+    {
+        if (!(__e instanceof NeonAffect.Level2PosAffectEvent)) 
+            return null;
+        NeonAffect.Level2PosAffectEvent __e1 = (NeonAffect.Level2PosAffectEvent) __e;
+        return new NeonAffect.SlowNodDignifiedPlan(__e1,__t,this);
+    }
+    
+    protected aos.jack.jak.logic.Signature initSignature(int __log)
+    {
+        aos.jack.jak.logic.Signature __s = super.initSignature(__log + 1);
+        __s.addLogical($name);
+        return __s;
+    }
+    
+    public void setFromSignature(aos.jack.jak.logic.Signature __s)
+    {
+        super.setFromSignature(__s);
+        $name = (aos.jack.jak.logic.StringVariable) __s.getLogical();
+    }
+    
+    public java.lang.String[] variableNames()
+    {
+        return __planVariableNames;
+    }
+    
+    public java.lang.String[] variableTypes()
+    {
+        return __planVariableTypes;
+    }
+    
+    public java.lang.Object getVariable(int n)
+    {
+        switch (n) {
+            case 0: 
+            {
+                return aos.util.ToObject.box($name);
+            }
+            case 1: 
+            {
+                return aos.util.ToObject.box(ev1);
+            }
+            case 2: 
+            {
+                return aos.util.ToObject.box(planContextName);
+            }
+            case 3: 
+            {
+                return aos.util.ToObject.box(behaviorName);
+            }
+            case 4: 
+            {
+                return aos.util.ToObject.box(mutex);
+            }
+            default: 
+            {
+                throw new java.lang.IndexOutOfBoundsException("Plan " + this + " does not have variable number " + n);
+            }
+        }
+    }
+    
+    public java.lang.String[] reasoningMethods()
+    {
+        return mergeReasoningMethods(__reasoningMethods,super.reasoningMethods());
+    }
+    
+    public java.lang.String[] logSignatureVariableNames()
+    {
+        return __logSignatureVariableNames;
+    }
+    
+    public java.lang.String[] logSignatureVariableTypes()
+    {
+        return __logSignatureVariableTypes;
+    }
+    
+    public aos.jack.jak.cursor.Cursor context()
+    {
+        try {
+            return (genCursor(1));
+        }
+        catch (java.lang.Exception e) {
+            e.printStackTrace();
+            return aos.jack.jak.cursor.Cursor.falseCursor;
+        }
+    }
+    
+    class __bodyFSM extends aos.jack.jak.plan.PlanFSM implements aos.jack.jak.core.Generator {
+        aos.jack.jak.beliefset.BeliefSetException __local__2788_0;
+        private int __breakLevel = 0;
+        public int run(int __status)
+            throws java.lang.Throwable
+        {
+            do {
+                try {
+                    if (__tothrow != null) 
+                        throw __tothrow;
+                    if ((aos.jack.jak.core.Jak.debugging & aos.jack.jak.core.Jak.LOG_PLANS) != 0) 
+                        aos.util.logging.LogMsg.log(this,aos.jack.jak.core.Jak.LOG_PLANS,__task + "-SlowNodDignifiedPlan.body:" + java.lang.Integer.toString(__state));
+                    if (__task.nsteps > 0) {
+                        __task.nsteps-- ;
+                        if (__task.nsteps == 0) 
+                            agent.changeFocus();
+                    }
+                    if (__state < 10) {
+                        __status = super.stdrun(NeonAffect.SlowNodDignifiedPlan.this,__status);
+                        if (__status != CONTINUE || agent.changing_focus) 
+                            return __status;
+                        continue;
+                    }
+                    __curstate = __state;
+                    switch (__state) {
+                        default: 
+                        {
+                            aos.jack.jak.core.Jak.error("SlowNodDignifiedPlan.body: Illegal state");
+                            return FAILED_STATE;
+                        }
+                        //* (41)             behaviorName.add(0, getPlanName());
+                        case 10: 
+                        {
+                            __breakLevel = 2;
+                            __state = 13;
+                            behaviorName.add(0,getPlanName());
+                            break;
+                        }
+                        //* (43)         catch (BeliefSetException e)
+                        case 11: 
+                        {
+                            __breakLevel = 2;
+                            __state = 12;
+                            __local__2788_0 = (aos.jack.jak.beliefset.BeliefSetException) __current;
+                            break;
+                        }
+                        //* (45)             e.printStackTrace();    
+                        case 12: 
+                        {
+                            __breakLevel = 4;
+                            __state = 13;
+                            __local__2788_0.printStackTrace();
+                            break;
+                        }
+                        //* (49)             mutex.signal();
+                        case 13: 
+                        {
+                            __breakLevel = 2;
+                            __state = 14;
+                            mutex.signal();
+                            break;
+                        }
+                        //* (48)         {
+                        case 14: 
+                        {
+                            __state = 15;
+                            if (__breakLevel < 2) 
+                                __state = 15;
+                            __tothrow = __pending;
+                            break;
+                        }
+                        //* (36)     #reasoning method
+                        case 15: 
+                        {
+                            if (__pending == null) 
+                                __state = PASSED_STATE;
+                            __tothrow = __pending;
+                            break;
+                        }
+                    }
+                }
+                catch (java.lang.Throwable e) {
+                    handleException(e,__exMap_body);
+                }
+            }
+             while (!agent.changing_focus);
+            return CONTINUE;
+        }
+        
+        public java.lang.String methodName()
+        {
+            return "body";
+        }
+        
+        __bodyFSM()
+        {
+        }
+        
+        public java.lang.String stateInfo()
+        {
+            int n = __curstate;
+            java.lang.String file = __tt__body[0];
+            java.lang.String method = __tt__body[1];
+            if (n < 0) 
+                n = -n;
+            n -= (10 - 2);
+            java.lang.String line = (n < 2)?"??":__tt__body[n];
+            return file + ":" + line + " " + method + " [" + __curstate + "]";
+        }
+        
+        public java.lang.Object genObject(int __index)
+        {
+            switch (__index) {
+            }
+            aos.jack.jak.core.Jak.error("illegal Object Construction");
+            return null;
+        }
+        
+        public aos.jack.jak.cursor.Cursor genCursor(int __index)
+            throws java.lang.Exception
+        {
+            switch (__index) {
+            }
+            aos.jack.jak.core.Jak.error("illegal Cursor Construction");
+            return null;
+        }
+        
+        public aos.jack.jak.fsm.FSM genFSM(int __index)
+            throws java.lang.Exception
+        {
+            switch (__index) {
+            }
+            aos.jack.jak.core.Jak.error("illegal FSM Construction");
+            return null;
+        }
+        
+        public boolean testCondition(int __index)
+            throws java.lang.Exception
+        {
+            switch (__index) {
+            }
+            aos.jack.jak.core.Jak.error("illegal test Construction");
+            return false;
+        }
+        
+        public aos.jack.jak.plan.Plan getPlan()
+        {
+            return NeonAffect.SlowNodDignifiedPlan.this;
+        }
+        
+        protected aos.jack.jak.fsm.FSM fail()
+        {
+            return getPlan().fail();
+        }
+        
+        protected aos.jack.jak.fsm.FSM pass()
+        {
+            return getPlan().pass();
+        }
+        
+        public void enter()
+        {
+            __trace = agent.trace("NeonAffect.SlowNodDignifiedPlan.body");
+        }
+        
+        public java.lang.Object getVariable(int n)
+        {
+            switch (n) {
+                case 0: 
+                {
+                    return aos.util.ToObject.box(__local__2788_0);
+                }
+                default: 
+                {
+                    throw new java.lang.IndexOutOfBoundsException("Reasoning Method " + methodName() + " does not have variable number " + n);
+                }
+            }
+        }
+        
+        public java.lang.String[] variableNames()
+        {
+            return __fsmVariableNames_body;
+        }
+        
+        public java.lang.String[] variableTypes()
+        {
+            return __fsmTypes_body;
+        }
+        
+        public java.lang.String[] variableLocalNames()
+        {
+            return __fsmLocalNames_body;
+        }
+        
+    }
+}
