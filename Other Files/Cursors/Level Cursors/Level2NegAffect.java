@@ -5,10 +5,10 @@ import aos.jack.util.cursor.Change;
 
 public class Level2NegAffect extends Change {
 
-    private EmotionCursorVar c = null;
-    private String strCursorType = CursorEnum.LEVEL_CURSOR_NEG_2;
-    private int iLevel = CursorEnum.iLEVEL_CURSOR_NEG_2;
-    private NeonAffectAgent agent1 = null;
+    private final EmotionCursorVar c;
+    private final String strCursorType = CursorEnum.LEVEL_CURSOR_NEG_2;
+    private final int iLevel = CursorEnum.iLEVEL_CURSOR_NEG_2;
+    private final NeonAffectAgent agent1;
     
     public final static double MAX_VALUE = -15.0;
     public final static double MIN_VALUE = -25.0;
@@ -16,19 +16,20 @@ public class Level2NegAffect extends Change {
     public Level2NegAffect(EmotionCursorVar c1, NeonAffectAgent agent11)
     {
         super(c1, false);
-        c = c1;
-        agent1 = agent11;
+        this.c = c1;
+        this.agent1 = agent11;
    
         agent1.IncrementNumberOfCursors();
     }
 
+    @Override
     public boolean condition()
     {
         System.out.println("Inside Level2NegAffect condition()");
         
         double dValue = c.GetValue();
         
-        System.out.println("dValue = " + Double.toString(dValue));
+        System.out.println("dValue = " + dValue);
 
         if (dValue > MIN_VALUE && dValue <= MAX_VALUE)
         {
@@ -44,7 +45,7 @@ public class Level2NegAffect extends Change {
     {
         System.out.println("Inside Level2NegAffect condition(dValue)");
               
-        System.out.println("dValue = " + Double.toString(dValue));
+        System.out.println("dValue = " + dValue);
 
         if (dValue > MIN_VALUE && dValue <= MAX_VALUE)
         {

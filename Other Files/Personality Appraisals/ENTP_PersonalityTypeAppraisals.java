@@ -1,12 +1,15 @@
 package NeonAffect;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ENTP_PersonalityTypeAppraisals extends ArrayList {
 
+        private final List<AffectAppraisal> appraisals = new ArrayList<>();
+
     public ENTP_PersonalityTypeAppraisals()
     {
-        super();
+        
         
         AddItems();
     }
@@ -14,481 +17,481 @@ public class ENTP_PersonalityTypeAppraisals extends ArrayList {
     private void AddItems()
     {
 		AffectAppraisal appraisalSim = createRageAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createVengefulAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAngryAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDisgustAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createSadAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createMoodyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAnticipationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPleasedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createHappyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createElationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createEuphoriaAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAweAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createOverwhelmedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPanicAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createTerrorAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFearAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createWarinessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createIrritationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createIndifferenceAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		//appraisalSim = createCuriosityAppraisal();
-		//add(appraisalSim);
+		//appraisals.add(appraisalSim);
 
 		appraisalSim = createSatisfactionAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAmazementAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createEagernessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createExcitementAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createObsessedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createBitternessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createResentmentAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createEnvyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createJealousyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		//appraisalSim = createInsecurityAppraisal();
-		//add(appraisalSim);
+		//appraisals.add(appraisalSim);
 
 		appraisalSim = createAcceptanceAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPeacefulnessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createInspiredAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createGratitudeAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createConnectednessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createWanderlustAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createHumiliationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDenialAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createHysteriaAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDreadAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createWorryAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createVulnerabilityAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createReliefAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createValuedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPrideAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createConfidenceAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFearlessnessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createSmugnessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createScornAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createContemptAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPityAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDisappointmentAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createResignationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createHumbledAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDeterminationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createHopefulnessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAdorationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createLoveAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDepressedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createRegretAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createRemorseAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createGuiltAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDoubtAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createConflictedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAdmirationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDesireAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createLongingAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createLustAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createMovedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createTormentedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAnguishAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createStunnedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDesperationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAnxietyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createGriefAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDevastationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDespairAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFlusteredAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createConfusionAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createImpatienceAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFrustrationAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAnnoyanceAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDefiantAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAppalledAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createSurprisedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createInjusticeAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDiscouragedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createTrustAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPainAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createMacabreAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createEmbarrassedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFatiguedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createArousedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPatienceAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createCompassionAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createEmpathyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createLoyaltyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDefeatedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createBoredAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDissatisfiedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createUpsetAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDomineeringAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createSexuallyExcitedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createInterestedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createCapableAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAffectionateAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createActivatedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createImpressedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createWonderAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPowerlessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFeebleAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createInsecureAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createEgotisticalAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createVigorousAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createShyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createKindAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFriendlyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createCarefreeAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDevotedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createInLoveAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createMightyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createSubduedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createInhibitedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDistressedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAggressiveAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createSeriousAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createUsefulAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createResponsibleAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createConcentratingAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createEnjoymentAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createInfluentialAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createBoldAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createLonelyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createListlessAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createRejectedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createArrogantAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAdmiredAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createAlertAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createCooperativeAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createExcitedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createJoyfulAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createPowerfulAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createTimidAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createMeekAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createTenseAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createControllingAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDignifiedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFreeAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createLuckyAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createStrongAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createBurdenedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createDiscontentedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createTroubledAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createThankfulAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createMasterfulAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createTriumphantAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createCuriousAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createSelfSatisfiedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
 
 		appraisalSim = createFascinatedAppraisal();
-		add(appraisalSim);
+		appraisals.add(appraisalSim);
     }
     
     public AffectAppraisal createRageAppraisal() {
@@ -6101,5 +6104,9 @@ public class ENTP_PersonalityTypeAppraisals extends ArrayList {
                                   threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, 
                                   consistency_with_social_norms, loss, familiarity, effort, challenge, 
                                   consistency_with_internal_values, expectedness);
+    }
+
+    public List<AffectAppraisal> getAppraisals() {
+        return appraisals;
     }
 }

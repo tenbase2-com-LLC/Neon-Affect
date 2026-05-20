@@ -1,98 +1,68 @@
-
 package NeonAffect;
 
 import aos.jack.util.cursor.Change;
-import java.util.ArrayList;
+import java.util.List;
 
 public class _ExtremeLevelCursor extends Change {
 
-    private AffectHistoryCursorVar r = null;
-    private int iStartLevel = 0;
-    private int iEndLevel = 0;
-    private String strCursorType = "";
-    private NeonAffectAgent agent1 = null;
+    private final AffectHistoryCursorVar r;
+    private final int iStartLevel;
+    private final int iEndLevel;
+    private final String strCursorType;
+    private final NeonAffectAgent agent1;
+    private final boolean bDebug = true;
 
-    private boolean bDebug = true;
-
-    public _ExtremeLevelCursor(AffectHistoryCursorVar r1, int iStartLevel1, int iEndLevel1, String strCursorType1, NeonAffectAgent agent11)
-    {
-        super(r1, false);
-        r = r1;
-        iStartLevel = iStartLevel1;
-        iEndLevel = iEndLevel1;
-        strCursorType = CursorEnum.toString(strCursorType1, iStartLevel1, iEndLevel1);
-        agent1 = agent11;
-        
+    public _ExtremeLevelCursor(AffectHistoryCursorVar r, int iStartLevel,
+            int iEndLevel, String strCursorType, NeonAffectAgent agent1) {
+        super(r, false);
+        this.r = r;
+        this.iStartLevel = iStartLevel;
+        this.iEndLevel = iEndLevel;
+        this.strCursorType = CursorEnum.toString(strCursorType, iStartLevel, iEndLevel);
+        this.agent1 = agent1;
         agent1.IncrementNumberOfCursors();
     }
 
-    public boolean condition()
-    {
+    @Override
+    public boolean condition() {
         boolean bStartLevelFound = false;
-        boolean bEndLevelFound = false;       
-        boolean bDebug = true;
+        boolean bEndLevelFound = false;
 
-        if (bDebug)
-        {  
-            System.out.println("Inside AfectRegulationIntervalCursor Condition StartLevel: " + Integer.toString(iStartLevel) + " EndLevel: " + Integer.toString(iEndLevel));
+        if (bDebug) {
+            System.out.println("Inside ExtremeLevelCursor Condition StartLevel: "
+                + iStartLevel + " EndLevel: " + iEndLevel);
         }
-            
-        ArrayList items = r.GetItems();
-        
-        double dStartValue = 0d;
-        double dEndValue = 0d;
-        
-        long startTime = 0;
-        long endTime = 0;
-        
-        for(int i = 0; i < items.size(); i++)
-        {
-            AffectHistoryVar item = (AffectHistoryVar)items.get(i);
-            
-            int iItemStartLevel = item.GetLevel();
-            int iStartID = item.GetID();
-            
-            if (iItemStartLevel == iStartLevel && !bEndLevelFound)
-            {
+
+        List<AffectHistoryVar> items = r.GetItems();
+        double dStartValue = 0d, dEndValue = 0d;
+        long startTime = 0, endTime = 0;
+        int iStartID = 0;
+
+        for (var item : items) {
+            if (item.GetLevel() == iStartLevel && !bEndLevelFound) {
                 dStartValue = item.GetValue();
                 startTime = item.GetTime();
+                iStartID = item.GetID();
                 bStartLevelFound = true;
             }
-             
-            int iItemEndLevel = item.GetLevel();
-            int iEndID = item.GetID();
-            
-            if (iItemEndLevel == iEndLevel && iStartID != iEndID && bStartLevelFound)
-            {
+
+            if (item.GetLevel() == iEndLevel && item.GetID() != iStartID && bStartLevelFound) {
                 dEndValue = item.GetValue();
                 endTime = item.GetTime();
                 bEndLevelFound = true;
             }
-            
-            if (bStartLevelFound && bEndLevelFound)
-            {
+
+            if (bStartLevelFound && bEndLevelFound) {
                 r.SetLevelVelocity((dEndValue - dStartValue) / (endTime - startTime));
                 return true;
-            }            
+            }
         }
- 
+
         agent1.SetCursorAck(strCursorType, iStartLevel, iEndLevel, false);
-         
         return false;
     }
-    
-    public String GetCursorType()
-    {
-        return strCursorType;        
-    }
-    
-    public int GetStartLevel()
-    {
-        return iStartLevel;        
-    }
-    
-    public int GetEndLevel()
-    {
-        return iEndLevel;        
-    }
+
+    public String GetCursorType() { return strCursorType; }
+    public int GetStartLevel()    { return iStartLevel; }
+    public int GetEndLevel()      { return iEndLevel; }
 }

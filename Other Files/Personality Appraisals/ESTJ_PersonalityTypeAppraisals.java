@@ -1,12 +1,15 @@
 package NeonAffect;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ESTJ_PersonalityTypeAppraisals extends ArrayList implements IAppraisalCreator {
+public class ESTJ_PersonalityTypeAppraisals implements IAppraisalCreator {
+
+        private final List<AffectAppraisal> appraisals = new ArrayList<>();
 
     public ESTJ_PersonalityTypeAppraisals()
     {
-        super();   
+        
         
         AddItems();
     }
@@ -14,481 +17,481 @@ public class ESTJ_PersonalityTypeAppraisals extends ArrayList implements IApprai
     private void AddItems()
     {
         AffectAppraisal appraisal = createRageAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createVengefulAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAngryAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDisgustAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createSadAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createMoodyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAnticipationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPleasedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createHappyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createElationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createEuphoriaAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAweAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createOverwhelmedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPanicAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createTerrorAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFearAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createWarinessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createIrritationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createIndifferenceAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         //appraisal = createCuriosityAppraisal();
-        //add(appraisal);
+        //appraisals.add(appraisal);
 
         appraisal = createSatisfactionAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAmazementAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createEagernessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createExcitementAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createObsessedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createBitternessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createResentmentAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createEnvyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createJealousyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         //appraisal = createInsecurityAppraisal();
-        //add(appraisal);
+        //appraisals.add(appraisal);
 
         appraisal = createAcceptanceAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPeacefulnessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createInspiredAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createGratitudeAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createConnectednessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createWanderlustAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createHumiliationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDenialAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createHysteriaAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDreadAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createWorryAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createVulnerabilityAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createReliefAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createValuedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPrideAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createConfidenceAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFearlessnessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createSmugnessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createScornAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createContemptAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPityAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDisappointmentAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createResignationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createHumbledAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDeterminationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createHopefulnessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAdorationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createLoveAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDepressedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createRegretAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createRemorseAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createGuiltAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDoubtAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createConflictedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAdmirationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDesireAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createLongingAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createLustAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createMovedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createTormentedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAnguishAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createStunnedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDesperationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAnxietyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createGriefAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDevastationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDespairAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFlusteredAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createConfusionAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createImpatienceAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFrustrationAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAnnoyanceAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDefiantAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAppalledAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createSurprisedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createInjusticeAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDiscouragedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createTrustAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPainAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createMacabreAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createEmbarrassedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFatiguedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createArousedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPatienceAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createCompassionAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createEmpathyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createLoyaltyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDefeatedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createBoredAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDissatisfiedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createUpsetAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDomineeringAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createSexuallyExcitedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createInterestedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createCapableAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAffectionateAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createActivatedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createImpressedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createWonderAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPowerlessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFeebleAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createInsecureAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createEgotisticalAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createVigorousAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createShyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createKindAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFriendlyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createCarefreeAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDevotedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createInLoveAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createMightyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createSubduedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createInhibitedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDistressedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAggressiveAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createSeriousAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createUsefulAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createResponsibleAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createConcentratingAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createEnjoymentAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createInfluentialAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createBoldAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createLonelyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createListlessAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createRejectedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createArrogantAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAdmiredAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createAlertAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createCooperativeAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createExcitedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createJoyfulAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createPowerfulAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createTimidAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createMeekAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createTenseAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createControllingAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDignifiedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFreeAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createLuckyAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createStrongAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createBurdenedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createDiscontentedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createTroubledAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createThankfulAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createMasterfulAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createTriumphantAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createCuriousAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createSelfSatisfiedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
 
         appraisal = createFascinatedAppraisal();
-        add(appraisal);
+        appraisals.add(appraisal);
     }
     
     public AffectAppraisal createRageAppraisal() {
@@ -6145,5 +6148,9 @@ public class ESTJ_PersonalityTypeAppraisals extends ArrayList implements IApprai
                                    threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, 
                                    consistency_with_social_norms, loss, familiarity, effort, challenge, 
                                    consistency_with_internal_values, expectedness);
+    }
+
+    public List<AffectAppraisal> getAppraisals() {
+        return appraisals;
     }
 }

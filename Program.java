@@ -1,47 +1,24 @@
 import NeonAffect.NeonAffectAgent;
 import NeonAffect.AffectEnum;
-import aos.jack.jak.util.timer.DilatedClock;
-import aos.cojack.configuration.*;
 
 public class Program {
-    public static void main( String args[] )
-    {
-        try
-        {   
-            long begTime =  System.currentTimeMillis();       
-        
-            NeonAffectAgent neonAgent = new NeonAffectAgent();
-            //neonAgent.CountAffectLevels();
-            
+
+    public static void main(String[] args) {
+        try {
+            long begTime = System.currentTimeMillis();
+
+            var neonAgent = new NeonAffectAgent();
             neonAgent.PostInit();
 
-            //neonAgent.TestAffectAppraisal();
+            neonAgent.AddEmotionDirect(AffectEnum.RAGE);
+            neonAgent.Wait(10.0);
 
-            //for (int i = 0; i < 5; i++)
-            //{ 
-                  neonAgent.AddEmotionDirect(AffectEnum.RAGE);
-                  neonAgent.Wait(10.0);
-                  
-                  /*
-                  neonAgent.AddPositiveEmotion(AffectEnum.LUST, 30.0);
-                  neonAgent.Wait(10.0);
-                  
-                  neonAgent.AddPositiveEmotion(AffectEnum.LUST, 30.0);
-                  neonAgent.Wait(10.0);
-                  */
-            //}
-                      
-            long endTime =  System.currentTimeMillis();
+            long elapsedTime = System.currentTimeMillis() - begTime;
+            System.out.println("\nElapsed time: " + elapsedTime);
 
-            long elapsedTime = endTime - begTime;
-            
-            System.out.println("\nElapsed time: " + elapsedTime); 
-            
             System.in.read();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();  
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         System.exit(0);
     }
