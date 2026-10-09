@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:46 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,7 @@ import aos.jack.util.thread.Semaphore;
  */
 public plan AddEmotionPlan extends Plan {
 
+    private boolean bDebug = false;
     #handles event AddEmotionEvent aee;
     #modifies data Emotion emotion;
     #uses data Semaphore mutex4;
@@ -31,7 +32,7 @@ public plan AddEmotionPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {   
@@ -98,6 +99,7 @@ public plan AddEmotionPlan extends Plan {
             mutex4.signal();
         }
     }
-    private boolean bDebug = false;
+    
 
 }
+

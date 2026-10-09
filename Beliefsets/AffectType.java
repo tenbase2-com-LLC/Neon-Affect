@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:46 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -18,6 +18,37 @@ public beliefset AffectType extends OpenWorld {
     #key field int id;
     #value field int iAffect;
     #indexed query get(int id, logical int iAffect);
+    
+    #function query int GetAffect()
+    {             
+        int iAffect1 = -1;
+        
+        try
+        {           
+            boolean bDebug = true;
+        
+            if (bDebug)
+            { 
+                System.out.println("Inside AffectType.GetAffect()");
+            }       
+        
+            get(0, $affect).next();
+            iAffect1 = $affect.as_int();
+            
+            if (bDebug)
+            { 
+                System.out.println("After grabbing affect enum: " + Integer.toString(iAffect1));
+            }            
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        
+        return iAffect1;
+        
+    }
+
 
     private logical int $affect;
 
@@ -35,3 +66,4 @@ public beliefset AffectType extends OpenWorld {
     }
 
 }
+

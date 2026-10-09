@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -13,8 +13,10 @@ package NeonAffect;
 /**
  * 
  */
-public agent NeonPanicAgent extends AbstractMiniAgent {
+public agent NeonPanicAgent extends AbstractMiniAgent implements IPost {
     #has capability PanicAffectCapability cap1;
+    #handles event AffectEvent;
+    #posts event AffectEvent ev1;
 
     public NeonPanicAgent(String strName, String strInteractionType1, boolean bDebug1)
     {
@@ -24,12 +26,13 @@ public agent NeonPanicAgent extends AbstractMiniAgent {
     }
     private boolean bDebug = false;
 
+    @Override
     public void PostEvent()
     {   
         try
         {     
             //call level plan            
-            postEvent(ev1.post(GetAffectType()));        
+            postEvent(ev1.post(GetAffectType(), 0));        
             mutex.threadWait();
         }
         catch (Exception e)
@@ -40,3 +43,4 @@ public agent NeonPanicAgent extends AbstractMiniAgent {
     }
 
 }
+

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,35 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability ControllingAffectCapability extends Capability {
-    #uses plan ArmsCrossedControllingPlan;
-    #uses plan AskQuestionsControllingPlan;
-    #uses plan ClenchedJawControllingPlan;
-    #uses plan CriticizingPlan;
-    #uses plan DemandingUpdatesPlan;
-    #uses plan DismissiveRemarksPlan;
-    #uses plan FrowningControllingPlan;
-    #uses plan GivingOrdersControllingPlan;
-    #uses plan HeadShakingControllingPlan;
-    #uses plan ImposingRulesPlan;
-    #uses plan InterruptingControllingPlan;
-    #uses plan LoomingOverOthersPlan;
-    #uses plan ManipulatingCircumstancesPlan;
-    #uses plan MonitoringOthersPlan;
-    #uses plan OverplanningEventsPlan;
-    #uses plan OverridingOthersPlan;
-    #uses plan OverseeingDetailsPlan;
-    #uses plan PassiveAggressiveCommentsPlan;
-    #uses plan RestrictingChoicesPlan;
-    #uses plan SpeakingOverOthersPlan;
-    #uses plan StaringControllingPlan;
-    #uses plan StiffPostureControllingPlan;
-    #uses plan UsingGuiltyPhrasesPlan;
-    #uses plan WithholdingInformationControllingPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextControllingPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> AskQuestionsControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> CorrectingOthersControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> CriticizingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> DismissiveRemarksPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> GivingOrdersControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> InterruptingControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> OverridingOthersPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> PassiveAggressiveCommentsPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> SpeakingOverOthersPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.VERBAL> UsingGuiltyPhrasesPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> ArmsCrossedControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> CheckWatchControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> ClenchedJawControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> FrowningControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> HeadShakingControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> LoomingOverOthersPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> PurseLipsControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> StaringControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> StiffPostureControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.NONVERBAL> TappingFootControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> DemandingUpdatesPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> ImposingRulesPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> MakingDecisionsForOthersControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> ManipulatingCircumstancesPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> MonitoringOthersPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> NeedControlControllingPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> OverplanningEventsPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> OverseeingDetailsPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> RestrictingChoicesPlan;
+    #uses BehaviorPlan<AffectEnum.CONTROLLING, AffectEnum.ACTION> WithholdingInformationControllingPlan;
 
 }
+

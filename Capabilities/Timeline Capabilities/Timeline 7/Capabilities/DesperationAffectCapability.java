@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,24 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability DesperationAffectCapability extends Capability {
-    #uses plan StrongGazeDesperationPlan;
-    #uses plan QuickMovementsDesperationPlan;
-    #uses plan MoaningDesperationPlan;
-    #uses plan ShakyVoicePlan;
-    #uses plan BargainingPlan;
-    #uses plan ShakingHeadDesperationPlan;
-    #uses plan SwearingDesperationPlan;
-    #uses plan ThinkingIrrationallyDesperationPlan;
-    #uses plan WillingToDoAnythingPlan;
-    #uses plan RebelliousPlan;
-    #uses plan CryingDesperationPlan;
-    #uses plan RiskTakingDesperationPlan;
-    #uses plan SteadfastnessDesperationPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextDesperationPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> AskForHelpDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> CryingDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> IssuingUltimatumsDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> MakingDemandsDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> MoaningDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> PleadingDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> ShakyVoicePlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> TalkToSelfDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> UsingPanicWordsDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.VERBAL> VerbalizingHelplessnessDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> ClenchedJawDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> LeanInDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> MakeFistDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> QuickMovementsDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> RapidBreathingDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> ShakingHeadDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> StrongGazeDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> SwearingDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> TremblingBodyDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.NONVERBAL> WringingHandsDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> AssumingWorstScenarioDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> BargainingPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> NeedControlDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> RebelliousPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> RiskTakingDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> SacrificingDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> SeekingComfortDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> SteadfastnessDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> ThinkingIrrationallyDesperationPlan;
+    #uses BehaviorPlan<AffectEnum.DESPERATION, AffectEnum.ACTION> WillingToDoAnythingPlan;
 
 }
+

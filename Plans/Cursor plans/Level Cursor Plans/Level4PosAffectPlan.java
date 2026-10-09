@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,9 +15,8 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public plan Level4PosAffectPlan extends Plan {
-
     #handles event SetAffectCursorsEvent ev1;
-    #posts event Level4PosAffectEvent ev3;
+    #posts event AffectEvent ev3;
     #posts event AddAffectHistoryEvent aahe;
     #posts event LevelCursorEvent lce;
     #uses interface NeonAffectAgent enc;
@@ -35,7 +34,7 @@ public plan Level4PosAffectPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {       
@@ -68,7 +67,7 @@ public plan Level4PosAffectPlan extends Plan {
                 double dEmotion = $emotion.as_double();
                 
                 @subtask(aahe.post(4, System.currentTimeMillis(), iAffect, dEmotion));
-                @subtask(ev3.post(iAffect));
+                @subtask(ev3.post(iAffect, 4));
                 */
                
                 enc.SetCursorAck(c.GetCursorType(), c.GetLevel(), true);
@@ -92,5 +91,7 @@ public plan Level4PosAffectPlan extends Plan {
             e.printStackTrace();         
         }
     }
+    
 
 }
+

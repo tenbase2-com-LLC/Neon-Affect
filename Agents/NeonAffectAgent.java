@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -27,6 +27,7 @@ import java.util.concurrent.Semaphore;
 public agent NeonAffectAgent extends Agent {
     #has capability NeonAffectCapability nac;
     #has capability WaitCapability wc;
+    #handles event CursorPlanChoiceEvent;
     #private data Emotion emotion();
     #private data PersonalityType personalityType();
     #private data AffectType affectType();
@@ -50,6 +51,7 @@ public agent NeonAffectAgent extends Agent {
         Init();
         CreateAgents();
     }
+
     private ThreadPool pctp = new ThreadPool(10);
     private String strPersonalityType = "";
     public ReservoirAgent riskTakingEuhporia = null;
@@ -71,6 +73,10 @@ public agent NeonAffectAgent extends Agent {
     private ArrayList behaviorList = new ArrayList();
     private ArrayList affectHistoryItems = new ArrayList();
     private java.util.concurrent.Semaphore emotionMutex = new java.util.concurrent.Semaphore(1);
+    private PathologyResult lastPathologyResult = null;
+    private EmotionPatternResult lastEmotionPatternResult = null;
+    private TrajectoryAnalysisResult lastTrajectoryAnalysis = null;
+    private AffectDynamicsParams lastDynamicsParams = null;
     #uses taskmanager CatMan(this);
 
     public void Init()
@@ -378,12 +384,16 @@ public agent NeonAffectAgent extends Agent {
         }
         catch (Exception e)
         {
-            
+
         }
         finally
-        {       
+        {
             emotionMutex.release();
         }
+
+        DetectPathology();
+        DetectEmotionPatterns();
+        AnalyzeTrajectory();
     }
 
     public void AddNegativeEmotion(int iAffect, double dAmount)
@@ -412,12 +422,16 @@ public agent NeonAffectAgent extends Agent {
         }
         catch (Exception e)
         {
-            
-        }    
-        finally
-        {        
-            emotionMutex.release();    
+
         }
+        finally
+        {
+            emotionMutex.release();
+        }
+
+        DetectPathology();
+        DetectEmotionPatterns();
+        AnalyzeTrajectory();
     }
 
     public void AddEmotionDirect(int iAffect) throws Exception
@@ -454,12 +468,16 @@ public agent NeonAffectAgent extends Agent {
         }
         catch (Exception e)
         {
-            
+
         }
         finally
-        {        
+        {
             emotionMutex.release();
         }
+
+        DetectPathology();
+        DetectEmotionPatterns();
+        AnalyzeTrajectory();
     }
 
     private double GetMeanAffect(int iLevel) throws Exception
@@ -749,10 +767,127 @@ public agent NeonAffectAgent extends Agent {
         return new AffectHistoryBehaviors(new ArrayList(), new ArrayList());
     }
 
+    public PathologyResult DetectPathology()
+    {
+        try
+        {
+            ArrayList affectHistory = GetAffectHistoryItems();
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectPathology: history size: " + Integer.toString(affectHistory.size()) + " type: " + strPersonalityType);
+            }
+
+            lastPathologyResult = PathologyDetector.Detect(affectHistory, strPersonalityType);
+            lastDynamicsParams = lastPathologyResult.GetDynamics();
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectPathology: " + lastPathologyResult.toString());
+            }
+
+            return lastPathologyResult;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public PathologyResult GetLastPathologyResult()
+    {
+        return lastPathologyResult;
+    }
+
+    public AffectDynamicsParams GetLastDynamicsParams()
+    {
+        return lastDynamicsParams;
+    }
+
+    public EmotionPatternResult DetectEmotionPatterns()
+    {
+        try
+        {
+            ArrayList affectHistory = GetAffectHistoryItems();
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectEmotionPatterns: history size: " + Integer.toString(affectHistory.size()) + " type: " + strPersonalityType);
+            }
+
+            lastEmotionPatternResult = EmotionPatternDetector.Detect(affectHistory, strPersonalityType);
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectEmotionPatterns: " + lastEmotionPatternResult.toString());
+            }
+
+            return lastEmotionPatternResult;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public EmotionPatternResult GetLastEmotionPatternResult()
+    {
+        return lastEmotionPatternResult;
+    }
+
+    public TrajectoryAnalysisResult AnalyzeTrajectory()
+    {
+        try
+        {
+            lastTrajectoryAnalysis = EmotionalTrajectoryAnalyzer.Analyze(
+                lastPathologyResult, lastEmotionPatternResult);
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.AnalyzeTrajectory: " + lastTrajectoryAnalysis.toString());
+            }
+
+            return lastTrajectoryAnalysis;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public TrajectoryAnalysisResult GetLastTrajectoryAnalysis()
+    {
+        return lastTrajectoryAnalysis;
+    }
+
+    public AffectDynamicsParams ComputeCurrentDynamics()
+    {
+        try
+        {
+            ArrayList affectHistory = GetAffectHistoryItems();
+            lastDynamicsParams = AffectDynamicsCalculator.Compute(affectHistory);
+            return lastDynamicsParams;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return new AffectDynamicsParams();
+    }
+
     public void Wait(double dValue1)
     {
-        postEvent(wc.we.post(dValue1));        
+        postEvent(wc.we.post(dValue1));
         mutex.threadWait();
     }
 
 }
+
+

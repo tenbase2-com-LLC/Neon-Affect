@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -37,28 +37,21 @@ public capability NeonAffectCapability extends Capability {
     #has capability Timeline18Capability timeline18Cap;
     #has capability Timeline19Capability timeline19Cap;
     #has capability Timeline20Capability timelinst20Cap;
-    #handles event Level3PosAffectEvent;
-    #posts event Level3PosAffectEvent ev2;
-    #handles event Level4PosAffectEvent;
-    #posts event Level4PosAffectEvent ev15;
-    #handles event Level5PosAffectEvent;
-    #posts event Level5PosAffectEvent ev16;
-    #handles event Level6PosAffectEvent;
-    #posts event Level6PosAffectEvent ev5;
-    #handles event Level2PosAffectEvent;
-    #posts event Level2PosAffectEvent ev6;
-    #handles event Level4NegAffectEvent;
-    #posts event Level4NegAffectEvent ev7;
-    #handles event Level3NegAffectEvent;
-    #posts event Level3NegAffectEvent ev17;
-    #handles event Level1PosAffectEvent;
-    #posts event Level1PosAffectEvent ev11;
-    #handles event Level1NegAffectEvent;
-    #posts event Level1NegAffectEvent ev12;
-    #handles event Level5NegAffectEvent;
-    #posts event Level5NegAffectEvent ev13;
-    #handles event Level6NegAffectEvent;
-    #posts event Level6NegAffectEvent ev14;
+    #has capability Timeline21Capability timeline21Cap;
+    #has capability Timeline22Capability timeline22Cap;
+    #has capability Timeline23Capability timeline23Cap;
+    #has capability Timeline24Capability timeline24Cap;
+    #posts external event CursorPlanChoiceEvent cpce;
+    #sends event IncreasingNegativeLevelEvent inle;
+    #sends event IncreasingPositiveLevelEvent iple;
+    #sends event DecreasingNegativeLevelEvent dnle;
+    #sends event DecreasingPositiveLevelEvent dple;
+    #sends event SameLevelEvent sle;
+    #sends event ExtremeLevelEvent ele;
+    #sends event DecideEvent de;
+    #sends event ContextEvent ce;
+    #handles event AffectEvent;
+    #posts event AffectEvent aev;
     #handles event SetAffectEnumEvent;
     #posts event SetAffectEnumEvent saee;
     #handles event MapAffectEvent;
@@ -152,4 +145,6 @@ public capability NeonAffectCapability extends Capability {
     #private data CancelPlan cancelDPLPlan(false);
     #private data CancelPlan cancelSameLevelPlan(false);
 
+
 }
+

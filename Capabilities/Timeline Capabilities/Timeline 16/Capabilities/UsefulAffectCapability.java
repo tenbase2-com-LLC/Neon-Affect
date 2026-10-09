@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:49 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,35 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability UsefulAffectCapability extends Capability {
-    #uses plan ArticulatingEfficienciesPlan;
-    #uses plan AskQuestionsUsefulPlan;
-    #uses plan CommunicatingResourcefulnessPlan;
-    #uses plan ConstructiveFeedbackPlan;
-    #uses plan DemonstrativeGesuresPlan;
-    #uses plan EfficiencyImprovementPlan;
-    #uses plan EncouragingCollaborationPlan;
-    #uses plan EngagedFacialExpressionPlan;
-    #uses plan FocusedGazeUsefulPlan;
-    #uses plan ListeningIntentlyUsefulPlan;
-    #uses plan NodHeadFastUsefulPlan;
-    #uses plan OfferingAdviceUsefulPlan;
-    #uses plan OfferingToHelpUsefulPlan;
-    #uses plan PreciseHandMovementsPlan;
-    #uses plan ProblemSolvingUsefulPlan;
-    #uses plan ProvideClearInstructionsPlan;
-    #uses plan ResourcefulnessUsefulPlan;
-    #uses plan SharingInformationUsefulPlan;
-    #uses plan SkillApplicationPlan;
-    #uses plan SkillEnhancementPlan;
-    #uses plan StrategicPlanningPlan;
-    #uses plan SupportivePresencePlan;
-    #uses plan TimeManagementPlan;
-    #uses plan VerbalProblemSolvingPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextUsefulPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> ArticulatingEfficienciesPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> AskQuestionsUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> CommunicatingResourcefulnessPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> ConstructiveFeedbackPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> EncouragingCollaborationPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> OfferingAdviceUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> OfferingToHelpUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> ProvideClearInstructionsPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> SharingInformationUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.VERBAL> VerbalProblemSolvingPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> CalmExteriorUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> DemonstrativeGesuresPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> EngagedFacialExpressionPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> FluidMovementUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> FocusedGazeUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> ListeningIntentlyUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> NodHeadFastUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> PreciseHandMovementsPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> SmilingUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.NONVERBAL> SupportivePresencePlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> AnticipatingNeedsUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> EfficiencyImprovementPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> HelpfulnessUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> ProblemSolvingUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> ResourcefulnessUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> SharingResourcesUsefulPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> SkillApplicationPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> SkillEnhancementPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> StrategicPlanningPlan;
+    #uses BehaviorPlan<AffectEnum.USEFUL, AffectEnum.ACTION> TimeManagementPlan;
 
 }
+

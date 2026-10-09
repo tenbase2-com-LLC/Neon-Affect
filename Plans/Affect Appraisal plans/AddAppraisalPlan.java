@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:46 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -14,7 +14,6 @@ package NeonAffect;
  * 
  */
 public plan AddAppraisalPlan extends Plan {
-
     #handles event AddAppraisalEvent aae;
     #uses data Appraisals appraisals;
     #uses data NA_Debug debug;
@@ -28,7 +27,7 @@ public plan AddAppraisalPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {
@@ -51,5 +50,7 @@ public plan AddAppraisalPlan extends Plan {
             e.printStackTrace();            
         }
     }
+    
 
 }
+

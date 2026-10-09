@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -14,7 +14,6 @@ package NeonAffect;
  * 
  */
 public plan IncreasingNegativeLevelPlan extends Plan {
-
     #handles event SetLevelCursorsEvent ev1;
     #posts event IncreasingNegativeLevelEvent inle;
     #posts event SetLevelCursorsEvent slce;
@@ -34,7 +33,7 @@ public plan IncreasingNegativeLevelPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {
@@ -43,7 +42,7 @@ public plan IncreasingNegativeLevelPlan extends Plan {
             setIncreasingNegativeCursors();
         }        
     }
-
+    
     #reasoning method
     setIncreasingNegativeCursors()
     {
@@ -342,5 +341,7 @@ public plan IncreasingNegativeLevelPlan extends Plan {
         }
     
     }
+    
 
 }
+

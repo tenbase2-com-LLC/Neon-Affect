@@ -10,6 +10,10 @@ public class ISFJ_AffectLevels
     public ISFJ_AffectLevels()
     {
         // Level -6 (Overwhelming Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.BETRAYED)); // Fe trust broken by someone close (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.SHAME)); // Fe whole self judged bad (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.HURT)); // Fe wounded by another (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.ABANDONED)); // Fe left alone by those relied on (new)
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.BITTERNESS));
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.OVERWHELMED));
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.RESENTMENT));
@@ -24,6 +28,9 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.SCORN));          // Fe rejection
 
         // Level -5 (Intense Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.HEARTBROKEN)); // Fe loss of a cherished bond (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.UNAPPRECIATED)); // Fe efforts go unrecognised (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DRAINED)); // Fe exhausted from giving (new)
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DENIAL));         // Si resistance
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DEVASTATION));    // Fe-Si processing
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.ANGUISH));        // Fe depth
@@ -39,6 +46,8 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.PANIC));          // Ne grip
 
         // Level -4 (Strong Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.DISILLUSIONED)); // Si ideals collapse (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.AWKWARD)); // Fe socially out of step (new)
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.ARROGANT));
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.EGOTISTICAL));
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.TERROR));         // Ne catastrophizing
@@ -58,6 +67,9 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.UPSET));          // Fe disturbance
 
         // Level -3 (Moderate Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.WISTFUL)); // Si longing for the unreachable (new)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.EXASPERATED)); // Ti patience exhausted (new)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.APPREHENSIVE)); // Si unease about what is coming (new)
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.FEAR));           // Ne worry
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.GUILT));          // Fe responsibility
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DREAD));          // Ne anticipation
@@ -92,6 +104,8 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.BORED));          // Ne understimulation
 
         // Level -1 (Slight Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.GUARDED)); // Si holding back to avoid hurt (new)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.RESTLESS)); // Ne unable to settle (new)
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.SERIOUS));        // Si focus
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.VULNERABILITY));  // Fe exposure
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.RESIGNATION));    // Si acceptance
@@ -107,6 +121,7 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.BURDENED));       // Si weight
 
         // Level 1 (Mild Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.AMUSED)); // Ne finding something funny (new)
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.CONCENTRATING));   // Si focus
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.ACCEPTANCE));      // Fe harmony
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.RELIEF));          // Si comfort
@@ -120,6 +135,9 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.PEACEFULNESS));    // Si tranquility
 
         // Level 2 (Moderate Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.REASSURED)); // Fe doubt eased by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.PLAYFUL)); // Ne light teasing spontaneity (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.SYMPATHY)); // Fe feeling for another's trouble (new)
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.VALUED));          // Fe worth
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.DIGNIFIED));       // Si propriety
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.DETERMINATION));   // Ti drive
@@ -132,6 +150,9 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.DESIRE));          // Fe wanting
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.AROUSED));         // Si sensation
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.COOPERATIVE));     // Fe harmony
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.BELONGING)); // Fe accepted by the group (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.SUPPORTED)); // Fe backed by others (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.PURPOSEFUL)); // Ti acting toward meaning (new)
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CAPABLE));         // Ti competence
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.USEFUL));          // Fe service
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.TRUST));           // Fe connection
@@ -148,6 +169,9 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CURIOUS));         // Ne interest
 
         // Level 4 (Very Strong Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.TENDERNESS)); // Fe gentle protective warmth (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.COMPERSION)); // Fe joy in another's joy (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.EMPOWERED)); // Ti able to effect change (new)
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.CONFIDENCE));      // Ti assurance
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.DEVOTED));         // Si-Fe dedication
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.BOLD));            // Ti assertion
@@ -159,6 +183,11 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.LUST));            // Fe passion
 
         // Level 5 (Intense Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.CHERISHED)); // Fe deeply valued by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.ELEVATION)); // Fe uplifted by human goodness (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.ONENESS)); // Fe union with something larger (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.NOSTALGIA)); // Si fondness for the past (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.INTIMACY)); // Fe mutual closeness and openness (new)
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.LOYALTY));         // Si-Fe commitment
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.INFLUENTIAL));     // Fe guidance
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.MASTERFUL));       // Ti expertise
@@ -177,6 +206,9 @@ public class ISFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.FASCINATED));      // Ne wonder
 
         // Level 6 (Peak Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.BLISS)); // Ne effortless happiness (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.PROTECTIVE)); // Fe drive to keep others safe (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.SERENITY)); // Si deep untroubled calm (new)
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.STRONG));          // Ti confidence
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.MIGHTY));          // Ti power
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.TRIUMPHANT));      // Fe-Ti victory

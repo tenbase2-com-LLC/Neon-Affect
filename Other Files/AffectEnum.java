@@ -208,6 +208,46 @@ public final class AffectEnum {
     public static final int SELF_SATISFIED = 161;
     public static final int FASCINATED = 162;
 
+    // Timeline 21
+    public static final int BETRAYED = 163;
+    public static final int HEARTBROKEN = 164;
+    public static final int DISILLUSIONED = 165;
+    public static final int UNAPPRECIATED = 166;
+    public static final int WISTFUL = 167;
+    public static final int GUARDED = 168;
+    public static final int REASSURED = 169;
+    public static final int BELONGING = 170;
+    public static final int TENDERNESS = 171;
+    public static final int CHERISHED = 172;
+    public static final int ELEVATION = 173;
+    public static final int ONENESS = 174;
+
+    // Timeline 22
+    public static final int SHAME = 175;
+    public static final int HURT = 176;
+    public static final int EXASPERATED = 177;
+    public static final int AWKWARD = 178;
+    public static final int APPREHENSIVE = 179;
+    public static final int RESTLESS = 180;
+    public static final int AMUSED = 181;
+    public static final int PLAYFUL = 182;
+    public static final int NOSTALGIA = 183;
+    public static final int COMPERSION = 184;
+    public static final int EMPOWERED = 185;
+    public static final int BLISS = 186;
+
+    // Timeline 23
+    public static final int ABANDONED = 187;
+    public static final int DRAINED = 188;
+    public static final int SYMPATHY = 189;
+    public static final int SUPPORTED = 190;
+    public static final int PURPOSEFUL = 191;
+    public static final int PROTECTIVE = 192;
+    public static final int SERENITY = 193;
+
+    // Timeline 24
+    public static final int INTIMACY = 194;
+
     // ── Category constants ─────────────────────────────────────────────
 
     public static final String VERBAL = "Verbal";
@@ -293,6 +333,38 @@ public final class AffectEnum {
         NAMES.put(MASTERFUL, "Masterful"); NAMES.put(TRIUMPHANT, "Triumphant");
         NAMES.put(CURIOUS, "Curious"); NAMES.put(SELF_SATISFIED, "SelfSatisfied");
         NAMES.put(FASCINATED, "Fascinated");
+        NAMES.put(BETRAYED, "Betrayed");
+        NAMES.put(HEARTBROKEN, "Heartbroken");
+        NAMES.put(DISILLUSIONED, "Disillusioned");
+        NAMES.put(UNAPPRECIATED, "Unappreciated");
+        NAMES.put(WISTFUL, "Wistful");
+        NAMES.put(GUARDED, "Guarded");
+        NAMES.put(REASSURED, "Reassured");
+        NAMES.put(BELONGING, "Belonging");
+        NAMES.put(TENDERNESS, "Tenderness");
+        NAMES.put(CHERISHED, "Cherished");
+        NAMES.put(ELEVATION, "Elevation");
+        NAMES.put(ONENESS, "Oneness");
+        NAMES.put(SHAME, "Shame");
+        NAMES.put(HURT, "Hurt");
+        NAMES.put(EXASPERATED, "Exasperated");
+        NAMES.put(AWKWARD, "Awkward");
+        NAMES.put(APPREHENSIVE, "Apprehensive");
+        NAMES.put(RESTLESS, "Restless");
+        NAMES.put(AMUSED, "Amused");
+        NAMES.put(PLAYFUL, "Playful");
+        NAMES.put(NOSTALGIA, "Nostalgia");
+        NAMES.put(COMPERSION, "Compersion");
+        NAMES.put(EMPOWERED, "Empowered");
+        NAMES.put(BLISS, "Bliss");
+        NAMES.put(ABANDONED, "Abandoned");
+        NAMES.put(DRAINED, "Drained");
+        NAMES.put(SYMPATHY, "Sympathy");
+        NAMES.put(SUPPORTED, "Supported");
+        NAMES.put(PURPOSEFUL, "Purposeful");
+        NAMES.put(PROTECTIVE, "Protective");
+        NAMES.put(SERENITY, "Serenity");
+        NAMES.put(INTIMACY, "Intimacy");
     }
 
     public static String GetName(int id) throws Exception {

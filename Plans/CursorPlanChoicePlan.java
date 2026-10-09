@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -19,18 +19,7 @@ public plan CursorPlanChoicePlan extends Plan {
 
     #handles event CursorPlanChoiceEvent cpce;
     #posts event SetPlanContextEvent spce;
-    #posts event Level6NegAffectEvent ev1;
-    #posts event Level5NegAffectEvent ev2;
-    #posts event Level4NegAffectEvent ev3;
-    #posts event Level3NegAffectEvent ev4;
-    #posts event Level2NegAffectEvent ev5;
-    #posts event Level1NegAffectEvent ev6;
-    #posts event Level1PosAffectEvent ev7;
-    #posts event Level2PosAffectEvent ev8;
-    #posts event Level3PosAffectEvent ev9;
-    #posts event Level4PosAffectEvent ev10;
-    #posts event Level5PosAffectEvent ev11;
-    #posts event Level6PosAffectEvent ev12;
+    #posts event AffectEvent aev;
     #posts event SameLevelEvent sle;
     #posts event DecreasingPositiveLevelEvent dple;
     #posts event IncreasingPositiveLevelEvent iple;
@@ -53,7 +42,7 @@ public plan CursorPlanChoicePlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {   
@@ -75,8 +64,8 @@ public plan CursorPlanChoicePlan extends Plan {
             int iLevel = cpce.iLevel;            
             int iAffect = cpce.iAffect; 
             
-            //use orig levels
-            iLevel = enc.GetOrigLevel(iAffect);
+            // the run-time (personality-adjusted) level travels on the AffectEvent;
+            // GetOrigLevel is no longer needed to route it to the right capability
             
             double dEmotion = cpce.dEmotion;
             
@@ -151,63 +140,7 @@ public plan CursorPlanChoicePlan extends Plan {
             if (bLevelOnly || bLevelAndAffect || bLevelAndExtreme)
             {
             
-            switch (iLevel)
-            { 
-                case CursorEnum.iLEVEL_CURSOR_NEG_6:
-                    levelEvent = ev1.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_NEG_5:
-                    levelEvent = ev2.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_NEG_4:
-                    levelEvent = ev3.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_NEG_3:
-                    levelEvent = ev4.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_NEG_2:
-                    levelEvent = ev5.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_NEG_1:
-                    levelEvent = ev6.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_POS_1:
-                                
-                    if (bDebug)
-                    {
-                        System.out.println("Inside CursorPlanChoicePlan. creating level 1 event. iAffect [" + Integer.toString(iAffect) + "]");
-                    }
-            
-                    levelEvent = ev7.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_POS_2:
-                    levelEvent = ev8.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_POS_3:
-                    
-                    if (bDebug)
-                    {
-                        System.out.println("Inside CursorPlanChoicePlan. creating level 3 event. iAffect [" + Integer.toString(iAffect) + "]");
-                    }
-                    
-                    levelEvent = ev9.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_POS_4:
-                    levelEvent = ev10.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_POS_5:
-            
-                    if (bDebug)
-                    {
-                        System.out.println("Inside CursorPlanChoicePlan. creating level 5 event. iAffect [" + Integer.toString(iAffect) + "]");
-                    }
-            
-                    levelEvent = ev11.post(iAffect);
-                    break;
-                case CursorEnum.iLEVEL_CURSOR_POS_6:
-                    levelEvent = ev12.post(iAffect);
-                    break;    
-                }
+            levelEvent = aev.post(iAffect, iLevel);
             }
                         
             if (bExtremeOnly || bLevelAndExtreme)
@@ -312,5 +245,7 @@ public plan CursorPlanChoicePlan extends Plan {
             mutex3.signal();           
         }
     }
+    
 
 }
+

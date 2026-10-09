@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:49 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,8 @@ import java.util.*;
  */
 public plan TestAffectAppraisalPlan extends Plan {
 
+    private boolean bDebug = false;
+    private PersonalityTypeAppraisals appraisalList = new PersonalityTypeAppraisals();
     #handles event TestAffectAppraisalEvent taae;
     #posts event AddAppraisalEvent aae;
     #uses data Appraisals appraisals;
@@ -33,7 +35,7 @@ public plan TestAffectAppraisalPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     timeline1()
     {
@@ -145,7 +147,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();            
         }
     }
-
+    
     #reasoning method
     timeline2()
     {
@@ -262,7 +264,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();            
         }
     }
-
+    
     #reasoning method
     timeline3()
     {
@@ -379,7 +381,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();            
         }
     }
-
+    
     #reasoning method
     timeline4() 
     {
@@ -491,7 +493,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline5()
     {
@@ -596,7 +598,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline6()  
     {
@@ -700,7 +702,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline7()
     {
@@ -756,7 +758,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline8()
     {
@@ -812,7 +814,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline9()  
     {
@@ -852,7 +854,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline10() 
     {
@@ -884,7 +886,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline11()
     {   
@@ -934,7 +936,7 @@ public plan TestAffectAppraisalPlan extends Plan {
            e.printStackTrace(); 
        }
     }
-
+    
     #reasoning method
     timeline12()
     {
@@ -1003,7 +1005,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline13()
     {
@@ -1032,7 +1034,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline14()
     {
@@ -1140,7 +1142,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline15()
     {
@@ -1248,7 +1250,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline16()
     {
@@ -1348,7 +1350,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline17()
     {
@@ -1440,7 +1442,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline18()
     {
@@ -1516,7 +1518,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline19()
     {
@@ -1576,7 +1578,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     timeline20()
     {
@@ -1612,7 +1614,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             e.printStackTrace();
         }
     }
-
+    
     #reasoning method
     body()
     {
@@ -1658,7 +1660,7 @@ public plan TestAffectAppraisalPlan extends Plan {
             mutex.signal();            
         }
     }
-    private boolean bDebug = false;
-    private PersonalityTypeAppraisals appraisalList = new PersonalityTypeAppraisals();
+    
 
 }
+

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -20,6 +20,7 @@ import java.util.*;
  */
 public plan SetPlanContextCapablePlan extends Plan {
 
+    private boolean bDebug = false;
     #handles event SetPlanContextEvent spce;
     #sends event ContextEvent ce;
     #uses interface NeonAffectAgent enc;
@@ -36,7 +37,7 @@ public plan SetPlanContextCapablePlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {   
@@ -160,6 +161,7 @@ public plan SetPlanContextCapablePlan extends Plan {
                 }
             };
     }
-    private boolean bDebug = false;
+    
 
 }
+

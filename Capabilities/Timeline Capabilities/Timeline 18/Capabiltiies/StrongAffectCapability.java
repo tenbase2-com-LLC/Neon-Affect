@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:49 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,36 +15,46 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability StrongAffectCapability extends Capability {
-    #uses plan BarrierOvercomingPlan;
-    #uses plan CompetitivenessPlan;
-    #uses plan ConfrontChallengesDirectlyStrongPlan;
-    #uses plan CreativityStrongPlan;
-    #uses plan EmotionalDeclarationsPlan;
-    #uses plan EuphoricExclamationsPlan;
-    #uses plan ExaggeratedStorytellingPlan;
-    #uses plan FocusedStrongPlan;
-    #uses plan GradioseProclamationsPlan;
-    #uses plan HyperventilatingStroingPlan;
-    #uses plan LaughingStrongPlan;
-    #uses plan LeadershipInitiativePlan;
-    #uses plan MakingDecisionsStrongPlan;
-    #uses plan OfferingComplementStrongPlan;
-    #uses plan PhysicalEnduranceBoostPlan;
-    #uses plan RapidEyeMovementsStrongPlan;
-    #uses plan RapidSpeakingStrongPlan;
-    #uses plan RememberDetailsStrongPlan;
-    #uses plan RepeatingWordsStrongPlan;
-    #uses plan RiskTakingStrongPlan;
-    #uses plan SetRealisticDeadlinesStrongPlan;
-    #uses plan SingingHummingStrongPlan;
-    #uses plan TearingUpStrongPlan;
-    #uses plan TremblingBodyStrongPlan;
-    #uses plan WildGesticulationPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextStrongPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> EmotionalDeclarationsPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> EuphoricExclamationsPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> ExaggeratedStorytellingPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> GradioseProclamationsPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> LaughingStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> OfferingComplementStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> PositiveSelfTalkStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> RapidSpeakingStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> RepeatingWordsStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.VERBAL> SingingHummingStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> FistPumpStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> HeadHeldHighStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> HuggingStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> HyperventilatingStroingPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> MakeFistStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> RapidEyeMovementsStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> StandingFirmStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> TearingUpStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> TremblingBodyStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.NONVERBAL> WildGesticulationPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> BarrierOvercomingPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> CompetitivenessPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> ConfrontChallengesDirectlyStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> CreativityStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> FocusedStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> LeadershipInitiativePlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> MakingDecisionsStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> PhysicalEnduranceBoostPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> RememberDetailsStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> RiskTakingStrongPlan;
+    #uses BehaviorPlan<AffectEnum.STRONG, AffectEnum.ACTION> SetRealisticDeadlinesStrongPlan;
 
 }
+

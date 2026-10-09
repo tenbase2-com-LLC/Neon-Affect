@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -18,6 +18,24 @@ import java.util.*;
  */
 public plan DecidePlan extends Plan {
 
+
+    private String CreateOpenAIPrompt(ArrayList affectHistory, ArrayList behaviorList, String strPersonalityType) throws Exception
+    {
+        //Given this history of behaviors and emotions, determine whether to do any combination of "verbal," "nonverbal," or "action" given an INTP Myers-Briggs personality type:
+        //1.  A happy emotion occurred with a smile behavior at 30.0 seconds ago.
+        //2.  A sad emoption occurred with a cry behavior at 40.0 seconds ago.
+    
+    /*
+        if (affectHistory.size() != behaviorList.size())
+        {
+            throw new Exception("CreateOpenAIPrompt: ArrayLists have different size.");        
+        }
+      */  
+        String strPrompt = "Given this history of behaviors and emotions, determine whether to do any combination of a \"non-affect regulation,\" \"affect regulation,\" or an \"intense affect-regulation\" given an " + strPersonalityType + " Myers-Briggs personality type:  Give only one answer for the entire list.\n";
+        strPrompt += AffectBehaviorHistory.FormatLines(affectHistory, behaviorList, System.currentTimeMillis());
+        
+        return strPrompt;        
+    }
     #handles event DecideEvent de;
     #sends event DecideReply reply;
     #uses interface NeonAffectDeciderAgent enc;
@@ -32,7 +50,7 @@ public plan DecidePlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {   
@@ -79,7 +97,7 @@ public plan DecidePlan extends Plan {
                     String strPrompt = CreateOpenAIPrompt(affectHistory, behaviorList, strPersonalityType);  
                  
                     //calls open ai
-                    ArrayList ret = new openai().DetermineAffectRegulation(strPrompt);
+                    ArrayList ret = new NeonOpenAI(bDebug).determineAffectRegulation(strPrompt);
      
                     for (int i = 0; i < ret.size(); i++)
                     {
@@ -113,39 +131,8 @@ public plan DecidePlan extends Plan {
         
         @reply(de, reply.response(bLevelOnly, bLevelAndAffect, bLevelAndExtreme));
     }
-
-    private String CreateOpenAIPrompt(ArrayList affectHistory, ArrayList behaviorList, String strPersonalityType) throws Exception
-    {
-        //Given this history of behaviors and emotions, determine whether to do any combination of "verbal," "nonverbal," or "action" given an INTP Myers-Briggs personality type:
-        //1.  A happy emotion occurred with a smile behavior at 30.0 seconds ago.
-        //2.  A sad emoption occurred with a cry behavior at 40.0 seconds ago.
     
-    /*
-        if (affectHistory.size() != behaviorList.size())
-        {
-            throw new Exception("CreateOpenAIPrompt: ArrayLists have different size.");        
-        }
-      */  
-        String strPrompt = "Given this history of behaviors and emotions, determine whether to do any combination of a \"non-affect regulation,\" \"affect regulation,\" or an \"intense affect-regulation\" given an " + strPersonalityType + " Myers-Briggs personality type:  Give only one answer for the entire list.";
-        long now = System.currentTimeMillis();
-        for (int i = 0; i < behaviorList.size(); i++)
-        {
-            Object[] items = (Object[])behaviorList.get(i);
-            
-            String strBehaviorName = (String)items[0];
-            long time = (long)items[1];
-            
-            double dDuration = (now - time) / 1000;
-            
-            AffectHistoryVar affectHistoryVar = (AffectHistoryVar)affectHistory.get(0);
-            
-            int iType = affectHistoryVar.GetType();
-            double dValue = affectHistoryVar.GetValue();
-            
-            strPrompt += Integer.toString(i+1) + ".  A " + AffectEnum.GetName(iType) + " emotion occurred with a " + strBehaviorName + " behavior at " + dDuration + " seconds ago.\n";
-        }
-        
-        return strPrompt;        
-    }
 
 }
+
+

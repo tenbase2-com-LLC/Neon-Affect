@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,29 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability GriefAffectCapability extends Capability {
-    #uses plan WeakMovementsPlan;
-    #uses plan SlackFacePlan;
-    #uses plan LossOfBreathPlan;
-    #uses plan LashingOutGriefPlan;
-    #uses plan TremblingLipsPlan;
-    #uses plan IsolationGriefPlan;
-    #uses plan WeakVoiceSpeakingPlan;
-    #uses plan LosingTrackConversationPlan;
-    #uses plan WeakPostureGriefPlan;
-    #uses plan CryingGriefPlan;
-    #uses plan LosingTrackOfTimeGriefPlan;
-    #uses plan NoiseSensitivityGriefPlan;
-    #uses plan RedEyesGriefPlan;
-    #uses plan CondescendingPlan;
-    #uses plan LonelinessPlan;
-    #uses plan LackOfMotivationPlan;
-    #uses plan ParanoiaGriefPlan;
-    #uses plan OverdoingItPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextGriefPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> CondescendingPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> CryingGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> LashingOutGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> LosingTrackConversationPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> LosingTrackOfTimeGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> MoaningGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> OneWordAnswerGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> RelivingPastEventsGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> WeakVoiceSpeakingPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.VERBAL> WishingEventNeverHappenedGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> CoverFaceHandsGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> EmptyStareGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> LossOfBreathPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> NoiseSensitivityGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> RedEyesGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> ShakingHeadGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> SlackFacePlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> TremblingLipsPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> WeakMovementsPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.NONVERBAL> WeakPostureGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> AskForHelpGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> DwellingOnPastGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> InabilityToSeeFutureGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> IsolationGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> LackOfMotivationPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> LonelinessPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> OverdoingItPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> ParanoiaGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> SeekingComfortGriefPlan;
+    #uses BehaviorPlan<AffectEnum.GRIEF, AffectEnum.ACTION> StopMidTaskGriefPlan;
 
 }
+

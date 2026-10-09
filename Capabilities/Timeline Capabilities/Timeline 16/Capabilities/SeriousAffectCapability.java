@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,38 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability SeriousAffectCapability extends Capability {
-    #uses plan AnalyzingSituationCarefullyPlan;
-    #uses plan ApproachingProblemsMeticulouslyPlan;
-    #uses plan AskQuestionsSeriousPlan;
-    #uses plan AvodingFrivolousActivitiesPlan;
-    #uses plan AvoidingHumorPlan;
-    #uses plan AvoidingSmallTalkPan;
-    #uses plan ConsideringConsequencesPlan;
-    #uses plan EmphasizingImportantPointsPlan;
-    #uses plan EyeContactSeriousPlan;
-    #uses plan FocusingOnTasksPlan;
-    #uses plan LipsPursedSeriousPlan;
-    #uses plan MaintainingFormalTonePlan;
-    #uses plan MaintainingProfessionalDemeanorPlan;
-    #uses plan MinimizeGesturesPlan;
-    #uses plan NoddingSlowlySeriousPlan;
-    #uses plan PrioritizingResponsibilitiesPlan;
-    #uses plan ProvidingDetailedExplanationsPlan;
-    #uses plan SeekingFactualInformationPlan;
-    #uses plan SlackFaceSeriousPlan;
-    #uses plan SlowBodyMovementsPlan;
-    #uses plan SpeakingDeliberatelyPlan;
-    #uses plan StiffPostureSeriousPlan;
-    #uses plan TakingTimeForReflectionPlan;
-    #uses plan UsingComplexVocabularyPlan;
-    #uses plan UsingLogicalArgumentsPlan;
-    #uses plan UsingPreciseLanguagePlan;
-    #uses plan WeighingOptionsSeriousPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextSeriousPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> AskQuestionsSeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> AvoidingHumorPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> AvoidingSmallTalkPan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> EmphasizingImportantPointsPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> MaintainingFormalTonePlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> ProvidingDetailedExplanationsPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> SpeakingDeliberatelyPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> UsingComplexVocabularyPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> UsingLogicalArgumentsPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.VERBAL> UsingPreciseLanguagePlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> EyeContactSeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> FurrowedBrowSeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> LipsPursedSeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> ListeningIntentlySeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> MinimizeGesturesPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> NoddingSlowlySeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> SlackFaceSeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> SlowBodyMovementsPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> SternLookHeadForwardSeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.NONVERBAL> StiffPostureSeriousPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> AnalyzingSituationCarefullyPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> ApproachingProblemsMeticulouslyPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> AvodingFrivolousActivitiesPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> ConsideringConsequencesPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> FocusingOnTasksPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> MaintainingProfessionalDemeanorPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> PrioritizingResponsibilitiesPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> SeekingFactualInformationPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> TakingTimeForReflectionPlan;
+    #uses BehaviorPlan<AffectEnum.SERIOUS, AffectEnum.ACTION> WeighingOptionsSeriousPlan;
 
 }
+

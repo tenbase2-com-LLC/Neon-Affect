@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,36 +15,47 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability ReliefAffectCapability extends Capability {
-    #uses plan CoverMouthWithHandPlan;
-    #uses plan ShakingHeadReliefPlan;
-    #uses plan GaspPlan;
-    #uses plan BadPostureReliefPlan;
-    #uses plan SlowSmileReliefPlan;
-    #uses plan HumorousPlan;
-    #uses plan ShakyLaughterPlan;
-    #uses plan AskForRepetitionPlan;
-    #uses plan StrugglingToSpeakPlan;
-    #uses plan CryingReliefPlan;
-    #uses plan AskQuestionsReliefPlan;
-    #uses plan LookingUpwardPlan;
-    #uses plan HugeBreathPlan;
-    #uses plan SlightMoanPlan;
-    #uses plan SlightOpenMouthPlan;
-    #uses plan HandsToStomachPlan;
-    #uses plan BowHeadReliefPlan;
-    #uses plan QuickNoddingPlan;
-    #uses plan SwearingReliefPlan;
-    #uses plan DesireToBeHeldPlan;
-    #uses plan StillnessPlan;
-    #uses plan GratitudeReliefPlan;
-    #uses plan JumbledThoughtsPlan;
-    #uses plan UnableToSpeakPlan;
-    #uses plan PostponingLossPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextReliefPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> AskForRepetitionPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> AskQuestionsReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> CryingReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> ExpressingGratitudeReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> HumorousPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> ShakyLaughterPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> SlightMoanPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> StrugglingToSpeakPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> SwearingReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.VERBAL> UnableToSpeakPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> BadPostureReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> BowHeadReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> CoverMouthWithHandPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> GaspPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> HandsToStomachPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> HugeBreathPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> LookingUpwardPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> QuickNoddingPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> ShakingHeadReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> SlightOpenMouthPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> SlowSmileReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.NONVERBAL> StillnessPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> CalmingDownReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> ContentmentReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> DesireToBeHeldPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> GratitudeReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> JumbledThoughtsPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> LettingGoConcernsReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> MakePlansReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> PostponingLossPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> SeekingOutOthersReliefPlan;
+    #uses BehaviorPlan<AffectEnum.RELIEF, AffectEnum.ACTION> TakingLongBreakReliefPlan;
 
 }
+

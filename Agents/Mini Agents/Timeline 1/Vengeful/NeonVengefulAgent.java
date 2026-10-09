@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,8 +15,10 @@ import aos.jack.jak.util.timer.DilatedClock;
 /**
  * 
  */
-public agent NeonVengefulAgent extends AbstractMiniAgent {
+public agent NeonVengefulAgent extends AbstractMiniAgent implements IPost {
     #has capability VengefulAffectCapability cap1;
+    #handles event AffectEvent;
+    #posts event AffectEvent ev1;
 
     public NeonVengefulAgent(String strName, String strInteractionType1, boolean bDebug1)
     {
@@ -26,6 +28,7 @@ public agent NeonVengefulAgent extends AbstractMiniAgent {
         
         bDebug = bDebug1;
     }
+
     #uses taskmanager CatMan(this);
     private boolean bDebug = false;
 
@@ -35,12 +38,13 @@ public agent NeonVengefulAgent extends AbstractMiniAgent {
         this.timer.setTime(0L);        
     }
 
+    @Override
     public void PostEvent()
     {   
         try
         {
             //call level plan            
-            postEvent(ev1.post(GetAffectType()));        
+            postEvent(ev1.post(GetAffectType(), 0));        
             mutex.threadWait();
         }
         catch (Exception e)
@@ -50,3 +54,4 @@ public agent NeonVengefulAgent extends AbstractMiniAgent {
     }
 
 }
+

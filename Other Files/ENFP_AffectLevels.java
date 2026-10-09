@@ -13,6 +13,9 @@ public class ENFP_AffectLevels
         // Negative Affects (High Intensity to Low)
         
         // Level -6 (Overwhelming Emotional States)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.BETRAYED)); // Fi trust broken by someone close (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.SHAME)); // Fi whole self judged bad (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.ABANDONED)); // Fi left alone by those relied on (new)
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.OVERWHELMED));    // Primary ENFP stress response
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.OBSESSED));       // Ne-Te loop manifestation
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.TORMENTED));      // Fi in crisis
@@ -24,6 +27,9 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.DEPRESSED));      // Si grip manifestation
 
         // Level -5 (Strong Negative Emotions)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.HEARTBROKEN)); // Fi loss of a cherished bond (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DISILLUSIONED)); // Si ideals collapse (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.HURT)); // Fi wounded by another (new)
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.PANIC));          // Ne catastrophizing
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DENIAL));         // Fi-Te conflict
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.ANGUISH));        // Fi processing
@@ -39,6 +45,7 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.FEEBLE));         // Si grip
 
         // Level -4 (Moderate Negative Emotions)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.EXASPERATED)); // Te patience exhausted (new)
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.SMUGNESS));      // Te shadow aspect
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.DOMINEERING));   // Te shadow aspect
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.TERROR));         // Ne amplification
@@ -59,6 +66,9 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.CONTROLLING));    // Te grip
 
         // Level -3 (Mild Negative Emotions)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.UNAPPRECIATED)); // Fi efforts go unrecognised (new)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.AWKWARD)); // Fi socially out of step (new)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DRAINED)); // Fi exhausted from giving (new)
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DEFEATED));      // Te frustration
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.UPSET));         // Fi disruption
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.FEAR));           // Ne anxiety
@@ -78,6 +88,9 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DISCONTENTED));   // Fi dissatisfaction
 
         // Level -2 (Subtle Negative Emotions)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.WISTFUL)); // Si longing for the unreachable (new)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.APPREHENSIVE)); // Si unease about what is coming (new)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.RESTLESS)); // Ne unable to settle (new)
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.SAD));            // Fi processing
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.WARINESS));       // Ne caution
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.JEALOUSY));       // Fi trigger
@@ -94,6 +107,7 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.TROUBLED));       // Fi concern
 
         // Level -1 (Slight Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.GUARDED)); // Si holding back to avoid hurt (new)
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.INDIFFERENCE));  // Ne disengagement
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.MOODY));          // Fi fluctuation
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.IRRITATION));     // Te friction
@@ -112,6 +126,7 @@ public class ENFP_AffectLevels
         // Positive Affects (Low Intensity to High)
         
         // Level 1 (Mild Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SYMPATHY)); // Fi feeling for another's trouble (new)
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.ANTICIPATION));    // Ne engagement
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.ACCEPTANCE));      // Fi peace
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.RELIEF));          // Si comfort
@@ -124,6 +139,10 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SELF_SATISFIED));  // Fi contentment
 
         // Level 2 (Moderate Positive Emotions)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.REASSURED)); // Fi doubt eased by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.BELONGING)); // Fi accepted by the group (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.AMUSED)); // Ne finding something funny (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.SUPPORTED)); // Fi backed by others (new)
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.PEACEFULNESS));   // Fi inner harmony
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.SEXUALLY_EXCITED)); // Si physical experience
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.PLEASED));         // Fi satisfaction
@@ -140,6 +159,9 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.THANKFUL));        // Fi gratitude
 
         // Level 3 (Strong Positive Emotions)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.TENDERNESS)); // Fi gentle protective warmth (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.NOSTALGIA)); // Si fondness for the past (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.PURPOSEFUL)); // Te acting toward meaning (new)
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.HAPPY));           // Ne-Fi joy
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.SATISFACTION));    // Fi fulfillment
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.GRATITUDE));       // Fi appreciation
@@ -156,6 +178,8 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CURIOUS));         // Ne exploration
 
         // Level 4 (Very Strong Positive Emotions)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.PLAYFUL)); // Ne light teasing spontaneity (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.PROTECTIVE)); // Fi drive to keep others safe (new)
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ELATION));         // Ne-Fi peak
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.AMAZEMENT));       // Ne wonder
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.CONNECTEDNESS));   // Fi unity
@@ -167,6 +191,12 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.EXCITED));         // Ne enthusiasm
 
         // Level 5 (Intense Positive Emotions)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.CHERISHED)); // Fi deeply valued by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.ELEVATION)); // Fi uplifted by human goodness (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.COMPERSION)); // Fi joy in another's joy (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.EMPOWERED)); // Te able to effect change (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.SERENITY)); // Si deep untroubled calm (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.INTIMACY)); // Fi mutual closeness and openness (new)
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.INFLUENTIAL));    // Ne leadership impact
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.POWERFUL));       // Te strength expression
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.FREE));           // Ne independence
@@ -185,6 +215,8 @@ public class ENFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.IN_LOVE));         // Fi passion
 
         // Level 6 (Peak Positive Emotions)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.ONENESS)); // Fi union with something larger (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.BLISS)); // Ne effortless happiness (new)
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.LOVE));           // Fi ultimate feeling
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.AWE));             // Ne wonder
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.WONDER));          // Ne amazement

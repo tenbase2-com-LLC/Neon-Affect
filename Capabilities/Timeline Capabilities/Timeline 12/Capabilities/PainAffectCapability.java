@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,25 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability PainAffectCapability extends Capability {
-    #uses plan AskForHelpPlan;
-    #uses plan CryingPainPlan;
-    #uses plan DescribingSensationPlan;
-    #uses plan FlinchingPainPlan;
-    #uses plan GrimacePainPlan;
-    #uses plan MoaningPainPlan;
-    #uses plan PleadingPainPlan;
-    #uses plan ScreamPainPlan;
-    #uses plan SeekingMedicalAssistancePlan;
-    #uses plan ShallowBreathingPainPlan;
-    #uses plan SwearingPainPlan;
-    #uses plan TakeAspirinPlan;
-    #uses plan WincePainPlan;
-    #uses plan WithdrawingFromOthersPainPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextPainPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> CryingPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> DescribingSensationPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> MoaningPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> PleadingForSupportPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> PleadingPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> ScreamPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> ShortResponsesPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> SwearingPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> VoiceStrainedPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.VERBAL> WhimperPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> ClenchedJawPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> FlinchingPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> GrimacePainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> HandsToStomachPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> HeavyBreathingPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> HoldBreathPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> ShallowBreathingPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> StiffPosturePainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> TearingUpPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.NONVERBAL> WincePainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> AskForHelpPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> DesireToBeHeldPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> InabilityToFocusPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> IrritabilityPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> SeekingComfortPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> SeekingMedicalAssistancePlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> SitPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> TakeAspirinPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> TakingLongBreakPainPlan;
+    #uses BehaviorPlan<AffectEnum.PAIN, AffectEnum.ACTION> WithdrawingFromOthersPainPlan;
 
 }
+

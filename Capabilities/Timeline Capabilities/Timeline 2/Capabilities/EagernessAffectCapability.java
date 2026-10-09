@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,28 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability EagernessAffectCapability extends Capability {
-    #uses plan LeanInEagernessPlan;
-    #uses plan RushedWordsPlan;
-    #uses plan LoudVoicePlan;
-    #uses plan NodHeadFastPlan;
-    #uses plan StrongEyeContactPlan;
-    #uses plan InterruptSpeakOverPlan;
-    #uses plan OfferingSuggestionsPlan;
-    #uses plan AskingQuestionsEagernessPlan;
-    #uses plan LongBreathesPlan;
-    #uses plan HandsClenchedPlan;
-    #uses plan HeadUpAlertPlan;
-    #uses plan WinkPlan;
-    #uses plan FocusedListeningPlan;
-    #uses plan NotEasilyDistractedPlan;
-    #uses plan LosingAllInhibitionsPlan;
-    #uses plan PositiveThinkingEagernessPlan;
-    #uses plan QuickDecisionsPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextEagernessPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> AskingQuestionsEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> EnthusiasticExclamationEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> ExpressingEagernessToLearnEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> ExpressingReadinessEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> FirstToSpeakEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> InterruptSpeakOverPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> LoudVoicePlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> OfferingSuggestionsPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> RushedWordsPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.VERBAL> VerbalizingThoughtsEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> EyesWideOpenEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> FocusedGazeEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> HandsClenchedPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> HeadUpAlertPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> LeanInEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> LongBreathesPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> NodHeadFastPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> SmilingEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> StrongEyeContactPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.NONVERBAL> WinkPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> EagernessToPlanEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> FocusedListeningPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> ImpatienceEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> LosingAllInhibitionsPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> NotEasilyDistractedPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> PositiveThinkingEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> QuickDecisionsPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> QuickToActionEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> TakingInitiativeEagernessPlan;
+    #uses BehaviorPlan<AffectEnum.EAGERNESS, AffectEnum.ACTION> VolunteeringEagernessPlan;
 
 }
+

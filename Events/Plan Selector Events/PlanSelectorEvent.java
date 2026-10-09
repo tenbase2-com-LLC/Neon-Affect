@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,8 +15,8 @@ import java.util.*;
  * 
  */
 public event PlanSelectorEvent extends MessageEvent {
-    public null strEmotion = "";
-    public null strInteractionType = "";
+    public String strEmotion = "";
+    public String strInteractionType = "";
     public ArrayList planNames = new ArrayList();
 
     #posted as
@@ -28,4 +28,6 @@ public event PlanSelectorEvent extends MessageEvent {
     }
 
 
+
 }
+

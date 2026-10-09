@@ -32,7 +32,7 @@ public class OrigAffectLevels
         affectTimelineList.add(new AffectLevel(2, -2, AffectEnum.WARINESS));
         affectTimelineList.add(new AffectLevel(2, -1, AffectEnum.IRRITATION));
         affectTimelineList.add(new AffectLevel(2, 0, AffectEnum.NEUTRAL_ID));
-        affectTimelineList.add(new AffectLevel(2, -1, AffectEnum.INDIFFERENCE));
+        affectTimelineList.add(new AffectLevel(2, 1, AffectEnum.INDIFFERENCE));
         //affectTimelineList.add(new AffectLevel(2, 2, AffectEnum.CURIOSITY));
         affectTimelineList.add(new AffectLevel(2, 3, AffectEnum.SATISFACTION));
         affectTimelineList.add(new AffectLevel(5, 4, AffectEnum.AMAZEMENT));
@@ -45,13 +45,13 @@ public class OrigAffectLevels
         affectTimelineList.add(new AffectLevel(3, -4, AffectEnum.RESENTMENT));
         affectTimelineList.add(new AffectLevel(3, -3, AffectEnum.ENVY));
         affectTimelineList.add(new AffectLevel(3, -2, AffectEnum.JEALOUSY));
-        affectTimelineList.add(new AffectLevel(3, -1, AffectEnum.ACCEPTANCE));
+        affectTimelineList.add(new AffectLevel(3, 1, AffectEnum.ACCEPTANCE));
         affectTimelineList.add(new AffectLevel(3, 0, AffectEnum.NEUTRAL_ID));
-        affectTimelineList.add(new AffectLevel(3, 1, AffectEnum.PEACEFULNESS));
-        affectTimelineList.add(new AffectLevel(3, 2, AffectEnum.INSPIRED));
-        affectTimelineList.add(new AffectLevel(3, 3, AffectEnum.GRATITUDE));
-        affectTimelineList.add(new AffectLevel(3, 4, AffectEnum.CONNECTEDNESS));
-        affectTimelineList.add(new AffectLevel(3, 5, AffectEnum.WANDERLUST));
+        affectTimelineList.add(new AffectLevel(3, 2, AffectEnum.PEACEFULNESS));
+        affectTimelineList.add(new AffectLevel(3, 3, AffectEnum.INSPIRED));
+        affectTimelineList.add(new AffectLevel(3, 4, AffectEnum.GRATITUDE));
+        affectTimelineList.add(new AffectLevel(3, 5, AffectEnum.CONNECTEDNESS));
+        affectTimelineList.add(new AffectLevel(3, 6, AffectEnum.WANDERLUST));
         
         //timeline 4
         affectTimelineList.add(new AffectLevel(4, -6, AffectEnum.HUMILIATION));
@@ -76,7 +76,7 @@ public class OrigAffectLevels
         affectTimelineList.add(new AffectLevel(5, -2, AffectEnum.DISAPPOINTMENT));
         affectTimelineList.add(new AffectLevel(5, -1, AffectEnum.RESIGNATION));
         affectTimelineList.add(new AffectLevel(5, 0, AffectEnum.NEUTRAL_ID));
-        affectTimelineList.add(new AffectLevel(5, -1, AffectEnum.HUMBLED));
+        affectTimelineList.add(new AffectLevel(5, 1, AffectEnum.HUMBLED));
         affectTimelineList.add(new AffectLevel(5, 2, AffectEnum.DETERMINATION));
         affectTimelineList.add(new AffectLevel(5, 3, AffectEnum.HOPEFULNESS));
         //affectTimelineList.add(new AffectLevel(5, 4, AffectEnum.CONFIDENCE));
@@ -113,9 +113,9 @@ public class OrigAffectLevels
         affectTimelineList.add(new AffectLevel(8, -2, AffectEnum.CONFUSION));
     
         //timeline 9
-        affectTimelineList.add(new AffectLevel(9, -5, AffectEnum.IMPATIENCE));
-        affectTimelineList.add(new AffectLevel(9, -4, AffectEnum.FRUSTRATION));
-        affectTimelineList.add(new AffectLevel(9, -3, AffectEnum.ANNOYANCE));
+        affectTimelineList.add(new AffectLevel(9, -4, AffectEnum.IMPATIENCE));
+        affectTimelineList.add(new AffectLevel(9, -3, AffectEnum.FRUSTRATION));
+        affectTimelineList.add(new AffectLevel(9, -2, AffectEnum.ANNOYANCE));
         
         //timeline 10
         affectTimelineList.add(new AffectLevel(10, -4, AffectEnum.DEFIANT));
@@ -201,7 +201,7 @@ public class OrigAffectLevels
         affectTimelineList.add(new AffectLevel(18, -4, AffectEnum.CONTROLLING));
         affectTimelineList.add(new AffectLevel(18, -3, AffectEnum.TENSE));
         affectTimelineList.add(new AffectLevel(18, -2, AffectEnum.TIMID));
-        affectTimelineList.add(new AffectLevel(18, -1, AffectEnum.MEEK));
+        affectTimelineList.add(new AffectLevel(18, -2, AffectEnum.MEEK));
         affectTimelineList.add(new AffectLevel(18, 1, AffectEnum.LUCKY));
         affectTimelineList.add(new AffectLevel(18, 2, AffectEnum.DIGNIFIED));
         affectTimelineList.add(new AffectLevel(18, 5, AffectEnum.FREE));
@@ -219,6 +219,42 @@ public class OrigAffectLevels
         affectTimelineList.add(new AffectLevel(20, 1, AffectEnum.SELF_SATISFIED));
         affectTimelineList.add(new AffectLevel(20, 3, AffectEnum.CURIOUS));
         affectTimelineList.add(new AffectLevel(20, 5, AffectEnum.FASCINATED));       
+        //timeline 21
+        affectTimelineList.add(new AffectLevel(21, -6, AffectEnum.BETRAYED));
+        affectTimelineList.add(new AffectLevel(21, -5, AffectEnum.HEARTBROKEN));
+        affectTimelineList.add(new AffectLevel(21, -4, AffectEnum.DISILLUSIONED));
+        affectTimelineList.add(new AffectLevel(21, -3, AffectEnum.UNAPPRECIATED));
+        affectTimelineList.add(new AffectLevel(21, -2, AffectEnum.WISTFUL));
+        affectTimelineList.add(new AffectLevel(21, -1, AffectEnum.GUARDED));
+        affectTimelineList.add(new AffectLevel(21, 1, AffectEnum.REASSURED));
+        affectTimelineList.add(new AffectLevel(21, 2, AffectEnum.BELONGING));
+        affectTimelineList.add(new AffectLevel(21, 3, AffectEnum.TENDERNESS));
+        affectTimelineList.add(new AffectLevel(21, 4, AffectEnum.CHERISHED));
+        affectTimelineList.add(new AffectLevel(21, 5, AffectEnum.ELEVATION));
+        affectTimelineList.add(new AffectLevel(21, 6, AffectEnum.ONENESS));
+        //timeline 22
+        affectTimelineList.add(new AffectLevel(22, -6, AffectEnum.SHAME));
+        affectTimelineList.add(new AffectLevel(22, -5, AffectEnum.HURT));
+        affectTimelineList.add(new AffectLevel(22, -4, AffectEnum.EXASPERATED));
+        affectTimelineList.add(new AffectLevel(22, -3, AffectEnum.AWKWARD));
+        affectTimelineList.add(new AffectLevel(22, -2, AffectEnum.APPREHENSIVE));
+        affectTimelineList.add(new AffectLevel(22, -1, AffectEnum.RESTLESS));
+        affectTimelineList.add(new AffectLevel(22, 1, AffectEnum.AMUSED));
+        affectTimelineList.add(new AffectLevel(22, 2, AffectEnum.PLAYFUL));
+        affectTimelineList.add(new AffectLevel(22, 3, AffectEnum.NOSTALGIA));
+        affectTimelineList.add(new AffectLevel(22, 4, AffectEnum.COMPERSION));
+        affectTimelineList.add(new AffectLevel(22, 5, AffectEnum.EMPOWERED));
+        affectTimelineList.add(new AffectLevel(22, 6, AffectEnum.BLISS));
+        //timeline 23
+        affectTimelineList.add(new AffectLevel(23, -6, AffectEnum.ABANDONED));
+        affectTimelineList.add(new AffectLevel(23, -3, AffectEnum.DRAINED));
+        affectTimelineList.add(new AffectLevel(23, 1, AffectEnum.SYMPATHY));
+        affectTimelineList.add(new AffectLevel(23, 2, AffectEnum.SUPPORTED));
+        affectTimelineList.add(new AffectLevel(23, 3, AffectEnum.PURPOSEFUL));
+        affectTimelineList.add(new AffectLevel(23, 4, AffectEnum.PROTECTIVE));
+        affectTimelineList.add(new AffectLevel(23, 6, AffectEnum.SERENITY));
+        //timeline 24
+        affectTimelineList.add(new AffectLevel(24, 4, AffectEnum.INTIMACY));
     }
     
     public ArrayList<AffectLevel> GetLevels()

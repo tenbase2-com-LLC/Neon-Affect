@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,27 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability DoubtAffectCapability extends Capability {
-    #uses plan DelayingTacticsPlan;
-    #uses plan ConversationFillersPlan;
-    #uses plan DecliningSupportPlan;
-    #uses plan TightSmilePlan;
-    #uses plan HesitatingNodPlan;
-    #uses plan ExcessiveSwallowingPlan;
-    #uses plan ShruggingDoubtPlan;
-    #uses plan AskingClarificationPlan;
-    #uses plan ArguingDoubtPlan;
-    #uses plan HoldingLongBreathPlan;
-    #uses plan ArmsCrossedDoubtPlan;
-    #uses plan WorryingPlan;
-    #uses plan LookingAheadPlan;
-    #uses plan RethinkingPastDecisionPlan;
-    #uses plan DefensiveDoubtPlan;
-    #uses plan FearmongeringDoubtPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextDoubtPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> ArguingDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> AskingClarificationPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> ConversationFillersPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> DecliningSupportPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> DefensiveDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> ExpressingUncertaintyDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> FearmongeringDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> UseOfUncertainPhrasesDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> UsingQualifiersDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.VERBAL> WeighingProsConsDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> ArmsCrossedDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> CockHeadDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> ExcessiveSwallowingPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> FurrowedBrowDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> HesitatingNodPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> HoldingLongBreathPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> PurseLipsDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> ShruggingDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> TightSmilePlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.NONVERBAL> WorryingPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> DelayingTacticsPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> IndecisivenessDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> LookingAheadPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> OveranalyzingDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> RethinkingPastDecisionPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> SecondGuessingDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> SeekingAlternativePerspectivesDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> SeekingMoreInformationDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> SeekingReassuranceDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.DOUBT, AffectEnum.ACTION> TestingAssumptionsDoubtPlan;
 
 }
+

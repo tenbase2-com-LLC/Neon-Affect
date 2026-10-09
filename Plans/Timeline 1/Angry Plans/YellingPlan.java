@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:49 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,7 @@ import aos.jack.util.thread.Semaphore;
  */
 public plan YellingPlan extends Plan {
 
+    logical String $name;
     #handles event Level4NegAffectEvent ev8;
     #uses data PlanContextName planContextName;
     #uses data Behavior behaviorName;
@@ -31,7 +32,7 @@ public plan YellingPlan extends Plan {
     {
         planContextName.get(0, $name) && ($name.as_string().equals(PlanConstants.ALL_PLANS) || $name.as_string().equals(getPlanName()));
     }
-
+    
     #reasoning method
     body()
     {
@@ -48,6 +49,7 @@ public plan YellingPlan extends Plan {
             mutex.signal();
         }
     }
-    logical String $name;
+    
 
 }
+

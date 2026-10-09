@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,34 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability PowerfulAffectCapability extends Capability {
-    #uses plan AskQuestionsPowerfulPlan;
-    #uses plan AssertiveStatementsPowerfulPlan;
-    #uses plan CommandingTonePlan;
-    #uses plan ConfidentDeclarationsPlan;
-    #uses plan DecisionMakingPowerfulPlan;
-    #uses plan DelegatingTasksPowerfulPlan;
-    #uses plan EmphasisOnKeyWordsPlan;
-    #uses plan ExertingInfluenceOnOthersPlan;
-    #uses plan FrownPowerfulPlan;
-    #uses plan GivingOrdersPowerfulPlan;
-    #uses plan GoalSettingPlan;
-    #uses plan HeadHeldHighPowerfulPlan;
-    #uses plan IntenseGazePowerfulPlan;
-    #uses plan InterruptingOthersPowerfulPlan;
-    #uses plan OpinionatedPowerfulPlan;
-    #uses plan OvercomingObstaclesEasilyPlan;
-    #uses plan PrioritizingResponsibilitiesPowerfulPlan;
-    #uses plan RiskTakingPowerfulPlan;
-    #uses plan SlowBodyMovementsPowerfulPlan;
-    #uses plan SpeakingSlowlyDeliberatelyPlan;
-    #uses plan StiffPosturePowerfulPlan;
-    #uses plan TakingChargeOfSituationPowerfulPlan;
-    #uses plan UsingAuthoritativeLanguagePlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextPowerfulPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> AskQuestionsPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> AssertiveStatementsPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> CommandingTonePlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> ConfidentDeclarationsPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> EmphasisOnKeyWordsPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> GivingOrdersPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> InterruptingOthersPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> OpinionatedPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> SpeakingSlowlyDeliberatelyPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.VERBAL> UsingAuthoritativeLanguagePlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> CharmingDemeanorPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> CommandingPresencePowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> FrownPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> HeadHeldHighPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> IntenseGazePowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> RelaxedAlertnessPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> SlowBodyMovementsPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> StandingFirmPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> StiffPosturePowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.NONVERBAL> UsingBoldGesturesPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> DecisionMakingPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> DecisiveActionPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> DelegatingTasksPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> ExertingInfluenceOnOthersPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> GoalSettingPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> OvercomingObstaclesEasilyPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> PrioritizingResponsibilitiesPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> RiskTakingPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> StrategicPlanningPowerfulPlan;
+    #uses BehaviorPlan<AffectEnum.POWERFUL, AffectEnum.ACTION> TakingChargeOfSituationPowerfulPlan;
 
 }
+

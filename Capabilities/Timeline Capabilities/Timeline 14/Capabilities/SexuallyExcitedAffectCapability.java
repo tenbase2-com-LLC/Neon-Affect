@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,34 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability SexuallyExcitedAffectCapability extends Capability {
-    #uses plan AskQuestionsSexuallyExcitedPlan;
-    #uses plan BitingLipSexuallyExcitedPlan;
-    #uses plan ClosingDistancePlan;
-    #uses plan ComplimentSexuallyExcitedPlan;
-    #uses plan CoyGlancePlan;
-    #uses plan ExpressingAttractionSexuallyExcitedPlan;
-    #uses plan EyesWideningSexuallyExcitedPlan;
-    #uses plan FlirtingTalkSexuallyExcitedPlan;
-    #uses plan FlushedFaceSexuallyExcitedPlan;
-    #uses plan GentleCaressPlan;
-    #uses plan LickingLipsSexuallyExcitedPlan;
-    #uses plan NaughtInsinuationsPlan;
-    #uses plan OpenPosutreSexuallyExcitedPlan;
-    #uses plan PlanningSeductionPlan;
-    #uses plan PraisingOthersSexuallyExcitedPlan;
-    #uses plan SensualGazePlan;
-    #uses plan SensuousTouchPlan;
-    #uses plan SmilingSexuallyExcitedPlan;
-    #uses plan SpeakingSoflySexuallyExcitedPlan;
-    #uses plan StimulatingSelfPlan;
-    #uses plan TeasingDisrobingPlan;
-    #uses plan VerbalForeplayPlan;
-    #uses plan WhisperDramaticallySexuallyExcitedPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextSexuallyExcitedPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> AskQuestionsSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> ComplimentSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> ExpressingAttractionSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> FlirtingTalkSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> JokingSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> NaughtInsinuationsPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> PraisingOthersSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> SpeakingSoflySexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> VerbalForeplayPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.VERBAL> WhisperDramaticallySexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> BitingLipSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> CoyGlancePlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> EyesWideningSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> FlushedFaceSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> LickingLipsSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> OpenPosutreSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> RapidBreathingSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> SensualGazePlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> SmilingSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.NONVERBAL> StrongEyeContactSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> ClosingDistancePlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> DanceSuggestivelySexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> DimLightsPlayMusicSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> FantasizingSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> FocusingOnPartnerSexuallyExcitedPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> GentleCaressPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> PlanningSeductionPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> SensuousTouchPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> StimulatingSelfPlan;
+    #uses BehaviorPlan<AffectEnum.SEXUALLY_EXCITED, AffectEnum.ACTION> TeasingDisrobingPlan;
 
 }
+

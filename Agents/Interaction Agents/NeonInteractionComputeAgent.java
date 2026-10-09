@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,6 +15,10 @@ import aos.jack.jak.util.timer.DilatedClock;
  * 
  */
 public agent NeonInteractionComputeAgent extends Agent {
+    #handles event ContextEvent;
+    #posts event ContextEvent ce;
+    #sends event ContextReply reply;
+    #uses plan InteractionPlan;
     #private data NA_Debug debug(true);
 
     public NeonInteractionComputeAgent(String name, NeonAffectAgent neonAffectAgent1)
@@ -25,6 +29,7 @@ public agent NeonInteractionComputeAgent extends Agent {
         neonAffectAgent = neonAffectAgent1;
         
     }
+
     private NeonAffectAgent neonAffectAgent = null;
     private boolean bDebug = false;
 
@@ -40,3 +45,4 @@ public agent NeonInteractionComputeAgent extends Agent {
     }
 
 }
+

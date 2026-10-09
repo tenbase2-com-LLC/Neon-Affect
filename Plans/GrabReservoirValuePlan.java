@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,8 @@ import aos.jack.jak.beliefset.BeliefSetException;
  */
 public plan GrabReservoirValuePlan extends Plan {
 
+    private static long TIME_OUT = 500;
+    private boolean bDebug = false;
     #handles event GrabReservoirValueEvent grve;
     #uses interface NeonAffectAgent enc;
     #uses data NA_Debug debug;
@@ -30,7 +32,7 @@ public plan GrabReservoirValuePlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     grabValue()
     {         
@@ -56,7 +58,7 @@ public plan GrabReservoirValuePlan extends Plan {
             e.printStackTrace();
         }        
     }
-
+    
     #reasoning method
     body()
     {
@@ -83,7 +85,7 @@ public plan GrabReservoirValuePlan extends Plan {
             e.printStackTrace();     
         }
     }
-    private static long TIME_OUT = 500;
-    private boolean bDebug = false;
+    
 
 }
+

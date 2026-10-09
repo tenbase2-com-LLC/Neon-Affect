@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,7 @@ import java.util.*;
  */
 public plan GetPlanFormulasPlan extends Plan {
 
+    private ArrayList ret = new ArrayList();
     #handles event GetPlanFormulasEvent gpfe;
     #uses interface AbstractMiniAgent enc;
     #uses data PlansWithFormulas plansFormulas;
@@ -32,7 +33,7 @@ public plan GetPlanFormulasPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {
@@ -84,6 +85,7 @@ public plan GetPlanFormulasPlan extends Plan {
             mutex.signal();   
         }
     }
-    private ArrayList ret = new ArrayList();
+    
 
 }
+

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:48 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -16,6 +16,10 @@ import aos.util.ThreadPool;
  * 
  */
 public agent NeonPlanSelectorAgent extends Agent {
+    #handles event PlanSelectorEvent;
+    #posts event PlanSelectorEvent pse;
+    #sends event PlanSelectorReply reply;
+    #uses plan PlanSelectorPlan;
     #private data NA_Debug debug(true);
 
     public NeonPlanSelectorAgent(String name, NeonAffectAgent neonAffectAgent1, ThreadPool tp1)
@@ -27,6 +31,7 @@ public agent NeonPlanSelectorAgent extends Agent {
     
         neonAffectAgent = neonAffectAgent1;
     }
+
     private ThreadPool tp = new ThreadPool();
     private NeonAffectAgent neonAffectAgent = null;
     private boolean bDebug = false;
@@ -48,3 +53,4 @@ public agent NeonPlanSelectorAgent extends Agent {
     }
 
 }
+

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Wed May 20 18:36:47 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,36 +15,46 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability FearAffectCapability extends Capability {
-    #uses plan InabilityToSpeakPlan;
-    #uses plan RapidBlinkingPlan;
-    #uses plan StaringNotSeeingPlan;
-    #uses plan CryingFearPlan;
-    #uses plan SelfHuggingPlan;
-    #uses plan HeavyBreathingPlan;
-    #uses plan LookAroundPlan;
-    #uses plan UncontrollableVoicePlan;
-    #uses plan LowerVoiceToWhisperPlan;
-    #uses plan FlinchingFearPlan;
-    #uses plan StutteringPlan;
-    #uses plan VoiceTremorPlan;
-    #uses plan ClumsinessFearPlan;
-    #uses plan LickingLipsPlan;
-    #uses plan WipeBrowPlan;
-    #uses plan GaspFearPlan;
-    #uses plan HandOverMouthFearPlan;
-    #uses plan TalkToSelfPlan;
-    #uses plan DizzinessFearPlan;
-    #uses plan ConfusionFearPlan;
-    #uses plan HypotheticalThinkingPlan;
-    #uses plan FlawedReasoningPlan;
-    #uses plan JumpingToConclusionsFearPlan;
-    #uses plan LackingSenseOfTimePlan;
-    #uses plan DoubtingSelfPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextFearPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> AskForHelpFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> AskQuestionsFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> CryingFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> InabilityToSpeakPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> LowerVoiceToWhisperPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> SpeakingCarefulWordsFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> StutteringPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> TalkToSelfPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> UncontrollableVoicePlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.VERBAL> VoiceTremorPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> DizzinessFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> FlinchingFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> GaspFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> HandOverMouthFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> HeavyBreathingPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> LickingLipsPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> LookAroundPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> RapidBlinkingPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> SelfHuggingPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> StaringNotSeeingPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.NONVERBAL> WipeBrowPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> ClumsinessFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> ConfusionFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> DefensiveFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> DoubtingSelfPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> FlawedReasoningPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> HypotheticalThinkingPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> JumpingToConclusionsFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> LackingSenseOfTimePlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> NeedToEscapeFearPlan;
+    #uses BehaviorPlan<AffectEnum.FEAR, AffectEnum.ACTION> SeekingReassuranceFearPlan;
 
 }
+

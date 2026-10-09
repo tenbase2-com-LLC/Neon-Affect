@@ -74,6 +74,9 @@ public class PersonalityTypeAppraisals extends ArrayList {
 		//appraisalSim = createCuriosityAppraisal();
 		//add(appraisalSim);
 
+		appraisalSim = null; // id 19: no emotion (AffectEnum gap) - keeps list position == id
+		add(appraisalSim);
+
 		appraisalSim = createSatisfactionAppraisal();
 		add(appraisalSim);
 
@@ -103,6 +106,9 @@ public class PersonalityTypeAppraisals extends ArrayList {
 
 		//appraisalSim = createInsecurityAppraisal();
 		//add(appraisalSim);
+
+		appraisalSim = null; // id 29: no emotion (AffectEnum gap) - keeps list position == id
+		add(appraisalSim);
 
 		appraisalSim = createAcceptanceAppraisal();
 		add(appraisalSim);
@@ -167,6 +173,9 @@ public class PersonalityTypeAppraisals extends ArrayList {
 		appraisalSim = createPityAppraisal();
 		add(appraisalSim);
 
+		appraisalSim = null; // id 51: no emotion (AffectEnum gap) - keeps list position == id
+		add(appraisalSim);
+
 		appraisalSim = createDisappointmentAppraisal();
 		add(appraisalSim);
 
@@ -180,6 +189,9 @@ public class PersonalityTypeAppraisals extends ArrayList {
 		add(appraisalSim);
 
 		appraisalSim = createHopefulnessAppraisal();
+		add(appraisalSim);
+
+		appraisalSim = null; // id 57: no emotion (AffectEnum gap) - keeps list position == id
 		add(appraisalSim);
 
 		appraisalSim = createAdorationAppraisal();
@@ -219,6 +231,9 @@ public class PersonalityTypeAppraisals extends ArrayList {
 		add(appraisalSim);
 
 		appraisalSim = createMovedAppraisal();
+		add(appraisalSim);
+
+		appraisalSim = null; // id 71: no emotion (AffectEnum gap) - keeps list position == id
 		add(appraisalSim);
 
 		appraisalSim = createTormentedAppraisal();
@@ -345,6 +360,9 @@ public class PersonalityTypeAppraisals extends ArrayList {
 		add(appraisalSim);
 
 		appraisalSim = createFeebleAppraisal();
+		add(appraisalSim);
+
+		appraisalSim = null; // id 114: no emotion (AffectEnum gap) - keeps list position == id
 		add(appraisalSim);
 
 		appraisalSim = createInsecureAppraisal();

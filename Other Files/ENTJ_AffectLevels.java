@@ -16,6 +16,9 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.POWERLESS));        // Total loss of influence
 
         // Level -5 (Very intense negative states)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.BETRAYED)); // Trust broken by someone close (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.SHAME)); // Whole self judged bad (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.EXASPERATED)); // Patience exhausted (new)
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DENIAL));           // Of leadership failures
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DEPRESSED));        // Loss of influence
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DESPAIR));          // Leadership collapse
@@ -24,6 +27,10 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.PANIC));            // Loss of control
 
         // Level -4 (Strong negative states)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.HEARTBROKEN)); // Loss of a cherished bond (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.DISILLUSIONED)); // Ideals collapse (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.HURT)); // Wounded by another (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.ABANDONED)); // Left alone by those relied on (new)
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.ANGUISH));          // Failed leadership
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.BORED));            // Lack of challenge
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.CONFUSION));        // Leadership uncertainty
@@ -42,6 +49,7 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.TORMENTED));        // By inefficiency
 
         // Level -3 (Moderate negative states)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.UNAPPRECIATED)); // Efforts go unrecognised (new)
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.ANGRY));            // At resistance
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.ANNOYANCE));        // With delays
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.ANXIETY));          // About control
@@ -75,6 +83,9 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.WORRY));            // About control
 
         // Level -2 (Mild negative states)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.AWKWARD)); // Socially out of step (new)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.APPREHENSIVE)); // Unease about what is coming (new)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.DRAINED)); // Exhausted from giving (new)
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.AGGRESSIVE));       // In leadership
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.ARROGANT));         // In power
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.BURDENED));         // By responsibility
@@ -101,6 +112,9 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.VULNERABILITY));    // Hidden weakness
 
         // Level -1 (Slight negative states)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.WISTFUL)); // Longing for the unreachable (new)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.GUARDED)); // Holding back to avoid hurt (new)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.RESTLESS)); // Unable to settle (new)
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.ACCEPTANCE));       // When strategic
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.HUMBLED));          // Temporarily
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.INDIFFERENCE));     // To weakness
@@ -109,9 +123,17 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.SERIOUS));          // In leadership
 
         // Level 1 (Slight positive states)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.REASSURED)); // Doubt eased by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.AMUSED)); // Finding something funny (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.PLAYFUL)); // Light teasing spontaneity (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SYMPATHY)); // Feeling for another's trouble (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SUPPORTED)); // Backed by others (new)
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.KIND));              // When beneficial
 
         // Level 2 (Mild positive states)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.BELONGING)); // Accepted by the group (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.TENDERNESS)); // Gentle protective warmth (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.NOSTALGIA)); // Fondness for the past (new)
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.AROUSED));           // By power
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.COOPERATIVE));       // To achieve goals
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.DIGNIFIED));         // In power
@@ -124,6 +146,9 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.THANKFUL));         // For success
 
         // Level 3 (Moderate positive states)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CHERISHED)); // Deeply valued by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.COMPERSION)); // Joy in another's joy (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.INTIMACY)); // Mutual closeness and openness (new)
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.ACTIVATED));        // By challenge
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.ADORATION));        // Of power
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.AFFECTIONATE));     // When pleased
@@ -145,6 +170,10 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.VALUED));            // For leadership
 
         // Level 4 (Strong positive states)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ELEVATION)); // Uplifted by human goodness (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ONENESS)); // Union with something larger (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.PROTECTIVE)); // Drive to keep others safe (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.SERENITY)); // Deep untroubled calm (new)
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ADMIRATION));        // For competence
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ADMIRED));           // By followers
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.BOLD));              // In action
@@ -166,6 +195,8 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.WANDERLUST));        // For expansion
 
         // Level 5 (Very strong positive states)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.BLISS)); // Effortless happiness (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.PURPOSEFUL)); // Acting toward meaning (new)
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.FASCINATED));        // By systems & efficiency
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.AMAZEMENT));         // At achievement
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.CONFIDENCE));        // In leadership
@@ -182,6 +213,7 @@ public class ENTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.STRONG));            // In leadership
 
         // Level 6 (Most extreme positive states)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.EMPOWERED)); // Able to effect change (new)
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.AWE));               // At dominance
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.CONNECTEDNESS));     // To organization
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.ENJOYMENT));         // Of command
