@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -193,7 +193,7 @@ public plan PlanSelectorPlan extends Plan {
                 //The call lives in JevPlanSelector because it needs a Map of state, and
                 //a .plan cannot build one - JAL blanks generics, leaving a raw Map whose
                 //put(String,String) will not resolve against put(Object,Object).
-                ret2 = JevPlanSelector.Select(planNames, strEmotion, strInteractionType, strPersonalityType, bDebug);
+                ret2 = JevPlanSelector.Select(planNames, strEmotion, strInteractionType, strPersonalityType, enc.GetNeonAffectAgent().GetCoEmotion(), bDebug);
                 //=================================================================
 
        
@@ -218,6 +218,7 @@ public plan PlanSelectorPlan extends Plan {
     
 
 }
+
 
 
 

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -53,7 +53,7 @@ public plan Level6PosAffectPlan extends Plan {
                 System.out.println("Inside Level6PosAffectPlan.");
             }
         
-            Level6PosAffect c = new Level6PosAffect(enc.emotionCursorVar, enc.GetAgent());
+            Level6PosAffect c = new Level6PosAffect(enc.emotionCursorVarPos, enc.GetAgent());
             
             while(true)
             {                

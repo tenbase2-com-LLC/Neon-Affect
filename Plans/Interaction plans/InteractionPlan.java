@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -48,10 +48,14 @@ public plan InteractionPlan extends Plan {
     
     #reasoning method
     body()
-    {           
-        boolean bVerbal = true;
+    {
+        //ONE channel per response: the judge picks verbal, nonverbal or action.
+        //Verbal is the fallback - no history yet, or no usable answer.
+        boolean bVerbal = false;
         boolean bNonverbal = false;
         boolean bAction = false;
+
+        String strChannel = JevChannelSelector.VERBAL;
         
         boolean bDebug = false;
         
@@ -87,37 +91,54 @@ public plan InteractionPlan extends Plan {
                     System.out.println("Inside NeonAffectAgent.ComputePlan: affectHistory.size: " + Integer.toString(affectHistory.size()) + " behaviorList.size: " + Integer.toString(behaviorList.size()));                
                 }
                 
-                if (affectHistory.size() != 0 && behaviorList.size() != 0)
-                { 
-                    String strPrompt = CreateOpenAIPrompt(affectHistory, behaviorList, strPersonalityType);
-                    
-                    //calls open ai
-                    ArrayList ret = new NeonOpenAI(bDebug).determineAffectContext(strPrompt);
-    
-                    for (int i = 0; i < ret.size(); i++)
-                    {
-                        String strResult = (String)ret.get(i);
-                
-                        if (strResult.equals("Verbal"))
-                        {
-                            bVerbal = true;                    
-                        }
-                        else if (strResult.equals("Nonverbal"))
-                        {
-                            bNonverbal = true;   
-                        }
-                        else if (strResult.equals("Action"))
-                        {
-                            bAction = true;                    
-                        }                
-                    }
+                //mixed emotions: a channel fixed in advance by CursorPlanChoicePlan
+                String strAssigned = enc.GetNeonAffectAgent().TakeAssignedChannel();
+
+                if (strAssigned != null)
+                {
+                    strChannel = strAssigned;
+                }
+                else if (affectHistory.size() != 0 && behaviorList.size() != 0)
+                {
+                    //================ OpenAI path - DISABLED ==========================
+                    //Kept here, next to the live path, so the two can be swapped by moving
+                    //the comment markers (as in PlanSelectorPlan).
+                    //
+                    //String strPrompt = CreateOpenAIPrompt(affectHistory, behaviorList, strPersonalityType);
+                    //
+                    //ArrayList ret = new NeonOpenAI(bDebug).determineAffectContext(strPrompt);
+                    //
+                    //if (ret.size() != 0)
+                    //{
+                    //    strChannel = (String)ret.get(0);
+                    //}
+                    //=================================================================
+
+                    //================ Jev path - ACTIVE ==============================
+                    //Jev takes the personality type and the history as separate fields of
+                    //structured state and answers with one of the three channel labels.
+                    strChannel = JevChannelSelector.Select(affectHistory, behaviorList, strPersonalityType, bDebug);
+                    //=================================================================
                 }
             }
             catch (Exception e)
             {
-                e.printStackTrace();            
+                e.printStackTrace();
             }
         };
+
+        if (strChannel.equals(JevChannelSelector.NONVERBAL))
+        {
+            bNonverbal = true;
+        }
+        else if (strChannel.equals(JevChannelSelector.ACTION))
+        {
+            bAction = true;
+        }
+        else
+        {
+            bVerbal = true;
+        }
      
         if (bDebug)
         {

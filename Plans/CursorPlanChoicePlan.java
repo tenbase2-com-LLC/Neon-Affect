@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -124,8 +124,75 @@ public plan CursorPlanChoicePlan extends Plan {
                 System.out.println("Inside CursorPlanChoicePlan. before call to set plan context: [" + Integer.toString(iAffect) + "]");
             }
             
-            @post(spce.post(iAffect)); //set plan context
-            @wait_for(mutex2.planWait());
+            //mixed emotions: is the other valence also in a level band right now?
+            int iOtherAffect = (iLevel > 0) ? enc.GetNegativeAffect() : enc.GetPositiveAffect();
+            double dOther = (iLevel > 0) ? enc.GetNegativeReservoirValue() : enc.GetPositiveReservoirValue();
+            int iOtherLevel = LevelClassifier.GetLevel(dOther);
+            boolean bMixed = (iOtherLevel != 0 && iOtherAffect >= 0 && iOtherAffect != iAffect);
+
+            String strBehavior1 = "";
+            String strBehavior2 = "";
+
+            if (bMixed)
+            {
+                if (bDebug)
+                {
+                    System.out.println("Inside CursorPlanChoicePlan. mixed: affect [" + Integer.toString(iAffect) + "] level [" + Integer.toString(iLevel) + "] with affect [" + Integer.toString(iOtherAffect) + "] level [" + Integer.toString(iOtherLevel) + "]");
+                }
+
+                //one channel per emotion, chosen together
+                String[] channels = null;
+                AffectHistoryBehaviors ahb = enc.GetAffectHistoryBehaviors();
+                String strPersonalityType = enc.GetPersonalityType();
+
+                @action()
+                {
+                    channels = JevChannelSelector.SelectPair(iAffect, iLevel, iOtherAffect, iOtherLevel, ahb.GetAffectHistory(), ahb.GetBehaviorList(), strPersonalityType, bDebug);
+                };
+
+                //each emotion's own SetPlanContextXxxPlan and mini agent, in its assigned channel;
+                //each appends its chosen behavior at the end of planContextName
+                int iFirst = planContextName.nFacts();
+                logical String $chosen1;
+                logical String $chosen2;
+
+                enc.SetAssignedChannel(channels[0]);
+                enc.SetCoEmotion(JevChannelSelector.Describe(iOtherAffect, iOtherLevel));
+                @post(spce.post(iAffect)); //set plan context
+                @wait_for(mutex2.planWait());
+
+                enc.SetAssignedChannel(channels[1]);
+                enc.SetCoEmotion(JevChannelSelector.Describe(iAffect, iLevel));
+                @post(spce.post(iOtherAffect)); //set plan context
+                @wait_for(mutex2.planWait());
+
+                enc.SetAssignedChannel(null);
+                enc.SetCoEmotion("");
+
+                if (planContextName.get(iFirst, $chosen1).next())
+                {
+                    strBehavior1 = $chosen1.as_string();
+                }
+                if (planContextName.get(iFirst + 1, $chosen2).next())
+                {
+                    strBehavior2 = $chosen2.as_string();
+                }
+            }
+            else
+            {
+                //the behavior this cycle's SetPlanContextXxxPlan appends. planContextName is
+                //never cleared, so its first fact is a stale behavior from an earlier cycle.
+                int iFirstSingle = planContextName.nFacts();
+                logical String $chosenSingle;
+
+                @post(spce.post(iAffect)); //set plan context
+                @wait_for(mutex2.planWait());
+
+                if (planContextName.get(iFirstSingle, $chosenSingle).next())
+                {
+                    strBehavior1 = $chosenSingle.as_string();
+                }
+            }
             
             if (bDebug)
             {
@@ -148,33 +215,44 @@ public plan CursorPlanChoicePlan extends Plan {
                 //ev5 = ele.post(iBegLevel, iEndLevel, iAffect, dVelocity);                
             }
             
-            if (bLevelOnly)
-            {       
+            if (bMixed)
+            {
+                //run each emotion's chosen behavior in the main agent: the plan context
+                //names the behavior, the AffectEvent selects the emotion's capability
+                if (!strBehavior1.equals(""))
+                {
+                    planContextName.add(0, strBehavior1);
+                    @subtask(aev.post(iAffect, iLevel));
+                }
+                if (!strBehavior2.equals(""))
+                {
+                    planContextName.add(0, strBehavior2);
+                    @subtask(aev.post(iOtherAffect, iOtherLevel));
+                }
+
                 if (bDebug)
                 {
-                    System.out.println("Inside CursorPlanChoicePlan. before subtask call using level event."); 
+                    System.out.println("Inside CursorPlanChoicePlan. mixed response [" + strBehavior1 + "] + [" + strBehavior2 + "]");
+                }
+            }
+            else if (bLevelOnly)
+            {
+                if (bDebug)
+                {
+                    System.out.println("Inside CursorPlanChoicePlan. before subtask call using level event.");
                 }
              
-                int iCount = planContextName.nFacts();
-                
+                //run THIS cycle's behavior. (This used to replay every fact of planContextName,
+                //starting with fact 0 - a stale behavior from an earlier cycle.)
                 if (bDebug)
                 {
-                    System.out.println("Inside CursorPlanChoicePlan. number of planContextNames: " + Integer.toString(iCount)); 
+                    System.out.println("Inside CursorPlanChoicePlan. behavior [" + strBehavior1 + "]");
                 }
-                
-                logical String $name;
-                
-                for (int i = 0; i < iCount; i++)
+
+                if (!strBehavior1.equals(""))
                 {
+                    planContextName.add(0, strBehavior1);
                     @subtask(levelEvent); //level
-                    //@wait_for(mutex.planWait());
-                    
-                    //delete first planContextName
-                    if (i != 0)
-                    {
-                        planContextName.get(i, $name);
-                        planContextName.add(0, $name.as_string());
-                    }
                 }
                  
                 if (bDebug)
@@ -184,6 +262,7 @@ public plan CursorPlanChoicePlan extends Plan {
             }
             else if (bLevelAndAffect)
             {
+                planContextName.add(0, strBehavior1);
                 @subtask(levelEvent); //level
                 //@wait_for(mutex.planWait());
                 
@@ -191,6 +270,7 @@ public plan CursorPlanChoicePlan extends Plan {
             }
             else if (bLevelAndExtreme)
             {
+                planContextName.add(0, strBehavior1);
                 @subtask(levelEvent); //level
                 //@wait_for(mutex.planWait());
                 //@subtask(); //extreme                

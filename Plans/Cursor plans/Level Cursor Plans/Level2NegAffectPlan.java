@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -54,7 +54,7 @@ public plan Level2NegAffectPlan extends Plan {
                 System.out.println("Inside Level2NegAffectPlan.");
             }
         
-            Level2NegAffect c = new Level2NegAffect(enc.emotionCursorVar, enc.GetAgent());
+            Level2NegAffect c = new Level2NegAffect(enc.emotionCursorVarNeg, enc.GetAgent());
         
             while(true)
             {

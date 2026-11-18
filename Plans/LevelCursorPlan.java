@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -39,10 +39,13 @@ public plan LevelCursorPlan extends Plan {
     
     #reasoning method
     body()
-    {            
-        try 
+    {
+        //one level event at a time: a positive and a negative cursor can now fire together
+        @wait_for(enc.levelLock.planWait());
+
+        try
         {
-            logical boolean $debug;            
+            logical boolean $debug;
             debug.get($debug).next();
             
             boolean bDebug = $debug.as_boolean();
@@ -64,6 +67,13 @@ public plan LevelCursorPlan extends Plan {
                 
             affectType.get(0, $affect).next();
             int iAffect = $affect.as_int();
+
+            //mixed emotions: the current emotion of the side whose cursor fired
+            int iSideAffect = (lce.iLevel > 0) ? enc.GetPositiveAffect() : enc.GetNegativeAffect();
+            if (iSideAffect >= 0)
+            {
+                iAffect = iSideAffect;
+            }
             
             if (bDebug)
             {
@@ -71,9 +81,14 @@ public plan LevelCursorPlan extends Plan {
             }
             
             emotion.get(0, $emotion).next();
-            double dEmotion = $emotion.as_double();            
-            
-            @post(aahe.post(1, System.currentTimeMillis(), iAffect, dEmotion));     
+            double dEmotion = $emotion.as_double();
+
+            //record the real level and intensity - the reservoir of the side whose cursor
+            //fired. (This recorded level 1 and the Emotion beliefset's value, which is never
+            //updated and stayed 0, so the analyzers saw a flat line.)
+            dEmotion = (lce.iLevel > 0) ? enc.GetPositiveReservoirValue() : enc.GetNegativeReservoirValue();
+
+            @post(aahe.post(lce.iLevel, System.currentTimeMillis(), iAffect, dEmotion));
             @wait_for(mutex3.planWait()); //new
                       
             Cursor c2 = new AckCursor(enc.ackCursorVar, enc.GetNumberOfCursors());            
@@ -99,7 +114,8 @@ public plan LevelCursorPlan extends Plan {
         }
         finally
         {
-            mutex6.signal();            
+            mutex6.signal();
+            enc.levelLock.signal();
         }
     }
     

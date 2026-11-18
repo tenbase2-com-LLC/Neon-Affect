@@ -31,21 +31,31 @@
         <param name="PERMANENT_ACTIVATION_NOISE" value="0.001"/>
         <parameter_group name="NeonAffectGroup">
             <param name="mbti_personality_type" value="INTP"/>
-            <param name="neon_parameter" value="1"/>
+            <!-- Mixed emotions: one reservoir per valence (NeonPositiveReservoir 0..65,
+                 NeonNegativeReservoir -65..0), each with a dead-band decay toward 0. -->
+            <!-- neon_inhibition (k, 0..1): how much of an incoming emotion is spent cancelling
+                 the opposite reservoir. 1 = the two cancel (the old single reservoir);
+                 0 = fully independent; 0.5 = moderate mixing. -->
+            <!-- Decay base rates (units/second): negative emotions fade 1.5x more slowly (negativity
+                 bias). At run time DecayRates scales each by the personality type (MBTIBaselines)
+                 and the current emotion's duration (EmotionDuration) and rewrites the moderator's
+                 reservoir_formula; the constants in the formulas below are only the start-up values. -->
+            <param name="neon_positive_decay" value="0.2525"/>
+            <param name="neon_negative_decay" value="0.1683"/>
+            <param name="neon_inhibition" value="0.5"/>
+            <param name="neon_positive_parameter" value="0"/>
+            <param name="neon_negative_parameter" value="0"/>
             <moderator events_decay_time="0.0"
-                reservoir_formula="if ((reservoir - 0.2525 * dt > 0) &amp;&amp; reservoir > 0.05) then (reservoir - 0.2525 * dt) else if ((reservoir + 0.2525 * dt &lt; 0) &amp;&amp; reservoir &lt; -0.05) then (reservoir + 0.2525 * dt) else 0.0;" type="NeonAffectReservoir">
+                reservoir_formula="if ((reservoir - 0.2525 * dt > 0) &amp;&amp; reservoir > 0.05) then (reservoir - 0.2525 * dt) else if ((reservoir + 0.2525 * dt &lt; 0) &amp;&amp; reservoir &lt; -0.05) then (reservoir + 0.2525 * dt) else 0.0;" type="NeonPositiveReservoir">
                 <param name="reservoir" value="0"/>
-                <applies_to formula="reservoir" name="neon_parameter"/>
+                <applies_to formula="reservoir" name="neon_positive_parameter"/>
+            </moderator>
+            <moderator events_decay_time="0.0"
+                reservoir_formula="if ((reservoir - 0.1683 * dt > 0) &amp;&amp; reservoir > 0.05) then (reservoir - 0.1683 * dt) else if ((reservoir + 0.1683 * dt &lt; 0) &amp;&amp; reservoir &lt; -0.05) then (reservoir + 0.1683 * dt) else 0.0;" type="NeonNegativeReservoir">
+                <param name="reservoir" value="0"/>
+                <applies_to formula="reservoir" name="neon_negative_parameter"/>
             </moderator>
 		</parameter_group>
-        <parameter_group name="GeorgeRiskTakingEuphoria">
-            <param name="george_parameter" value="1"/>
-            <moderator events_decay_time="0.0"
-                reservoir_formula="if (reservoir - 0.2525 * dt > 0) then (reservoir - 0.2525 * dt) else 0.0;" type="Value">
-                <param name="reservoir" value="0"/>
-                <applies_to formula="reservoir" name="george_parameter"/>
-            </moderator>
-        </parameter_group>
         <parameter_group name="NeonAnticipationVerbal">
 			<param name="PLAN_VALUE" value="20" attribute="UnableThinkTalkAnythingElsePlan"/>
 			<param name="PLAN_VALUE" value="0" attribute="ClosingEyesSighingPlan"/>

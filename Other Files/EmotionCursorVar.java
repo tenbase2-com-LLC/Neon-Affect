@@ -8,6 +8,11 @@ public class EmotionCursorVar extends Observable {
     private int iPrevLevel = -7;
     private final boolean bDebug = true;
 
+    /** Whether SetValue(dEmotion) would notify the cursors (first value, or a new level). */
+    public boolean LevelChanges(double dEmotion) {
+        return iPrevLevel == -7 || LevelClassifier.GetLevel(dEmotion) != iPrevLevel;
+    }
+
     public void SetValue(double dEmotion) {
         this.dEmotion = dEmotion;
         int iLevel = LevelClassifier.GetLevel(dEmotion);

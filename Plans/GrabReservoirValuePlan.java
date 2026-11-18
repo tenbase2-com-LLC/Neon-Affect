@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -43,10 +43,12 @@ public plan GrabReservoirValuePlan extends Plan {
                 System.out.println("Inside GrabReservoirValuePlan grabValue");
             }
             
-            double v = enc.GetReservoirValue();
-            
-            //set observable
-            enc.SetEmotionValue(v);
+            //mixed emotions: one value per reservoir
+            double dPositive = enc.GetPositiveReservoirValue();
+            double dNegative = enc.GetNegativeReservoirValue();
+
+            //set observables
+            enc.SetEmotionValues(dPositive, dNegative);
             
             if (bDebug)
             {

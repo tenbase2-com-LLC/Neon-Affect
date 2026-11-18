@@ -15,6 +15,11 @@ Neon-Affect is a CoJACK-enabled BDI application that models **188 emotions** and
 - **Emotions and timelines.** Each emotion has an affect level on one of 24 timelines (a timeline
   runs from strongly negative to strongly positive, e.g. Rage ... Awe). The emotion is held in a
   CoJACK moderated reservoir, so it rises when events add to it and decays back over time.
+- **Mixed emotions.** Positive and negative feelings are held in two separate reservoirs, so a
+  positive and a negative emotion can be felt at the same time. Each side partly inhibits the other
+  (inhibition 0.5), and each emotion is expressed on its own channel.
+- **Decay rates.** Each reservoir decays at a rate set by the personality type and by the emotion
+  (for example, sadness lasts longer than surprise).
 - **Mini agents.** Each emotion has its own mini agent, which holds that emotion's behaviour
   capability and chooses its behaviour plans.
 - **Behaviour plans.** Behaviour plans are written as one-line `BehaviorPlan` template instances in

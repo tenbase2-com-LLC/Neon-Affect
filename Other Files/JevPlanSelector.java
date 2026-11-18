@@ -38,6 +38,20 @@ public final class JevPlanSelector {
                                                  String strInteractionType,
                                                  String strPersonalityType,
                                                  boolean bDebug) {
+        return Select(planNames, strEmotion, strInteractionType, strPersonalityType, "", bDebug);
+    }
+
+    /**
+     * As {@link #Select(ArrayList, String, String, String, boolean)}, for a mixed response:
+     * strCoEmotion names the other emotion felt at the same time (e.g. "joy (level 3)"),
+     * which Jev receives as state; "" when the emotion is felt alone.
+     */
+    public static ArrayList<SelectedPlan> Select(ArrayList<String> planNames,
+                                                 String strEmotion,
+                                                 String strInteractionType,
+                                                 String strPersonalityType,
+                                                 String strCoEmotion,
+                                                 boolean bDebug) {
 
         if (planNames == null || planNames.isEmpty()) {
             return new ArrayList<SelectedPlan>();
@@ -50,6 +64,9 @@ public final class JevPlanSelector {
             state.put("personality_type", strPersonalityType);
             state.put("emotion", strEmotion);
             state.put("modality", strInteractionType);
+            if (strCoEmotion != null && !strCoEmotion.isEmpty()) {
+                state.put("also_feeling", strCoEmotion);
+            }
 
             String strInstructions =
                 "The agent has this Myers-Briggs personality type and is experiencing this emotion."

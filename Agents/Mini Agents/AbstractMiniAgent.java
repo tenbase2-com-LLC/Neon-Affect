@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -276,10 +276,10 @@ public agent AbstractMiniAgent extends Agent {
         catch (Exception e)
         {
             e.printStackTrace();
-        }
-        finally
-        {
-            mutex.signal(); 
+            //signal only on failure: a finally-signal after the successful wait above left
+            //the (binary) mutex open, so every later post/threadWait in GetBehavior returned
+            //one step early - the last plan value was written after the competition began
+            mutex.signal();
         }
     
         return selectedPlans; 

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -50,10 +50,8 @@ public plan MapAffectPlan extends Plan {
             }
                
             int iAffect = mae.iAffect;         
-            double dEmotion = enc.GetReservoirValue();
-            
-            //calculate new reservoir value
-            double dNewEmotion = dEmotion + mae.dAmount;
+            //mixed emotions: the reservoir of the amount's sign, after inhibition
+            double dNewEmotion = enc.PredictReservoirValue(mae.dAmount);
             
             if (bDebug)
             {
@@ -74,10 +72,13 @@ public plan MapAffectPlan extends Plan {
                 System.out.println("NeonAffectAgent.MapAffectPlan: iNewAffect: " + Integer.toString(iNewAffect));
             }
             
+            //record the mapped emotion FIRST: the plan does not continue past the @subtask
+            //below (SetAffectEnumEvent is declared #sends here), so a call placed after it
+            //never ran - the side's emotion and its decay rate were never set
+            enc.SetMappedAffect(iNewAffect);
+
             //set affectType/affectTypePrev beliefsets
             @subtask(saee.post(iNewAffect));
-            
-            enc.SetMappedAffect(iNewAffect);
             
         }
         catch (Exception e)
