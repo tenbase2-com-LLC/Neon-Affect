@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,34 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability InfluentialAffectCapability extends Capability {
-    #uses plan AdaptiveLeadershipPlan;
-    #uses plan AskQuestionsInfluentialPlan;
-    #uses plan AttentiveBodyLanguagePlan;
-    #uses plan CharmingDemeanorPlan;
-    #uses plan CharmingEloquencePlan;
-    #uses plan CommandingPresencePlan;
-    #uses plan ConfidentPostureInfluentialPlan;
-    #uses plan ConfidentVoiceInfluentialPlan;
-    #uses plan EffectiveNegotiationPlan;
-    #uses plan EmpatheticUnderstandingPlan;
-    #uses plan EmpoweringEncouragmentPlan;
-    #uses plan EyeContactInfluentialPlan;
-    #uses plan FacialExpressionsInfluentialPlan;
-    #uses plan GracefulHandGesutresPlan;
-    #uses plan InnovativeThinkingInfluentialPlan;
-    #uses plan ListeningIntentlyInfluentialPlan;
-    #uses plan PersuasiveSpeechInfluentialPlan;
-    #uses plan SmilingInfluentialPlan;
-    #uses plan SpeakToInspireInfluentialPlan;
-    #uses plan StrategicNetworkingPlan;
-    #uses plan StrategicWordChoicePlan;
-    #uses plan TrendSettingPlan;
-    #uses plan VisionarySolutionsPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextInfluentialPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> AskQuestionsInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> CharmingEloquencePlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> ConfidentVoiceInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> EffectiveNegotiationPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> EmpoweringEncouragmentPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> PersuasiveSpeechInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> SharingIdeasInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> SpeakToInspireInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> StrategicWordChoicePlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.VERBAL> ThoughtfulResponsesInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> AttentiveBodyLanguagePlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> CharmingDemeanorPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> CommandingPresencePlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> ConfidentPostureInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> EyeContactInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> FacialExpressionsInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> GracefulHandGesutresPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> ListeningIntentlyInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> OpenGesturesInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.NONVERBAL> SmilingInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> AdaptiveLeadershipPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> BeingOpenMindedInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> BuildRelationshipsInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> EmpatheticUnderstandingPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> InnovativeThinkingInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> LeadByExampleInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> StrategicNetworkingPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> StrategicPlanningInfluentialPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> TrendSettingPlan;
+    #uses BehaviorPlan<AffectEnum.INFLUENTIAL, AffectEnum.ACTION> VisionarySolutionsPlan;
 
 }
+

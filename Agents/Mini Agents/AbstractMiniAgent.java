@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:50 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -27,6 +27,21 @@ public agent AbstractMiniAgent extends Agent {
     #has capability WaitCapability wc;
     #has capability AbstractAffectCapability cap1;
     #has capability GetSetFormulasCapability gsfc;
+    #handles event AbstractAffectEvent;
+    #posts event AbstractAffectEvent ev1;
+    #handles event GetSelectedPlansEvent;
+    #posts event GetSelectedPlansEvent gspe;
+    #handles event SetPlanContextEvent2;
+    #posts event SetPlanContextEvent2 spce2;
+    #handles event GetBehaviorEvent;
+    #posts event GetBehaviorEvent gbe;
+    #handles event GetPlanFormulasEvent;
+    #posts event GetPlanFormulasEvent gpfe;
+    #sends event PlanSelectorEvent pse;
+    #uses plan GetBehaviorPlan;
+    #uses plan GetPlanFormulasPlan;
+    #uses plan GetSelectedPlansPlan;
+    #uses plan SetPlanContextPlan2;
     #private data PlansWithFormulas plansFormulas();
     #private data PlanContextName planContextName();
     #private data Behavior behaviorName();
@@ -45,6 +60,7 @@ public agent AbstractMiniAgent extends Agent {
                
         bDebug = bDebug1;
     }
+
     private boolean bDebug = false;
     private int iAffectType = -1;
     private String strInteractionType = "";
@@ -165,30 +181,6 @@ public agent AbstractMiniAgent extends Agent {
     
     }
 
-    protected Event GetLevelEvent() throws Exception
-    {        
-        Event[] events = cap1.getAgent().getKnownEvents();
-            
-        int iSize = events.length;           
-        for (int i = 0; i < iSize; i++)
-        {        
-            Event event1 = (Event)events[i];
-                
-            String strEventName = event1.getEventName();
-             
-            if (bDebug)
-            {         
-                System.out.println("Inside AbstractMiniAgent.GetBehavior: event name: [" + strEventName + "]");
-            }
-            
-            if (strEventName.contains(Constants.NEON_LEVEL_EVENT) == true)
-            {
-                return event1;
-            }
-        }
-        throw new Exception("AbstractMiniAgent: GetLeveLEvent: couldn't find level event!");
-    }
-
     private ArrayList GetPlans()
     {   
         ArrayList ret = new ArrayList();
@@ -284,10 +276,10 @@ public agent AbstractMiniAgent extends Agent {
         catch (Exception e)
         {
             e.printStackTrace();
-        }
-        finally
-        {
-            mutex.signal(); 
+            //signal only on failure: a finally-signal after the successful wait above left
+            //the (binary) mutex open, so every later post/threadWait in GetBehavior returned
+            //one step early - the last plan value was written after the competition began
+            mutex.signal();
         }
     
         return selectedPlans; 
@@ -363,3 +355,4 @@ public agent AbstractMiniAgent extends Agent {
     }
 
 }
+

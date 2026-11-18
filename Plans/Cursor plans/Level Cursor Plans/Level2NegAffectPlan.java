@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:52 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,9 +15,8 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public plan Level2NegAffectPlan extends Plan {
-
     #handles event SetAffectCursorsEvent ev1;
-    #posts event Level2NegAffectEvent ev7;
+    #posts event AffectEvent ev7;
     #posts event AddAffectHistoryEvent aahe;
     #posts event LevelCursorEvent lce;
     #uses interface NeonAffectAgent enc;
@@ -35,7 +34,7 @@ public plan Level2NegAffectPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {   
@@ -55,7 +54,7 @@ public plan Level2NegAffectPlan extends Plan {
                 System.out.println("Inside Level2NegAffectPlan.");
             }
         
-            Level2NegAffect c = new Level2NegAffect(enc.emotionCursorVar, enc.GetAgent());
+            Level2NegAffect c = new Level2NegAffect(enc.emotionCursorVarNeg, enc.GetAgent());
         
             while(true)
             {
@@ -69,7 +68,7 @@ public plan Level2NegAffectPlan extends Plan {
                 double dEmotion = $emotion.as_double();
                 
                 @subtask(aahe.post(-2, System.currentTimeMillis(), iAffect, dEmotion));
-                @subtask(ev7.post(iAffect));
+                @subtask(ev7.post(iAffect, -2));
                 */
     
                 enc.SetCursorAck(c.GetCursorType(), c.GetLevel(), true);
@@ -93,5 +92,7 @@ public plan Level2NegAffectPlan extends Plan {
             e.printStackTrace();           
         }    
     }
+    
 
 }
+

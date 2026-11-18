@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,8 @@ import aos.jack.jak.beliefset.BeliefSetException;
  */
 public plan GrabReservoirValuePlan extends Plan {
 
+    private static long TIME_OUT = 500;
+    private boolean bDebug = false;
     #handles event GrabReservoirValueEvent grve;
     #uses interface NeonAffectAgent enc;
     #uses data NA_Debug debug;
@@ -30,7 +32,7 @@ public plan GrabReservoirValuePlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     grabValue()
     {         
@@ -41,10 +43,12 @@ public plan GrabReservoirValuePlan extends Plan {
                 System.out.println("Inside GrabReservoirValuePlan grabValue");
             }
             
-            double v = enc.GetReservoirValue();
-            
-            //set observable
-            enc.SetEmotionValue(v);
+            //mixed emotions: one value per reservoir
+            double dPositive = enc.GetPositiveReservoirValue();
+            double dNegative = enc.GetNegativeReservoirValue();
+
+            //set observables
+            enc.SetEmotionValues(dPositive, dNegative);
             
             if (bDebug)
             {
@@ -56,7 +60,7 @@ public plan GrabReservoirValuePlan extends Plan {
             e.printStackTrace();
         }        
     }
-
+    
     #reasoning method
     body()
     {
@@ -83,7 +87,7 @@ public plan GrabReservoirValuePlan extends Plan {
             e.printStackTrace();     
         }
     }
-    private static long TIME_OUT = 500;
-    private boolean bDebug = false;
+    
 
 }
+

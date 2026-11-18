@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:53 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,33 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability VengefulAffectCapability extends Capability {
-    #uses plan StiffPosturePlan;
-    #uses plan IntenseGazePlan;
-    #uses plan TensionInJawPlan;
-    #uses plan HoldingChinUpPlan;
-    #uses plan HoldingFullBreathPlan;
-    #uses plan BidingTimePlan;
-    #uses plan LyingEasilyConvicinglyPlan;
-    #uses plan ReadingIntoSayDoPlan;
-    #uses plan SmirkVengefulPlan;
-    #uses plan RarelyApologizingPlan;
-    #uses plan AnsweringQuestionsIndirectlyPlan;
-    #uses plan HoldingBackInformationPlan;
-    #uses plan InvadingPersonalSpacePlan;
-    #uses plan StrongGesturePlan;
-    #uses plan EncouragingSelfDoubtPlan;
-    #uses plan VerballyAttackPlan;
-    #uses plan NarrowEyesPlan;
-    #uses plan ObsessingPlan;
-    #uses plan RelivingWrongfulEventsPlan;
-    #uses plan FantasizingGettingEvenPlan;
-    #uses plan NormalRoutineAmissPlan;
-    #uses plan PatienceForRightMomentPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextVengefulPlan;
     #imports data PlanContextName planContextName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data Behavior behaviorName();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> AnsweringQuestionsIndirectlyPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> HoldingBackInformationPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> HoldingGrudgeBringingUpPastVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> InsultVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> LyingEasilyConvicinglyPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> MakingThreatsVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> NotForgivingVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> RarelyApologizingPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> SarcasmVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.VERBAL> VerballyAttackPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> HoldingChinUpPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> HoldingFullBreathPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> IntenseGazePlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> InvadingPersonalSpacePlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> NarrowEyesPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> SmirkVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> SneeringVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> StiffPosturePlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> StrongGesturePlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.NONVERBAL> TensionInJawPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> BidingTimePlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> EncouragingSelfDoubtPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> FantasizingGettingEvenPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> NormalRoutineAmissPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> ObsessingPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> PatienceForRightMomentPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> ReadingIntoSayDoPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> RelivingWrongfulEventsPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> RetaliationVengefulPlan;
+    #uses BehaviorPlan<AffectEnum.VENGEFUL, AffectEnum.ACTION> SeekingRevengeVengefulPlan;
 
 }
+

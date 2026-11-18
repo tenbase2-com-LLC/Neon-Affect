@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,38 @@ import aos.jack.jak.beliefset.BeliefSetException;
 public beliefset CancelPlan extends OpenWorld {
     #value field boolean bCancel;
     #indexed query get(logical boolean bCancel);
+    
+    #function query boolean getValue()
+    {        
+        logical boolean $cancelPlan;
+        
+        try {
+            get($cancelPlan).next();
+        }
+        catch (BeliefSetException e) {
+            System.err.println("Error initializing data in Debug.");
+            System.exit(1);
+        } 
+        
+        boolean bPlanCancelled = $cancelPlan.as_boolean();
+        
+        return bPlanCancelled;
+    }
+    
+    #function query int Reset()
+    {               
+        try
+        {
+            add(false);
+        }
+        catch (BeliefSetException e)
+        {
+            e.printStackTrace();
+        }         
+        
+        return 0;
+    }
+
 
 
     CancelPlan(boolean bCancel1)
@@ -33,3 +65,4 @@ public beliefset CancelPlan extends OpenWorld {
     }
 
 }
+

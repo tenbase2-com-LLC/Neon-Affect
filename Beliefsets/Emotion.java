@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -18,6 +18,36 @@ public beliefset Emotion extends OpenWorld {
     #key field int id;
     #value field double dAmount;
     #indexed query get(int id, logical double dAmount);
+    
+    #function query double GetValue()
+    {             
+        double dValue = 0d;
+        
+        try
+        {           
+            boolean bDebug = true;
+        
+            if (bDebug)
+            { 
+                System.out.println("Inside Level4PosEvent.");
+            }       
+        
+            get(0, $emotion).next();
+            dValue = $emotion.as_double();
+            
+            if (bDebug)
+            { 
+                System.out.println("After grabbing emotion: " + Double.toString(dValue));
+            }            
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        
+        return dValue;        
+    }
+
 
     private logical double $emotion;
 
@@ -35,3 +65,4 @@ public beliefset Emotion extends OpenWorld {
     }
 
 }
+

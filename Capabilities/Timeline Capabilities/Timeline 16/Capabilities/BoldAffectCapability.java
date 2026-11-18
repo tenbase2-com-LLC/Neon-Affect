@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,35 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability BoldAffectCapability extends Capability {
-    #uses plan AskQuestionsBoldPlan;
-    #uses plan AssertiveFacialExpressionPlan;
-    #uses plan AssertiveStatementsPlan;
-    #uses plan BoldGesturesPlan;
-    #uses plan ChallengeViewpointBoldPlan;
-    #uses plan CommandingAttentionPlan;
-    #uses plan ConfidentVoiceBoldPlan;
-    #uses plan ConfrontingChallengesDirectlyBoldPlan;
-    #uses plan DebatingBoldPlan;
-    #uses plan DecisionMakingBoldPlan;
-    #uses plan DecisiveActionPlan;
-    #uses plan DirectCommunicationPlan;
-    #uses plan EmbracingUncertaintyBoldPlan;
-    #uses plan HeadHeldHighBoldPlan;
-    #uses plan InnovativeThinkingPlan;
-    #uses plan LeadingByExamplePlan;
-    #uses plan OpinionatedBoldPlan;
-    #uses plan PersuasiveSpeechPlan;
-    #uses plan PushingBoundariesBoldPlan;
-    #uses plan RiskTakingBoldPlan;
-    #uses plan SpeakToInspirePlan;
-    #uses plan StrategicPlanningBoldPlan;
-    #uses plan StrongEyeContactBoldPlan;
-    #uses plan StrongPostureBoldPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextBoldPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> AskQuestionsBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> AssertiveStatementsPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> ConfidentVoiceBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> DebatingBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> DirectCommunicationPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> ImprovisedSpeechBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> OpinionatedBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> PersuasiveSpeechPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> SpeakToInspirePlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.VERBAL> ToThePointSpeechBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> AssertiveFacialExpressionPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> BoldGesturesPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> CalmExteriorBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> CommandingAttentionPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> HeadHeldHighBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> LeanInBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> OpenBodyLanguageBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> StandingFirmBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> StrongEyeContactBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.NONVERBAL> StrongPostureBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> ChallengeViewpointBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> ConfrontingChallengesDirectlyBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> DecisionMakingBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> DecisiveActionPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> EmbracingUncertaintyBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> InnovativeThinkingPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> LeadingByExamplePlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> PushingBoundariesBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> RiskTakingBoldPlan;
+    #uses BehaviorPlan<AffectEnum.BOLD, AffectEnum.ACTION> StrategicPlanningBoldPlan;
 
 }
+

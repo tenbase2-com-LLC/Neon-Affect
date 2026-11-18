@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -16,6 +16,7 @@ import aos.jack.jak.beliefset.BeliefSetException;
  */
 public plan ClearAffectHistoryPlan extends Plan {
 
+    private boolean bDebug = false;
     #handles event ClearAffectHistoryEvent cahe;
     #uses data AffectHistory affectHistory;
     #uses data NA_Debug debug;
@@ -29,7 +30,7 @@ public plan ClearAffectHistoryPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {        
@@ -63,6 +64,7 @@ public plan ClearAffectHistoryPlan extends Plan {
             e.printStackTrace();
         }
     }
-    private boolean bDebug = false;
+    
 
 }
+

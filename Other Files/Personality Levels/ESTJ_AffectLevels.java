@@ -21,6 +21,10 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.DEPRESSED));      // Fi grip
 
         // Level -5 (Intense Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.BETRAYED)); // Fi trust broken by someone close (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.SHAME)); // Fi whole self judged bad (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.EXASPERATED)); // Te patience exhausted (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.ABANDONED)); // Fi left alone by those relied on (new)
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.VENGEFUL));       // Te retaliation
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DENIAL));         // Si resistance
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.CONTEMPT));       // Te criticism
@@ -36,6 +40,10 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.BITTERNESS));     // Fi injury
 
         // Level -4 (Strong Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.HEARTBROKEN)); // Fi loss of a cherished bond (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.DISILLUSIONED)); // Si ideals collapse (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.UNAPPRECIATED)); // Fi efforts go unrecognised (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.HURT)); // Fi wounded by another (new)
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.OVERWHELMED));      // Te overload
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.ANGRY));          // Te frustration
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.CONTROLLING));    // Te grip
@@ -54,6 +62,7 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.ARROGANT));       // Te inflation
 
         // Level -3 (Moderate Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DRAINED)); // Fi exhausted from giving (new)
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.LISTLESS));         // Te disengagement
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DISGUST));        // Te rejection
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.FEAR));           // Ne threat
@@ -72,6 +81,8 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DISCONTENTED));   // Te dissatisfaction
 
         // Level -2 (Mild Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.AWKWARD)); // Fi socially out of step (new)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.APPREHENSIVE)); // Si unease about what is coming (new)
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.ANNOYANCE));
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.UPSET));            // Fi disturbance
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.MACABRE));          // Fi shadow
@@ -92,6 +103,9 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.BORED));          // Ne understim
 
         // Level -1 (Slight Negative States)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.WISTFUL)); // Si longing for the unreachable (new)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.GUARDED)); // Si holding back to avoid hurt (new)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.RESTLESS)); // Ne unable to settle (new)
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.SEXUALLY_EXCITED)); // Si sensation
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.MOODY));          // Fi fluctuation
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.SERIOUS));        // Te focus
@@ -107,6 +121,10 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.BURDENED));       // Si weight
 
         // Level 1 (Mild Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.REASSURED)); // Fi doubt eased by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.AMUSED)); // Ne finding something funny (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.PLAYFUL)); // Ne light teasing spontaneity (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SYMPATHY)); // Fi feeling for another's trouble (new)
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.ANTICIPATION));    // Ne possibility
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.CONCENTRATING));   // Te focus
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.RELIEF));          // Si comfort
@@ -119,6 +137,9 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SELF_SATISFIED));  // Te content
 
         // Level 2 (Moderate Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.BELONGING)); // Fi accepted by the group (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.TENDERNESS)); // Fi gentle protective warmth (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.SUPPORTED)); // Fi backed by others (new)
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.PEACEFULNESS));      // Si contentment
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.VALUED));          // Te worth
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.DETERMINATION));   // Te drive
@@ -132,6 +153,9 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.COOPERATIVE));     // Te teamwork
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.THANKFUL));        // Fi gratitude
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.AROUSED));         // Si sensation
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.NOSTALGIA)); // Si fondness for the past (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.COMPERSION)); // Fi joy in another's joy (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.INTIMACY)); // Fi mutual closeness and openness (new)
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CAPABLE));         // Te competence
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.USEFUL));          // Te contribution
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.PRIDE));           // Te achievement
@@ -148,6 +172,10 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CURIOUS));         // Ne interest
 
         // Level 4 (Very Strong Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.CHERISHED)); // Fi deeply valued by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ELEVATION)); // Fi uplifted by human goodness (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ONENESS)); // Fi union with something larger (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.PURPOSEFUL)); // Te acting toward meaning (new)
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.CONFIDENCE));      // Te mastery
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.BOLD));            // Te assertion
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ELATION));         // Fi fulfillment
@@ -159,6 +187,9 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.LUST));            // Fi passion
 
         // Level 5 (Intense Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.BLISS)); // Ne effortless happiness (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.PROTECTIVE)); // Fi drive to keep others safe (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.SERENITY)); // Si deep untroubled calm (new)
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.INFLUENTIAL));     // Te leadership
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.MASTERFUL));       // Te expertise
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.POWERFUL));        // Te strength
@@ -177,6 +208,7 @@ public class ESTJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.FASCINATED));      // Ne discovery
 
         // Level 6 (Peak Positive States)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.EMPOWERED)); // Te able to effect change (new)
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.STRONG));          // Te power
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.MIGHTY));          // Te force
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.TRIUMPHANT));      // Te victory

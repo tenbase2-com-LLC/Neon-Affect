@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:50 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -14,7 +14,7 @@ package NeonAffect;
  * 
  */
 public event AddAppraisalCriteriaEvent extends Event {
-    public null strPersonalityType = "";
+    public String strPersonalityType = "";
 
     #posted as
     post(String strPersonalityType1)
@@ -24,3 +24,4 @@ public event AddAppraisalCriteriaEvent extends Event {
 
 
 }
+

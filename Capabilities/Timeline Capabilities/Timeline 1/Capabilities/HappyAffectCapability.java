@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,43 +15,47 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability HappyAffectCapability extends Capability {
-    #uses plan SmilingPlan;
-    #uses plan HummingWhistlingSingingPlan;
-    #uses plan RelaxedAppearancePlan;
-    #uses plan TellingJokesLaughingFrequentlyPlan;
-    #uses plan EyesDanceSparkleShinePlan;
-    #uses plan BubblyLightVoicePlan;
-    #uses plan RapidSpeakingPlan;
-    #uses plan BuyingGiftsOfferingKindnessPlan;
-    #uses plan GivingThumbsUpPlan;
-    #uses plan SittingUpStraightPlan;
-    #uses plan FluidMovementPlan;
-    #uses plan PoliteMannerPlan;
-    #uses plan OfferingComplementPlan;
-    #uses plan InitiatingPhysicalContactPlan;
-    #uses plan InfusingPositiveWords;
-    #uses plan TalkativeNatureCourtesyWithStrangersPlan;
-    #uses plan SpontaneityPlan;
-    #uses plan NoddingLeaningInWhileListeningPlan;
-    #uses plan OfferingEncouragementSupportPlan;
-    #uses plan QuickMovementsNoHesitationsPlan;
-    #uses plan InitiatingRandomActsOfKindnessPlan;
-    #uses plan BecomingMoreTalkativePlan;
-    #uses plan PositiveThinkingPlan;
-    #uses plan SpreadJoyPlan;
-    #uses plan HelpfulnessPatiencePlan;
-    #uses plan ContentmentHappyPlan;
-    #uses plan BrightOutlookPlan;
-    #uses plan BeWithLovedOnesFriendsPlan;
-    #uses plan FearlessnessPlan;
-    #uses plan BenignRiskTakingPlan;
-    #uses plan JoyfulTearsPlan;
-    #uses plan GenerosityCompassionPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextHappyPlan;
     #imports data PlanContextName planContextName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data Behavior behaviorName();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> BecomingMoreTalkativePlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> BrightOutlookPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> BubblyLightVoicePlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> HummingWhistlingSingingPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> InfusingPositiveWords;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> OfferingComplementPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> OfferingEncouragementSupportPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> RapidSpeakingPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> TalkativeNatureCourtesyWithStrangersPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.VERBAL> TellingJokesLaughingFrequentlyPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> EyesDanceSparkleShinePlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> FluidMovementPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> GivingThumbsUpPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> InitiatingPhysicalContactPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> JoyfulTearsPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> NoddingLeaningInWhileListeningPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> PoliteMannerPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> QuickMovementsNoHesitationsPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> RelaxedAppearancePlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> SittingUpStraightPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.NONVERBAL> SmilingPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> BeWithLovedOnesFriendsPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> BenignRiskTakingPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> BuyingGiftsOfferingKindnessPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> ContentmentHappyPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> FearlessnessPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> GenerosityCompassionPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> HelpfulnessPatiencePlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> InitiatingRandomActsOfKindnessPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> PositiveThinkingPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> SpontaneityPlan;
+    #uses BehaviorPlan<AffectEnum.HAPPY, AffectEnum.ACTION> SpreadJoyPlan;
 
 }
+

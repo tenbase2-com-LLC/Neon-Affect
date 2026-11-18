@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,29 +15,46 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability DepressedAffectCapability extends Capability {
-    #uses plan GauntAppearancePlan;
-    #uses plan BlinkingInfrequentlyPlan;
-    #uses plan RedEyesPlan;
-    #uses plan NoiseInsensitivityPlan;
-    #uses plan BadPostureDepressedPlan;
-    #uses plan MakingExcusesDepressedPlan;
-    #uses plan PoorCommunicationDepressedPlan;
-    #uses plan PreferBeingAlonePlan;
-    #uses plan ForgettingDepressedPlan;
-    #uses plan FatiguedDepressedPlan;
-    #uses plan ShallowBreathingPlan;
-    #uses plan UnmotivatedPlan;
-    #uses plan NegativeSelfImagePlan;
-    #uses plan PoorObservationPlan;
-    #uses plan PessimisticDepressedPlan;
-    #uses plan InabilityConcentrateDepressedPlan;
-    #uses plan LosingTrackOfTimeDepressedPlan;
-    #uses plan AvoidingStressfulSituationsPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextDepressedPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> CryingDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> DelayedResponseDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> ExpressingHopelessnessDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> MakingExcusesDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> MonotoneVoiceDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> OneWordAnswerDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> PessimisticStatementsDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> PoorCommunicationDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> SelfNegativeTalkDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.VERBAL> SpeakingLessDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> AvoidingEyeContactDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> BadPostureDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> BlinkingInfrequentlyPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> DullEyesDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> EmptyStareDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> GauntAppearancePlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> RedEyesPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> ShallowBreathingPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> SighDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.NONVERBAL> TearingUpDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> AvoidingStressfulSituationsPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> FatiguedDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> ForgettingDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> InabilityConcentrateDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> LosingTrackOfTimeDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> NegativeSelfImagePlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> NoiseInsensitivityPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> PessimisticDepressedPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> PoorObservationPlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> PreferBeingAlonePlan;
+    #uses BehaviorPlan<AffectEnum.DEPRESSED, AffectEnum.ACTION> UnmotivatedPlan;
 
 }
+

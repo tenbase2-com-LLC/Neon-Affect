@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,31 +15,46 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability DisgustAffectCapability extends Capability {
-    #uses plan CurledLipPlan;
-    #uses plan WrinklingNosePlan;
-    #uses plan FlinchingPlan;
-    #uses plan SwallowingHardPlan;
-    #uses plan EyesColdPlan;
-    #uses plan RefusingToLookPlan;
-    #uses plan ShakingHeadPlan;
-    #uses plan RepeatSaidNoEmotionPlan;
-    #uses plan JerkingAwayFromContactPlan;
-    #uses plan DemandStopSpeakingPlan;
-    #uses plan OfferingEvasiveAnswersPlan;
-    #uses plan RubbingNosePlan;
-    #uses plan SpeakingUnsteadyVoicePlan;
-    #uses plan LosingTrackOnesWordsPlan;
-    #uses plan CringePlan;
-    #uses plan TroubleSwallowingPlan;
-    #uses plan WishingSomewhereElsePlan;
-    #uses plan MindReplayingAgonizingPlan;
-    #uses plan UnableToConcentratePlan;
-    #uses plan BecomingUnresponsivePlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextDisgustPlan;
     #imports data PlanContextName planContextName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data Behavior behaviorName();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> ChangeSubjectDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> DemandStopSpeakingPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> HardToneDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> LosingTrackOnesWordsPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> MakingTskNoiseDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> MutteringDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> OfferingEvasiveAnswersPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> RepeatSaidNoEmotionPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> SpeakingUnsteadyVoicePlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.VERBAL> SwearingDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> CringePlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> CurledLipPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> EyesColdPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> FlinchingPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> JerkingAwayFromContactPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> RefusingToLookPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> RubbingNosePlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> ShakingHeadPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> SwallowingHardPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> TroubleSwallowingPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.NONVERBAL> WrinklingNosePlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> AvoidingPersonDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> BecomingUnresponsivePlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> DisengageFromInteractionDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> JudgementalDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> LossOfAppetiteDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> MindReplayingAgonizingPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> NeedToEscapeDisgustPlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> UnableToConcentratePlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> WishingSomewhereElsePlan;
+    #uses BehaviorPlan<AffectEnum.DISGUST, AffectEnum.ACTION> WithdrawingFromOthersDisgustPlan;
 
 }
+

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:53 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -25,6 +25,9 @@ public capability Timeline5Capability extends Capability {
     #has capability HopefulnessAffectCapability hac1;
     #has capability AdorationAffectCapability aac;
     #has capability LoveAffectCapability lac;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
@@ -32,3 +35,4 @@ public capability Timeline5Capability extends Capability {
     #imports data NA_Debug debug();
 
 }
+

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -18,6 +18,19 @@ import java.util.*;
  */
 public plan InteractionPlan extends Plan {
 
+
+    private String CreateOpenAIPrompt(ArrayList affectHistory, ArrayList behaviorList, String strPersonalityType) throws Exception
+    {
+        //Given this history of behaviors and emotions, determine whether to do any combination of "verbal," "nonverbal," or "action" given an INTP Myers-Briggs personality type:
+        //1.  A happy emotion occurred with a smile behavior at 30.0 seconds ago.
+        //2.  A sad emoption occurred with a cry behavior at 40.0 seconds ago.
+    
+        String strPrompt = "Given this history of emotions and behaviors, determine whether to do a \"verbal,\" \"nonverbal,\" or \"action\" given an " + strPersonalityType + " Myers-Briggs personality type.  Give only one answer for the entire list.\n";
+                
+        strPrompt += AffectBehaviorHistory.FormatLines(affectHistory, behaviorList, System.currentTimeMillis());
+        
+        return strPrompt;        
+    }
     #handles event ContextEvent ce;
     #sends event ContextReply reply;
     #uses interface NeonInteractionComputeAgent enc;
@@ -32,13 +45,17 @@ public plan InteractionPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
-    {           
-        boolean bVerbal = true;
+    {
+        //ONE channel per response: the judge picks verbal, nonverbal or action.
+        //Verbal is the fallback - no history yet, or no usable answer.
+        boolean bVerbal = false;
         boolean bNonverbal = false;
         boolean bAction = false;
+
+        String strChannel = JevChannelSelector.VERBAL;
         
         boolean bDebug = false;
         
@@ -74,37 +91,54 @@ public plan InteractionPlan extends Plan {
                     System.out.println("Inside NeonAffectAgent.ComputePlan: affectHistory.size: " + Integer.toString(affectHistory.size()) + " behaviorList.size: " + Integer.toString(behaviorList.size()));                
                 }
                 
-                if (affectHistory.size() != 0 && behaviorList.size() != 0)
-                { 
-                    String strPrompt = CreateOpenAIPrompt(affectHistory, behaviorList, strPersonalityType);
-                    
-                    //calls open ai
-                    ArrayList ret = new openai().DetermineAffectContext(strPrompt);
-    
-                    for (int i = 0; i < ret.size(); i++)
-                    {
-                        String strResult = (String)ret.get(i);
-                
-                        if (strResult.equals("Verbal"))
-                        {
-                            bVerbal = true;                    
-                        }
-                        else if (strResult.equals("Nonverbal"))
-                        {
-                            bNonverbal = true;   
-                        }
-                        else if (strResult.equals("Action"))
-                        {
-                            bAction = true;                    
-                        }                
-                    }
+                //mixed emotions: a channel fixed in advance by CursorPlanChoicePlan
+                String strAssigned = enc.GetNeonAffectAgent().TakeAssignedChannel();
+
+                if (strAssigned != null)
+                {
+                    strChannel = strAssigned;
+                }
+                else if (affectHistory.size() != 0 && behaviorList.size() != 0)
+                {
+                    //================ OpenAI path - DISABLED ==========================
+                    //Kept here, next to the live path, so the two can be swapped by moving
+                    //the comment markers (as in PlanSelectorPlan).
+                    //
+                    //String strPrompt = CreateOpenAIPrompt(affectHistory, behaviorList, strPersonalityType);
+                    //
+                    //ArrayList ret = new NeonOpenAI(bDebug).determineAffectContext(strPrompt);
+                    //
+                    //if (ret.size() != 0)
+                    //{
+                    //    strChannel = (String)ret.get(0);
+                    //}
+                    //=================================================================
+
+                    //================ Jev path - ACTIVE ==============================
+                    //Jev takes the personality type and the history as separate fields of
+                    //structured state and answers with one of the three channel labels.
+                    strChannel = JevChannelSelector.Select(affectHistory, behaviorList, strPersonalityType, bDebug);
+                    //=================================================================
                 }
             }
             catch (Exception e)
             {
-                e.printStackTrace();            
+                e.printStackTrace();
             }
         };
+
+        if (strChannel.equals(JevChannelSelector.NONVERBAL))
+        {
+            bNonverbal = true;
+        }
+        else if (strChannel.equals(JevChannelSelector.ACTION))
+        {
+            bAction = true;
+        }
+        else
+        {
+            bVerbal = true;
+        }
      
         if (bDebug)
         {
@@ -113,34 +147,8 @@ public plan InteractionPlan extends Plan {
      
         @reply(ce, reply.response(bVerbal, bNonverbal, bAction));   
     }
-
-    private String CreateOpenAIPrompt(ArrayList affectHistory, ArrayList behaviorList, String strPersonalityType) throws Exception
-    {
-        //Given this history of behaviors and emotions, determine whether to do any combination of "verbal," "nonverbal," or "action" given an INTP Myers-Briggs personality type:
-        //1.  A happy emotion occurred with a smile behavior at 30.0 seconds ago.
-        //2.  A sad emoption occurred with a cry behavior at 40.0 seconds ago.
     
-        String strPrompt = "Given this history of emotions and behaviors, determine whether to do a \"verbal,\" \"nonverbal,\" or \"action\" given an " + strPersonalityType + " Myers-Briggs personality type.  Give only one answer for the entire list.\n";
-                
-        long now = System.currentTimeMillis();
-        for (int i = 0; i < behaviorList.size(); i++)
-        {
-            Object[] items = (Object[])behaviorList.get(i);
-            
-            String strBehaviorName = (String)items[0];
-            long time = (long)items[1];
-            
-            double dDuration = (now - time) / 1000;
-            
-            AffectHistoryVar affectHistoryVar = (AffectHistoryVar)affectHistory.get(0);
-            
-            int iType = affectHistoryVar.GetType();
-            double dValue = affectHistoryVar.GetValue();
-            
-            strPrompt += Integer.toString(i+1) + ".  A " + AffectEnum.GetName(iType) + " emotion occurred with a " + strBehaviorName + " behavior at " + dDuration + " seconds ago.\n";
-        }
-        
-        return strPrompt;        
-    }
 
 }
+
+

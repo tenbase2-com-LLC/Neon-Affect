@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:50 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -18,6 +18,7 @@ import java.util.*;
  */
 public plan AddAppraisalCriteriaPlan extends Plan {
 
+    private boolean bDebug = false;
     #handles event AddAppraisalCriteriaEvent aace;
     #uses interface NeonAffectAgent enc;
     #uses data Appraisals appraisalSims;
@@ -33,7 +34,7 @@ public plan AddAppraisalCriteriaPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {
@@ -76,6 +77,7 @@ public plan AddAppraisalCriteriaPlan extends Plan {
             mutex.signal();
         }
     }
-    private boolean bDebug = false;
+    
 
 }
+

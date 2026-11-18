@@ -12,6 +12,12 @@ public class INFP_AffectLevels
         // Timeline initialization list
         
         // Level -6
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.BETRAYED)); // Trust broken by someone close (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.HEARTBROKEN)); // Loss of a cherished bond (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.DISILLUSIONED)); // Ideals collapse (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.SHAME)); // Whole self judged bad (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.HURT)); // Wounded by another (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.ABANDONED)); // Left alone by those relied on (new)
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.RAGE));
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.GRIEF));
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.TORMENTED));
@@ -33,6 +39,8 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.SEXUALLY_EXCITED));
 
         // Level -4
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.AWKWARD)); // Socially out of step (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.DRAINED)); // Exhausted from giving (new)
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.SCORN));
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.DEPRESSED));
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.ANGRY));
@@ -52,6 +60,9 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.INJUSTICE));
 
         // Level -3
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.UNAPPRECIATED)); // Efforts go unrecognised (new)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.WISTFUL)); // Longing for the unreachable (new)
+        affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.EXASPERATED)); // Patience exhausted (new)
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.OVERWHELMED));
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DENIAL));
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.HUMILIATION));
@@ -76,6 +87,8 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.ANNOYANCE));
 
         // Level -2
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.GUARDED)); // Holding back to avoid hurt (new)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.APPREHENSIVE)); // Unease about what is coming (new)
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.IMPATIENCE));
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.BORED));
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.SAD));
@@ -93,6 +106,7 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.DISAPPOINTMENT));
 
         // Level -1
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.RESTLESS)); // Unable to settle (new)
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.MOODY));
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.IRRITATION));
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.VULNERABILITY));
@@ -109,6 +123,8 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.BURDENED));
 
         // Level 1
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.REASSURED)); // Doubt eased by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.AMUSED)); // Finding something funny (new)
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.ANTICIPATION));
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.INDIFFERENCE));
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.PEACEFULNESS));
@@ -122,6 +138,10 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SELF_SATISFIED));
 
         // Level 2
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.BELONGING)); // Accepted by the group (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.PLAYFUL)); // Light teasing spontaneity (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.SYMPATHY)); // Feeling for another's trouble (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.SUPPORTED)); // Backed by others (new)
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.CAREFREE));
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.PLEASED));
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.CURIOUS));
@@ -152,6 +172,12 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.HOPEFULNESS));
 
         // Level 4
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.TENDERNESS)); // Gentle protective warmth (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.NOSTALGIA)); // Fondness for the past (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.COMPERSION)); // Joy in another's joy (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.EMPOWERED)); // Able to effect change (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.PURPOSEFUL)); // Acting toward meaning (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.PROTECTIVE)); // Drive to keep others safe (new)
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.FEARLESSNESS));
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.SMUGNESS));
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.ELATION));
@@ -165,6 +191,8 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.LUST));
 
         // Level 5
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.CHERISHED)); // Deeply valued by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.INTIMACY)); // Mutual closeness and openness (new)
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.EUPHORIA));
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.EAGERNESS));
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.WANDERLUST));
@@ -182,6 +210,10 @@ public class INFP_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.FASCINATED));
 
         // Level 6
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.ELEVATION)); // Uplifted by human goodness (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.ONENESS)); // Union with something larger (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.BLISS)); // Effortless happiness (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.SERENITY)); // Deep untroubled calm (new)
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.AWE));           // Profound wonder
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.WONDER));        // Deep amazement
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.ADMIRED));       // Deep appreciation

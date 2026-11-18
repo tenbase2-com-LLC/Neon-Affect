@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:52 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,29 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability LoveAffectCapability extends Capability {
-    #uses plan SmilingNoReasonPlan;
-    #uses plan StrongEyeContactLovePlan;
-    #uses plan DeepBreathsLovePlan;
-    #uses plan SillyGrinPlan;
-    #uses plan LaughingNonStopTalkingPlan;
-    #uses plan UsingPetNamesPan;
-    #uses plan TongueTiedPlan;
-    #uses plan SayILoveYouPlan;
-    #uses plan SharingSecretsPlan;
-    #uses plan AlignInterestsOtherPlan;
-    #uses plan AppreciatingWorldPlan;
-    #uses plan LosingTrackOfTimeLovePlan;
-    #uses plan DizzinessLovePlan;
-    #uses plan PossessivenessLovePlan;
-    #uses plan PerceptivePlan;
-    #uses plan OthersAsFriendPlan;
-    #uses plan ShowImportancePlan;
-    #uses plan InterestGoingsOnPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextLovePlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> ComplementLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> LaughingNonStopTalkingPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> MakingCommitmentsLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> SayILoveYouPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> SharingSecretsPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> ShowImportancePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> SpeakingWithTendernessLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> TongueTiedPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> UsingPetNamesPan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.VERBAL> WhisperDramaticallyLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> BlushingLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> DeepBreathsLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> DizzinessLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> GentleCaressLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> HalfClosedEyesLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> LeanInLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> MaintainPhysicalProximityLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> SillyGrinPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> SmilingNoReasonPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.NONVERBAL> StrongEyeContactLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> AlignInterestsOtherPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> AppreciatingWorldPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> InterestGoingsOnPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> LosingTrackOfTimeLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> MakePlansLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> OthersAsFriendPlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> PerceptivePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> PossessivenessLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> SacrificingLovePlan;
+    #uses BehaviorPlan<AffectEnum.LOVE, AffectEnum.ACTION> SurprisingWithAffectionLovePlan;
 
 }
+

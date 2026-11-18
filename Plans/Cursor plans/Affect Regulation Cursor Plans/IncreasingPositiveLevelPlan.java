@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -14,7 +14,6 @@ package NeonAffect;
  * 
  */
 public plan IncreasingPositiveLevelPlan extends Plan {
-
     #handles event SetLevelCursorsEvent ev1;
     #posts event IncreasingPositiveLevelEvent iple;
     #posts event SetLevelCursorsEvent slce;
@@ -34,7 +33,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {
@@ -43,7 +42,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
             setIncreasingPositiveCursors();
         }        
     }
-
+    
     #reasoning method
     setIncreasingPositiveCursors()
     {   
@@ -92,7 +91,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c.GetCursorType(), c.GetStartLevel(), c.GetEndLevel(), true);
     
                     //clear affect history beliefset
-                    @subtask(cahe.post());  
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it  
                 }
             }
             catch (Exception e)
@@ -117,7 +116,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c2.GetCursorType(), c2.GetStartLevel(), c2.GetEndLevel(), true);
     
                     //clear affect history beliefset
-                    @subtask(cahe.post());               
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it               
                 }
             }
             catch (Exception e)
@@ -142,7 +141,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c3.GetCursorType(), c3.GetStartLevel(), c3.GetEndLevel(), true);
     
                     //clear affect history beliefset
-                    @subtask(cahe.post());                     
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it                     
                 }
             }
             catch (Exception e)
@@ -167,7 +166,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c4.GetCursorType(), c4.GetStartLevel(), c4.GetEndLevel(), true);
     
                      //clear affect history beliefset
-                    @subtask(cahe.post());
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it
                 }
             }
             catch (Exception e)
@@ -192,7 +191,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c5.GetCursorType(), c5.GetStartLevel(), c5.GetEndLevel(), true);
     
                     //clear affect history beliefset
-                    @subtask(cahe.post()); 
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it 
                 }
             }
             catch (Exception e)
@@ -217,7 +216,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c6.GetCursorType(), c6.GetStartLevel(), c6.GetEndLevel(), true);
     
                      //clear affect history beliefset
-                    @subtask(cahe.post());                    
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it                    
                 }
             }
             catch (Exception e)
@@ -242,7 +241,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c7.GetCursorType(), c7.GetStartLevel(), c7.GetEndLevel(), true);
     
                     //clear affect history beliefset
-                    @subtask(cahe.post());  
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it  
                 }
             }
             catch (Exception e)
@@ -267,7 +266,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c8.GetCursorType(), c8.GetStartLevel(), c8.GetEndLevel(), true);
     
                      //clear affect history beliefset
-                    @subtask(cahe.post());
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it
                 }
             }
             catch (Exception e)
@@ -292,7 +291,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c9.GetCursorType(), c9.GetStartLevel(), c9.GetEndLevel(), true);
     
                     //clear affect history beliefset
-                    @subtask(cahe.post());
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it
                 }
             }
             catch (Exception e)
@@ -317,7 +316,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
                     enc.SetCursorAck(c10.GetCursorType(), c10.GetStartLevel(), c10.GetEndLevel(), true);
     
                       //clear affect history beliefset
-                    @subtask(cahe.post());
+                    //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it
                 }
             }
             catch (Exception e)
@@ -328,7 +327,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
         };
         
         //clear affect history beliefset
-        @subtask(cahe.post());
+        //@subtask(cahe.post()); //history kept (2026-10-30): the analyzers and judges read it
         
         if (bDebug)
         {
@@ -336,5 +335,7 @@ public plan IncreasingPositiveLevelPlan extends Plan {
         }
     
     }
+    
 
 }
+

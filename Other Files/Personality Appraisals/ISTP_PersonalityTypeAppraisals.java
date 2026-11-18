@@ -77,6 +77,9 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
         //appraisal = createCuriosityAppraisal();
         //appraisals.add(appraisal);
 
+        appraisal = null; // id 19: no emotion (AffectEnum gap) - keeps list position == id
+        appraisals.add(appraisal);
+
         appraisal = createSatisfactionAppraisal();
         appraisals.add(appraisal);
 
@@ -106,6 +109,9 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
 
         //appraisal = createInsecurityAppraisal();
         //appraisals.add(appraisal);
+
+        appraisal = null; // id 29: no emotion (AffectEnum gap) - keeps list position == id
+        appraisals.add(appraisal);
 
         appraisal = createAcceptanceAppraisal();
         appraisals.add(appraisal);
@@ -170,6 +176,9 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
         appraisal = createPityAppraisal();
         appraisals.add(appraisal);
 
+        appraisal = null; // id 51: no emotion (AffectEnum gap) - keeps list position == id
+        appraisals.add(appraisal);
+
         appraisal = createDisappointmentAppraisal();
         appraisals.add(appraisal);
 
@@ -183,6 +192,9 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
         appraisals.add(appraisal);
 
         appraisal = createHopefulnessAppraisal();
+        appraisals.add(appraisal);
+
+        appraisal = null; // id 57: no emotion (AffectEnum gap) - keeps list position == id
         appraisals.add(appraisal);
 
         appraisal = createAdorationAppraisal();
@@ -222,6 +234,9 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
         appraisals.add(appraisal);
 
         appraisal = createMovedAppraisal();
+        appraisals.add(appraisal);
+
+        appraisal = null; // id 71: no emotion (AffectEnum gap) - keeps list position == id
         appraisals.add(appraisal);
 
         appraisal = createTormentedAppraisal();
@@ -348,6 +363,9 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
         appraisals.add(appraisal);
 
         appraisal = createFeebleAppraisal();
+        appraisals.add(appraisal);
+
+        appraisal = null; // id 114: no emotion (AffectEnum gap) - keeps list position == id
         appraisals.add(appraisal);
 
         appraisal = createInsecureAppraisal();
@@ -492,6 +510,102 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
         appraisals.add(appraisal);
 
         appraisal = createFascinatedAppraisal();
+        appraisals.add(appraisal);
+
+        appraisal = createBetrayedAppraisal(); // id 163
+        appraisals.add(appraisal);
+
+        appraisal = createHeartbrokenAppraisal(); // id 164
+        appraisals.add(appraisal);
+
+        appraisal = createDisillusionedAppraisal(); // id 165
+        appraisals.add(appraisal);
+
+        appraisal = createUnappreciatedAppraisal(); // id 166
+        appraisals.add(appraisal);
+
+        appraisal = createWistfulAppraisal(); // id 167
+        appraisals.add(appraisal);
+
+        appraisal = createGuardedAppraisal(); // id 168
+        appraisals.add(appraisal);
+
+        appraisal = createReassuredAppraisal(); // id 169
+        appraisals.add(appraisal);
+
+        appraisal = createBelongingAppraisal(); // id 170
+        appraisals.add(appraisal);
+
+        appraisal = createTendernessAppraisal(); // id 171
+        appraisals.add(appraisal);
+
+        appraisal = createCherishedAppraisal(); // id 172
+        appraisals.add(appraisal);
+
+        appraisal = createElevationAppraisal(); // id 173
+        appraisals.add(appraisal);
+
+        appraisal = createOnenessAppraisal(); // id 174
+        appraisals.add(appraisal);
+
+        appraisal = createShameAppraisal(); // id 175
+        appraisals.add(appraisal);
+
+        appraisal = createHurtAppraisal(); // id 176
+        appraisals.add(appraisal);
+
+        appraisal = createExasperatedAppraisal(); // id 177
+        appraisals.add(appraisal);
+
+        appraisal = createAwkwardAppraisal(); // id 178
+        appraisals.add(appraisal);
+
+        appraisal = createApprehensiveAppraisal(); // id 179
+        appraisals.add(appraisal);
+
+        appraisal = createRestlessAppraisal(); // id 180
+        appraisals.add(appraisal);
+
+        appraisal = createAmusedAppraisal(); // id 181
+        appraisals.add(appraisal);
+
+        appraisal = createPlayfulAppraisal(); // id 182
+        appraisals.add(appraisal);
+
+        appraisal = createNostalgiaAppraisal(); // id 183
+        appraisals.add(appraisal);
+
+        appraisal = createCompersionAppraisal(); // id 184
+        appraisals.add(appraisal);
+
+        appraisal = createEmpoweredAppraisal(); // id 185
+        appraisals.add(appraisal);
+
+        appraisal = createBlissAppraisal(); // id 186
+        appraisals.add(appraisal);
+
+        appraisal = createAbandonedAppraisal(); // id 187
+        appraisals.add(appraisal);
+
+        appraisal = createDrainedAppraisal(); // id 188
+        appraisals.add(appraisal);
+
+        appraisal = createSympathyAppraisal(); // id 189
+        appraisals.add(appraisal);
+
+        appraisal = createSupportedAppraisal(); // id 190
+        appraisals.add(appraisal);
+
+        appraisal = createPurposefulAppraisal(); // id 191
+        appraisals.add(appraisal);
+
+        appraisal = createProtectiveAppraisal(); // id 192
+        appraisals.add(appraisal);
+
+        appraisal = createSerenityAppraisal(); // id 193
+        appraisals.add(appraisal);
+
+        appraisal = createIntimacyAppraisal(); // id 194
         appraisals.add(appraisal);
     }
     
@@ -6221,5 +6335,964 @@ public class ISTP_PersonalityTypeAppraisals implements IAppraisalCreator {
 
     public List<AffectAppraisal> getAppraisals() {
         return appraisals;
+    }
+    public AffectAppraisal createBetrayedAppraisal() {
+        // ISTP version - Trust withdrawn after someone close proved unreliable and deceptive
+        float self_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float other_responsibility = AffectAppraisalEnum.ONE_0f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_1f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_8f;
+        float goal_relevance = AffectAppraisalEnum.ONE_0f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_9f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_3f;
+        float other_controllable = AffectAppraisalEnum.ZERO_8f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_3f;
+        float predictability = AffectAppraisalEnum.ZERO_2f;
+        float threat = AffectAppraisalEnum.ZERO_8f;
+        float pleasantness = AffectAppraisalEnum.ZERO_0f;
+        float certainty = AffectAppraisalEnum.ZERO_9f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_0f;
+        float fairness = AffectAppraisalEnum.ZERO_0f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_0f;
+        float loss = AffectAppraisalEnum.ZERO_9f;
+        float familiarity = AffectAppraisalEnum.ZERO_6f;
+        float effort = AffectAppraisalEnum.ZERO_6f;
+        float challenge = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_2f;
+        float expectedness = AffectAppraisalEnum.ZERO_0f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createHeartbrokenAppraisal() {
+        // ISTP version - Private loss of a rare close bond processed internally
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ONE_0f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_7f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_4f;
+        float self_controllable = AffectAppraisalEnum.ZERO_2f;
+        float other_controllable = AffectAppraisalEnum.ZERO_4f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_3f;
+        float predictability = AffectAppraisalEnum.ZERO_4f;
+        float threat = AffectAppraisalEnum.ZERO_6f;
+        float pleasantness = AffectAppraisalEnum.ZERO_0f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_0f;
+        float fairness = AffectAppraisalEnum.ZERO_3f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_1f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_3f;
+        float loss = AffectAppraisalEnum.ONE_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_8f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_6f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_3f;
+        float expectedness = AffectAppraisalEnum.ZERO_3f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createDisillusionedAppraisal() {
+        // ISTP version - Belief in a person or system dropped once it proves not to work
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_7f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_3f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_4f;
+        float other_controllable = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_4f;
+        float threat = AffectAppraisalEnum.ZERO_4f;
+        float pleasantness = AffectAppraisalEnum.ZERO_1f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_1f;
+        float fairness = AffectAppraisalEnum.ZERO_2f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_1f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_1f;
+        float loss = AffectAppraisalEnum.ZERO_7f;
+        float familiarity = AffectAppraisalEnum.ZERO_6f;
+        float effort = AffectAppraisalEnum.ZERO_2f;
+        float challenge = AffectAppraisalEnum.ZERO_3f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_0f;
+        float expectedness = AffectAppraisalEnum.ZERO_2f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createUnappreciatedAppraisal() {
+        // ISTP version - Practical fixes and competence taken for granted by others
+        float self_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_8f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_7f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_6f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_5f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_5f;
+        float other_controllable = AffectAppraisalEnum.ZERO_7f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_6f;
+        float threat = AffectAppraisalEnum.ZERO_4f;
+        float pleasantness = AffectAppraisalEnum.ZERO_1f;
+        float certainty = AffectAppraisalEnum.ZERO_7f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_2f;
+        float fairness = AffectAppraisalEnum.ZERO_1f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_3f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_2f;
+        float loss = AffectAppraisalEnum.ZERO_5f;
+        float familiarity = AffectAppraisalEnum.ZERO_8f;
+        float effort = AffectAppraisalEnum.ZERO_7f;
+        float challenge = AffectAppraisalEnum.ZERO_5f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_2f;
+        float expectedness = AffectAppraisalEnum.ZERO_6f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createWistfulAppraisal() {
+        // ISTP version - Brief detached longing for past freedom or a lost skill
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_7f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_4f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_6f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_3f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_3f;
+        float other_controllable = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_3f;
+        float predictability = AffectAppraisalEnum.ZERO_5f;
+        float threat = AffectAppraisalEnum.ZERO_2f;
+        float pleasantness = AffectAppraisalEnum.ZERO_4f;
+        float certainty = AffectAppraisalEnum.ZERO_4f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_3f;
+        float fairness = AffectAppraisalEnum.ZERO_5f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_3f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_4f;
+        float loss = AffectAppraisalEnum.ZERO_6f;
+        float familiarity = AffectAppraisalEnum.ZERO_8f;
+        float effort = AffectAppraisalEnum.ZERO_2f;
+        float challenge = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_5f;
+        float expectedness = AffectAppraisalEnum.ZERO_5f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createGuardedAppraisal() {
+        // ISTP version - Independent reserve keeping personal space and options protected
+        float self_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_7f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_9f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_7f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_7f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_1f;
+        float self_controllable = AffectAppraisalEnum.ZERO_9f;
+        float other_controllable = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_5f;
+        float predictability = AffectAppraisalEnum.ZERO_3f;
+        float threat = AffectAppraisalEnum.ZERO_6f;
+        float pleasantness = AffectAppraisalEnum.ZERO_3f;
+        float certainty = AffectAppraisalEnum.ZERO_4f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_3f;
+        float fairness = AffectAppraisalEnum.ZERO_4f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_4f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_3f;
+        float loss = AffectAppraisalEnum.ZERO_3f;
+        float familiarity = AffectAppraisalEnum.ZERO_4f;
+        float effort = AffectAppraisalEnum.ZERO_6f;
+        float challenge = AffectAppraisalEnum.ZERO_6f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_4f;
+        float expectedness = AffectAppraisalEnum.ZERO_4f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createReassuredAppraisal() {
+        // ISTP version - Uncertainty settled by solid evidence from a capable ally
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_8f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_7f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_4f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_5f;
+        float other_controllable = AffectAppraisalEnum.ZERO_7f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_6f;
+        float predictability = AffectAppraisalEnum.ZERO_5f;
+        float threat = AffectAppraisalEnum.ZERO_3f;
+        float pleasantness = AffectAppraisalEnum.ZERO_6f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_6f;
+        float fairness = AffectAppraisalEnum.ZERO_7f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_6f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_5f;
+        float loss = AffectAppraisalEnum.ZERO_2f;
+        float familiarity = AffectAppraisalEnum.ZERO_7f;
+        float effort = AffectAppraisalEnum.ZERO_2f;
+        float challenge = AffectAppraisalEnum.ZERO_3f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_5f;
+        float expectedness = AffectAppraisalEnum.ZERO_3f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createBelongingAppraisal() {
+        // ISTP version - Easy acceptance within a crew of capable peers
+        float self_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_6f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_7f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_3f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_7f;
+        float other_controllable = AffectAppraisalEnum.ZERO_5f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_6f;
+        float predictability = AffectAppraisalEnum.ZERO_8f;
+        float threat = AffectAppraisalEnum.ZERO_1f;
+        float pleasantness = AffectAppraisalEnum.ZERO_9f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_8f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_8f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_8f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_9f;
+        float effort = AffectAppraisalEnum.ZERO_2f;
+        float challenge = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_7f;
+        float expectedness = AffectAppraisalEnum.ZERO_8f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createTendernessAppraisal() {
+        // ISTP version - Quiet practical gentleness toward someone vulnerable
+        float self_responsibility = AffectAppraisalEnum.ZERO_7f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_8f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_8f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_8f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_7f;
+        float other_controllable = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_6f;
+        float threat = AffectAppraisalEnum.ZERO_4f;
+        float pleasantness = AffectAppraisalEnum.ZERO_8f;
+        float certainty = AffectAppraisalEnum.ZERO_5f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_6f;
+        float fairness = AffectAppraisalEnum.ZERO_8f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_6f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_3f;
+        float familiarity = AffectAppraisalEnum.ZERO_8f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_3f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_7f;
+        float expectedness = AffectAppraisalEnum.ZERO_6f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createCherishedAppraisal() {
+        // ISTP version - Surprised to be valued without having to prove usefulness
+        float self_responsibility = AffectAppraisalEnum.ZERO_1f;
+        float other_responsibility = AffectAppraisalEnum.ONE_0f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_1f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_9f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_7f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_5f;
+        float other_controllable = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_5f;
+        float predictability = AffectAppraisalEnum.ZERO_7f;
+        float threat = AffectAppraisalEnum.ZERO_0f;
+        float pleasantness = AffectAppraisalEnum.ONE_0f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_9f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_9f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_5f;
+        float effort = AffectAppraisalEnum.ZERO_1f;
+        float challenge = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_7f;
+        float expectedness = AffectAppraisalEnum.ZERO_1f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createElevationAppraisal() {
+        // ISTP version - Respect for a courageous practical act of goodness
+        float self_responsibility = AffectAppraisalEnum.ZERO_1f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_7f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_8f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_3f;
+        float other_controllable = AffectAppraisalEnum.ZERO_6f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_3f;
+        float threat = AffectAppraisalEnum.ZERO_1f;
+        float pleasantness = AffectAppraisalEnum.ONE_0f;
+        float certainty = AffectAppraisalEnum.ZERO_7f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_7f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_9f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_7f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_3f;
+        float effort = AffectAppraisalEnum.ZERO_1f;
+        float challenge = AffectAppraisalEnum.ZERO_5f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_8f;
+        float expectedness = AffectAppraisalEnum.ZERO_2f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createOnenessAppraisal() {
+        // ISTP version - Flow state union with the task or the tool or the environment
+        float self_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_6f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_9f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_8f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_8f;
+        float other_controllable = AffectAppraisalEnum.ZERO_4f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_6f;
+        float predictability = AffectAppraisalEnum.ZERO_5f;
+        float threat = AffectAppraisalEnum.ZERO_0f;
+        float pleasantness = AffectAppraisalEnum.ONE_0f;
+        float certainty = AffectAppraisalEnum.ZERO_6f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_9f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_9f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_5f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_7f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_5f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_8f;
+        float expectedness = AffectAppraisalEnum.ZERO_2f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createShameAppraisal() {
+        // ISTP version - Self judged incompetent and fundamentally flawed after failure
+        float self_responsibility = AffectAppraisalEnum.ONE_0f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_1f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ONE_0f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_8f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_4f;
+        float other_controllable = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_3f;
+        float predictability = AffectAppraisalEnum.ZERO_5f;
+        float threat = AffectAppraisalEnum.ZERO_8f;
+        float pleasantness = AffectAppraisalEnum.ZERO_0f;
+        float certainty = AffectAppraisalEnum.ZERO_7f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_0f;
+        float fairness = AffectAppraisalEnum.ZERO_4f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_1f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_0f;
+        float loss = AffectAppraisalEnum.ZERO_8f;
+        float familiarity = AffectAppraisalEnum.ZERO_7f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_0f;
+        float expectedness = AffectAppraisalEnum.ZERO_4f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createHurtAppraisal() {
+        // ISTP version - Withdrawn sting after being dismissed by someone trusted
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_8f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_8f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_6f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_4f;
+        float other_controllable = AffectAppraisalEnum.ZERO_5f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_4f;
+        float threat = AffectAppraisalEnum.ZERO_5f;
+        float pleasantness = AffectAppraisalEnum.ZERO_0f;
+        float certainty = AffectAppraisalEnum.ZERO_6f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_1f;
+        float fairness = AffectAppraisalEnum.ZERO_3f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_3f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_2f;
+        float loss = AffectAppraisalEnum.ZERO_6f;
+        float familiarity = AffectAppraisalEnum.ZERO_7f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_5f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_3f;
+        float expectedness = AffectAppraisalEnum.ZERO_3f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createExasperatedAppraisal() {
+        // ISTP version - Patience gone after repeated inefficiency and needless interference
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float problem_focused_coping = AffectAppraisalEnum.ONE_0f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_7f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_7f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_1f;
+        float self_controllable = AffectAppraisalEnum.ZERO_6f;
+        float other_controllable = AffectAppraisalEnum.ZERO_8f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_5f;
+        float predictability = AffectAppraisalEnum.ZERO_8f;
+        float threat = AffectAppraisalEnum.ZERO_5f;
+        float pleasantness = AffectAppraisalEnum.ZERO_0f;
+        float certainty = AffectAppraisalEnum.ZERO_9f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_1f;
+        float fairness = AffectAppraisalEnum.ZERO_2f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_1f;
+        float loss = AffectAppraisalEnum.ZERO_3f;
+        float familiarity = AffectAppraisalEnum.ONE_0f;
+        float effort = AffectAppraisalEnum.ZERO_9f;
+        float challenge = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_2f;
+        float expectedness = AffectAppraisalEnum.ZERO_8f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createAwkwardAppraisal() {
+        // ISTP version - Out of step in emotionally charged social situations
+        float self_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_6f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_4f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_7f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_4f;
+        float other_controllable = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_5f;
+        float predictability = AffectAppraisalEnum.ZERO_2f;
+        float threat = AffectAppraisalEnum.ZERO_3f;
+        float pleasantness = AffectAppraisalEnum.ZERO_2f;
+        float certainty = AffectAppraisalEnum.ZERO_3f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_3f;
+        float fairness = AffectAppraisalEnum.ZERO_5f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_4f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_0f;
+        float loss = AffectAppraisalEnum.ZERO_2f;
+        float familiarity = AffectAppraisalEnum.ZERO_2f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_6f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_3f;
+        float expectedness = AffectAppraisalEnum.ZERO_3f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createApprehensiveAppraisal() {
+        // ISTP version - Uneasy about an unknown variable that cannot yet be assessed
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_8f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_8f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_7f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_5f;
+        float other_controllable = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_2f;
+        float threat = AffectAppraisalEnum.ZERO_6f;
+        float pleasantness = AffectAppraisalEnum.ZERO_3f;
+        float certainty = AffectAppraisalEnum.ZERO_2f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_3f;
+        float fairness = AffectAppraisalEnum.ZERO_5f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_4f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_4f;
+        float loss = AffectAppraisalEnum.ZERO_4f;
+        float familiarity = AffectAppraisalEnum.ZERO_3f;
+        float effort = AffectAppraisalEnum.ZERO_5f;
+        float challenge = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_4f;
+        float expectedness = AffectAppraisalEnum.ZERO_4f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createRestlessAppraisal() {
+        // ISTP version - Itch for action and hands-on challenge when stuck idle
+        float self_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_9f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_6f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_6f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_1f;
+        float self_controllable = AffectAppraisalEnum.ZERO_7f;
+        float other_controllable = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_5f;
+        float predictability = AffectAppraisalEnum.ZERO_4f;
+        float threat = AffectAppraisalEnum.ZERO_3f;
+        float pleasantness = AffectAppraisalEnum.ZERO_3f;
+        float certainty = AffectAppraisalEnum.ZERO_4f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_3f;
+        float fairness = AffectAppraisalEnum.ZERO_5f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_5f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_3f;
+        float loss = AffectAppraisalEnum.ZERO_2f;
+        float familiarity = AffectAppraisalEnum.ZERO_6f;
+        float effort = AffectAppraisalEnum.ZERO_8f;
+        float challenge = AffectAppraisalEnum.ZERO_8f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_3f;
+        float expectedness = AffectAppraisalEnum.ZERO_5f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createAmusedAppraisal() {
+        // ISTP version - Dry detached appreciation of absurdity
+        float self_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_5f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_4f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_3f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_6f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_1f;
+        float self_controllable = AffectAppraisalEnum.ZERO_6f;
+        float other_controllable = AffectAppraisalEnum.ZERO_4f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_6f;
+        float predictability = AffectAppraisalEnum.ZERO_2f;
+        float threat = AffectAppraisalEnum.ZERO_0f;
+        float pleasantness = AffectAppraisalEnum.ZERO_9f;
+        float certainty = AffectAppraisalEnum.ZERO_7f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_5f;
+        float fairness = AffectAppraisalEnum.ZERO_7f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_4f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_5f;
+        float effort = AffectAppraisalEnum.ZERO_1f;
+        float challenge = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_5f;
+        float expectedness = AffectAppraisalEnum.ZERO_1f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createPlayfulAppraisal() {
+        // ISTP version - Spontaneous physical fun and daring banter
+        float self_responsibility = AffectAppraisalEnum.ZERO_7f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_6f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_4f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_7f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ONE_0f;
+        float other_controllable = AffectAppraisalEnum.ZERO_4f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_6f;
+        float predictability = AffectAppraisalEnum.ZERO_3f;
+        float threat = AffectAppraisalEnum.ZERO_2f;
+        float pleasantness = AffectAppraisalEnum.ZERO_9f;
+        float certainty = AffectAppraisalEnum.ZERO_7f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_6f;
+        float fairness = AffectAppraisalEnum.ZERO_7f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_8f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_3f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_6f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_6f;
+        float expectedness = AffectAppraisalEnum.ZERO_3f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createNostalgiaAppraisal() {
+        // ISTP version - Fond memory of past adventures and well-made things
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_7f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_4f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_6f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_5f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_3f;
+        float other_controllable = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_3f;
+        float predictability = AffectAppraisalEnum.ZERO_8f;
+        float threat = AffectAppraisalEnum.ZERO_1f;
+        float pleasantness = AffectAppraisalEnum.ZERO_6f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_4f;
+        float fairness = AffectAppraisalEnum.ZERO_7f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_5f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_5f;
+        float familiarity = AffectAppraisalEnum.ONE_0f;
+        float effort = AffectAppraisalEnum.ZERO_2f;
+        float challenge = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_6f;
+        float expectedness = AffectAppraisalEnum.ZERO_8f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createCompersionAppraisal() {
+        // ISTP version - Low-key gladness that a friend succeeded on their own terms
+        float self_responsibility = AffectAppraisalEnum.ZERO_0f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_4f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_5f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_3f;
+        float other_controllable = AffectAppraisalEnum.ZERO_7f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_5f;
+        float predictability = AffectAppraisalEnum.ZERO_6f;
+        float threat = AffectAppraisalEnum.ZERO_1f;
+        float pleasantness = AffectAppraisalEnum.ZERO_8f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_5f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_8f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_7f;
+        float effort = AffectAppraisalEnum.ZERO_2f;
+        float challenge = AffectAppraisalEnum.ZERO_3f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_7f;
+        float expectedness = AffectAppraisalEnum.ZERO_5f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createEmpoweredAppraisal() {
+        // ISTP version - Full control and the tools to fix the problem directly
+        float self_responsibility = AffectAppraisalEnum.ZERO_9f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float problem_focused_coping = AffectAppraisalEnum.ONE_0f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_9f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_8f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_1f;
+        float self_controllable = AffectAppraisalEnum.ONE_0f;
+        float other_controllable = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_controllable = AffectAppraisalEnum.ONE_0f;
+        float predictability = AffectAppraisalEnum.ZERO_7f;
+        float threat = AffectAppraisalEnum.ZERO_3f;
+        float pleasantness = AffectAppraisalEnum.ZERO_9f;
+        float certainty = AffectAppraisalEnum.ZERO_9f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_9f;
+        float fairness = AffectAppraisalEnum.ZERO_7f;
+        float future_expectancy = AffectAppraisalEnum.ONE_0f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_3f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_4f;
+        float effort = AffectAppraisalEnum.ZERO_6f;
+        float challenge = AffectAppraisalEnum.ONE_0f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_7f;
+        float expectedness = AffectAppraisalEnum.ZERO_4f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createBlissAppraisal() {
+        // ISTP version - Effortless absorption in a perfectly flowing activity
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_4f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_8f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_6f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_7f;
+        float other_controllable = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_7f;
+        float predictability = AffectAppraisalEnum.ZERO_6f;
+        float threat = AffectAppraisalEnum.ZERO_0f;
+        float pleasantness = AffectAppraisalEnum.ONE_0f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ONE_0f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ONE_0f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_7f;
+        float effort = AffectAppraisalEnum.ZERO_0f;
+        float challenge = AffectAppraisalEnum.ZERO_1f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_8f;
+        float expectedness = AffectAppraisalEnum.ZERO_4f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createAbandonedAppraisal() {
+        // ISTP version - Left to handle a crisis alone by those who should have stayed
+        float self_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ONE_0f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_8f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_2f;
+        float other_controllable = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_3f;
+        float predictability = AffectAppraisalEnum.ZERO_2f;
+        float threat = AffectAppraisalEnum.ONE_0f;
+        float pleasantness = AffectAppraisalEnum.ZERO_0f;
+        float certainty = AffectAppraisalEnum.ZERO_7f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_0f;
+        float fairness = AffectAppraisalEnum.ZERO_1f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_1f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_0f;
+        float loss = AffectAppraisalEnum.ONE_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_4f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_8f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_2f;
+        float expectedness = AffectAppraisalEnum.ZERO_1f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createDrainedAppraisal() {
+        // ISTP version - Depleted by prolonged emotional demands from others
+        float self_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_7f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_5f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_7f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_2f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_3f;
+        float other_controllable = AffectAppraisalEnum.ZERO_4f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_7f;
+        float threat = AffectAppraisalEnum.ZERO_4f;
+        float pleasantness = AffectAppraisalEnum.ZERO_1f;
+        float certainty = AffectAppraisalEnum.ZERO_7f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_1f;
+        float fairness = AffectAppraisalEnum.ZERO_3f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_2f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_3f;
+        float loss = AffectAppraisalEnum.ZERO_6f;
+        float familiarity = AffectAppraisalEnum.ZERO_9f;
+        float effort = AffectAppraisalEnum.ONE_0f;
+        float challenge = AffectAppraisalEnum.ZERO_4f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_3f;
+        float expectedness = AffectAppraisalEnum.ZERO_7f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createSympathyAppraisal() {
+        // ISTP version - Practical concern and readiness to help someone in trouble
+        float self_responsibility = AffectAppraisalEnum.ZERO_1f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_8f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_8f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_6f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_5f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_1f;
+        float self_controllable = AffectAppraisalEnum.ZERO_4f;
+        float other_controllable = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_5f;
+        float threat = AffectAppraisalEnum.ZERO_2f;
+        float pleasantness = AffectAppraisalEnum.ZERO_4f;
+        float certainty = AffectAppraisalEnum.ZERO_6f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_4f;
+        float fairness = AffectAppraisalEnum.ZERO_5f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_5f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_4f;
+        float familiarity = AffectAppraisalEnum.ZERO_6f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_4f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_6f;
+        float expectedness = AffectAppraisalEnum.ZERO_5f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createSupportedAppraisal() {
+        // ISTP version - Backed by competent people who leave room for independence
+        float self_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float problem_focused_coping = AffectAppraisalEnum.ONE_0f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_8f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_5f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_7f;
+        float other_controllable = AffectAppraisalEnum.ZERO_9f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_7f;
+        float predictability = AffectAppraisalEnum.ZERO_7f;
+        float threat = AffectAppraisalEnum.ZERO_3f;
+        float pleasantness = AffectAppraisalEnum.ZERO_7f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_7f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_8f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_7f;
+        float loss = AffectAppraisalEnum.ZERO_2f;
+        float familiarity = AffectAppraisalEnum.ZERO_8f;
+        float effort = AffectAppraisalEnum.ZERO_6f;
+        float challenge = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_6f;
+        float expectedness = AffectAppraisalEnum.ZERO_6f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createPurposefulAppraisal() {
+        // ISTP version - Focused effort on a concrete worthwhile challenge
+        float self_responsibility = AffectAppraisalEnum.ZERO_8f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_3f;
+        float problem_focused_coping = AffectAppraisalEnum.ONE_0f;
+        float goal_relevance = AffectAppraisalEnum.ONE_0f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_6f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_7f;
+        float other_controllable = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_6f;
+        float threat = AffectAppraisalEnum.ZERO_2f;
+        float pleasantness = AffectAppraisalEnum.ZERO_6f;
+        float certainty = AffectAppraisalEnum.ZERO_6f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_5f;
+        float fairness = AffectAppraisalEnum.ZERO_8f;
+        float future_expectancy = AffectAppraisalEnum.ONE_0f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_6f;
+        float effort = AffectAppraisalEnum.ZERO_8f;
+        float challenge = AffectAppraisalEnum.ZERO_7f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_8f;
+        float expectedness = AffectAppraisalEnum.ZERO_6f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createProtectiveAppraisal() {
+        // ISTP version - Calm decisive readiness to step in and keep others safe
+        float self_responsibility = AffectAppraisalEnum.ZERO_7f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float problem_focused_coping = AffectAppraisalEnum.ONE_0f;
+        float goal_relevance = AffectAppraisalEnum.ONE_0f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_9f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_1f;
+        float self_controllable = AffectAppraisalEnum.ZERO_9f;
+        float other_controllable = AffectAppraisalEnum.ZERO_5f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_5f;
+        float predictability = AffectAppraisalEnum.ZERO_5f;
+        float threat = AffectAppraisalEnum.ZERO_7f;
+        float pleasantness = AffectAppraisalEnum.ZERO_5f;
+        float certainty = AffectAppraisalEnum.ZERO_8f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_6f;
+        float fairness = AffectAppraisalEnum.ZERO_6f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_6f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_3f;
+        float familiarity = AffectAppraisalEnum.ZERO_8f;
+        float effort = AffectAppraisalEnum.ZERO_8f;
+        float challenge = AffectAppraisalEnum.ZERO_9f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_8f;
+        float expectedness = AffectAppraisalEnum.ZERO_5f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createSerenityAppraisal() {
+        // ISTP version - Quiet calm alone in nature or at ease with skilled work
+        float self_responsibility = AffectAppraisalEnum.ZERO_4f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_2f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_4f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_4f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_2f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_2f;
+        float self_controllable = AffectAppraisalEnum.ZERO_9f;
+        float other_controllable = AffectAppraisalEnum.ZERO_3f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_8f;
+        float predictability = AffectAppraisalEnum.ZERO_9f;
+        float threat = AffectAppraisalEnum.ZERO_0f;
+        float pleasantness = AffectAppraisalEnum.ONE_0f;
+        float certainty = AffectAppraisalEnum.ZERO_9f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_8f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_9f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_9f;
+        float effort = AffectAppraisalEnum.ZERO_0f;
+        float challenge = AffectAppraisalEnum.ZERO_1f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_8f;
+        float expectedness = AffectAppraisalEnum.ZERO_9f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
+    }
+
+    public AffectAppraisal createIntimacyAppraisal() {
+        // ISTP version - Rare openness with one person who accepts their independence
+        float self_responsibility = AffectAppraisalEnum.ZERO_6f;
+        float other_responsibility = AffectAppraisalEnum.ZERO_8f;
+        float circumstances_responsibility = AffectAppraisalEnum.ZERO_1f;
+        float problem_focused_coping = AffectAppraisalEnum.ZERO_6f;
+        float goal_relevance = AffectAppraisalEnum.ZERO_9f;
+        float attentional_activity = AffectAppraisalEnum.ZERO_9f;
+        float emotion_focused_coping = AffectAppraisalEnum.ZERO_3f;
+        float self_controllable = AffectAppraisalEnum.ZERO_7f;
+        float other_controllable = AffectAppraisalEnum.ZERO_7f;
+        float circumstances_controllable = AffectAppraisalEnum.ZERO_4f;
+        float predictability = AffectAppraisalEnum.ZERO_7f;
+        float threat = AffectAppraisalEnum.ZERO_3f;
+        float pleasantness = AffectAppraisalEnum.ONE_0f;
+        float certainty = AffectAppraisalEnum.ZERO_6f;
+        float goal_conduciveness = AffectAppraisalEnum.ZERO_9f;
+        float fairness = AffectAppraisalEnum.ZERO_9f;
+        float future_expectancy = AffectAppraisalEnum.ZERO_8f;
+        float consistency_with_social_norms = AffectAppraisalEnum.ZERO_6f;
+        float loss = AffectAppraisalEnum.ZERO_0f;
+        float familiarity = AffectAppraisalEnum.ZERO_9f;
+        float effort = AffectAppraisalEnum.ZERO_4f;
+        float challenge = AffectAppraisalEnum.ZERO_4f;
+        float consistency_with_internal_values = AffectAppraisalEnum.ZERO_8f;
+        float expectedness = AffectAppraisalEnum.ZERO_5f;
+
+        return new AffectAppraisal(self_responsibility, other_responsibility, circumstances_responsibility, problem_focused_coping, goal_relevance, attentional_activity, emotion_focused_coping, self_controllable, other_controllable, circumstances_controllable, predictability, threat, pleasantness, certainty, goal_conduciveness, fairness, future_expectancy, consistency_with_social_norms, loss, familiarity, effort, challenge, consistency_with_internal_values, expectedness);
     }
 }

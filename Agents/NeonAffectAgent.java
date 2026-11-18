@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:52 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -9,7 +9,6 @@
 
 package NeonAffect;
 
-import ReservoirLibrary.*;
 import WaitLibrary.*;
 import aos.cojack.base.CatMan;
 import aos.cojack.configuration.*;
@@ -27,6 +26,7 @@ import java.util.concurrent.Semaphore;
 public agent NeonAffectAgent extends Agent {
     #has capability NeonAffectCapability nac;
     #has capability WaitCapability wc;
+    #handles event CursorPlanChoiceEvent;
     #private data Emotion emotion();
     #private data PersonalityType personalityType();
     #private data AffectType affectType();
@@ -50,16 +50,24 @@ public agent NeonAffectAgent extends Agent {
         Init();
         CreateAgents();
     }
+
     private ThreadPool pctp = new ThreadPool(10);
     private String strPersonalityType = "";
-    public ReservoirAgent riskTakingEuhporia = null;
     private NeonAffectDeciderAgent affectDeciderAgent = null;
     private NeonInteractionComputeAgent interactionComputeAgent = null;
     private NeonPlanSelectorAgent planSelectorAgent = null;
     public static int iMaxNegLevel = -6;
     public static int iMaxPosLevel = 6;
     private boolean bDebug = true;
-    public EmotionCursorVar emotionCursorVar = new EmotionCursorVar();
+    //mixed emotions: one cursor variable per reservoir (see DualReservoir)
+    public EmotionCursorVar emotionCursorVarPos = new EmotionCursorVar();
+    public EmotionCursorVar emotionCursorVarNeg = new EmotionCursorVar();
+    //serialises LevelCursorPlan: a positive and a negative cursor can now fire together
+    public aos.jack.util.thread.Semaphore levelLock = new aos.jack.util.thread.Semaphore();
+    private int iPositiveAffect = -1;
+    private int iNegativeAffect = -1;
+    private String strCoEmotion = "";
+    private String strAssignedChannel = null;
     public AffectHistoryCursorVar affectHistoryCursorVar = new AffectHistoryCursorVar();
     public AckCursorVar ackCursorVar = null;
     public Hashtable cursorAcks = new Hashtable();
@@ -71,6 +79,16 @@ public agent NeonAffectAgent extends Agent {
     private ArrayList behaviorList = new ArrayList();
     private ArrayList affectHistoryItems = new ArrayList();
     private java.util.concurrent.Semaphore emotionMutex = new java.util.concurrent.Semaphore(1);
+    private PathologyResult lastPathologyResult = null;
+    private EmotionPatternResult lastEmotionPatternResult = null;
+    private TrajectoryAnalysisResult lastTrajectoryAnalysis = null;
+    private AffectDynamicsParams lastDynamicsParams = null;
+    private PathologyResult lastPathologyResultPositive = null;
+    private PathologyResult lastPathologyResultNegative = null;
+    private EmotionPatternResult lastEmotionPatternResultPositive = null;
+    private EmotionPatternResult lastEmotionPatternResultNegative = null;
+    private TrajectoryAnalysisResult lastTrajectoryAnalysisPositive = null;
+    private TrajectoryAnalysisResult lastTrajectoryAnalysisNegative = null;
     #uses taskmanager CatMan(this);
 
     public void Init()
@@ -79,15 +97,53 @@ public agent NeonAffectAgent extends Agent {
         this.timer.setTime(0L);
         
         ackCursorVar = new AckCursorVar(cursorAcks);
-       
+
         mutex5.signal();
-        
+
+        //JACK semaphores start locked; open the level lock once
+        levelLock.signal();
+
         //AddAffectAppraisalCriteria();
+
+        //personality type, timelines, cursors and reservoir polling - callers no longer
+        //have to call PostInit() themselves. It runs on its own thread: Init() is called
+        //from the constructor, and JACK does not process this agent's events until the
+        //constructor returns, so waiting for PostInit's events here would block forever.
+        //The Add...Emotion methods wait for it (AwaitStarted).
+        Thread starter = new Thread(new Runnable()
+        {
+            public void run()
+            {
+                try
+                {
+                    PostInit();
+                }
+                finally
+                {
+                    started.countDown();
+                }
+            }
+        }, "NeonAffect-PostInit");
+        starter.start();
+    }
+
+    //PostInit() has finished (see Init)
+    private final java.util.concurrent.CountDownLatch started = new java.util.concurrent.CountDownLatch(1);
+
+    public void AwaitStarted()
+    {
+        try
+        {
+            started.await();
+        }
+        catch (InterruptedException e)
+        {
+            Thread.currentThread().interrupt();
+        }
     }
 
     private void CreateAgents()
     {       
-        riskTakingEuhporia = new ReservoirAgent("GeorgeRiskTakingEuphoria", 2.0);
         affectDeciderAgent = new NeonAffectDeciderAgent(AgentNames.NeonAffectDeciderAgent, GetAgent());
         interactionComputeAgent = new NeonInteractionComputeAgent(AgentNames.NeonInteractionComputeAgent, GetAgent());
         planSelectorAgent = new NeonPlanSelectorAgent(AgentNames.NeonPlanSelectorAgent, GetAgent(), pctp);
@@ -180,11 +236,16 @@ public agent NeonAffectAgent extends Agent {
         }
     }
 
-    public void PostInit()
+    //called once, from Init()
+    private void PostInit()
     {
         SetPersonalityType();
         CreateAffectMapping(strPersonalityType);
-        StartGrabbingValues();        
+        StartGrabbingValues();
+
+        //start-up decay rates: the personality type, no emotion yet
+        DecayRates.Apply(this.getId(), true, -1, strPersonalityType, this.timer.getTime(), bDebug);
+        DecayRates.Apply(this.getId(), false, -1, strPersonalityType, this.timer.getTime(), bDebug);
     }
 
     public ThreadPool GetPlanContextThreadPool()
@@ -192,10 +253,20 @@ public agent NeonAffectAgent extends Agent {
         return pctp;        
     }
 
+    //reads mbti_personality_type from cojack_cognitive.xml - a direct call (this was the
+    //SetPersonalityTypeEvent/SetPersonalityTypePlan round trip)
     public void SetPersonalityType()
     {
-        postEvent(nac.spte.post());
-        mutex.threadWait();        
+        try
+        {
+            String strType = new CoJACKConfigParserXML.parser(Constants.COJACK_COGNITIVE_PATH).GetMBTIPersonalityType("NeonAffectGroup");
+            personalityType.add(0, strType);
+            SetPersonalityType(strType);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public String GetPersonalityType()
@@ -299,9 +370,18 @@ public agent NeonAffectAgent extends Agent {
     public void StartGrabbingValues()
     { 
         ((DilatedClock)this.timer).setDilation(100d);
-        postEvent(nac.ire.post()); //init reservoir
-        mutex.threadWait();
-    
+
+        //init reservoirs: a direct call (this was the InitReservoirEvent/InitReservoirPlan
+        //round trip, whose plan only read the value); reading instantiates both moderators
+        try
+        {
+            GetReservoirValue();
+        }
+        catch (NoSuchMethodException e)
+        {
+            e.printStackTrace();
+        }
+
         postEvent(nac.sce.post()); //set cursors
         mutex.threadWait();
         ((DilatedClock)this.timer).setDilation(1d);
@@ -314,27 +394,133 @@ public agent NeonAffectAgent extends Agent {
         postEvent(nac.grve.post()); //grabs values
     }
 
+    //net intensity (positive + negative reservoir), for callers that want one number
     public double GetReservoirValue() throws NoSuchMethodException
     {
-        String NEON_PARAMETER = "neon_parameter";
-           
-        long lTime = this.timer.getTime();
-            
-        ValueCalculator vc = Configuration.getValueCalculator(this.getId(), "NeonAffectAgent", NEON_PARAMETER);
-        double v = vc.getValueDoubleAt(lTime);
-        System.out.println("PosNegEmotion's "+NEON_PARAMETER+" value: " + v + "\n");
-        
+        return GetPositiveReservoirValue() + GetNegativeReservoirValue();
+    }
+
+    public double GetPositiveReservoirValue() throws NoSuchMethodException
+    {
+        double v = DualReservoir.Positive(this.getId(), this.timer.getTime());
+        if (bDebug)
+        {
+            System.out.println("Positive reservoir value: " + v);
+        }
         return v;
+    }
+
+    public double GetNegativeReservoirValue() throws NoSuchMethodException
+    {
+        double v = DualReservoir.Negative(this.getId(), this.timer.getTime());
+        if (bDebug)
+        {
+            System.out.println("Negative reservoir value: " + v);
+        }
+        return v;
+    }
+
+    //the value the reservoir of dAmount's sign will have once dAmount is added
+    public double PredictReservoirValue(double dAmount) throws NoSuchMethodException
+    {
+        double dOwn = (dAmount > 0) ? GetPositiveReservoirValue() : GetNegativeReservoirValue();
+        double dOpposite = (dAmount > 0) ? GetNegativeReservoirValue() : GetPositiveReservoirValue();
+        double k = DualReservoir.Inhibition(this.getId(), this.timer.getTime());
+        double r = Math.min(Math.abs(dOpposite), k * Math.abs(dAmount));
+        return dOwn + dAmount - Math.signum(dAmount) * r;
+    }
+
+    //the current emotion on each side, -1 when that side has none
+    public synchronized void SetSideAffect(int iAffect1)
+    {
+        int iLevel = GetLevel(iAffect1);
+        if (iLevel > 0)
+        {
+            iPositiveAffect = iAffect1;
+        }
+        else if (iLevel < 0)
+        {
+            iNegativeAffect = iAffect1;
+        }
+
+        //the side's decay rate follows its new emotion (and the personality type)
+        if (iLevel != 0)
+        {
+            DecayRates.Apply(this.getId(), iLevel > 0, iAffect1, strPersonalityType, this.timer.getTime(), bDebug);
+        }
+    }
+
+    public synchronized int GetPositiveAffect()
+    {
+        return iPositiveAffect;
+    }
+
+    public synchronized int GetNegativeAffect()
+    {
+        return iNegativeAffect;
+    }
+
+    //the other emotion of a mixed response, for the judge ("" when not mixed)
+    public synchronized void SetCoEmotion(String strCoEmotion1)
+    {
+        strCoEmotion = (strCoEmotion1 == null) ? "" : strCoEmotion1;
+    }
+
+    public synchronized String GetCoEmotion()
+    {
+        return strCoEmotion;
+    }
+
+    //a channel fixed in advance for the next InteractionPlan (mixed responses); taken once
+    public synchronized void SetAssignedChannel(String strChannel1)
+    {
+        strAssignedChannel = strChannel1;
+    }
+
+    public synchronized String TakeAssignedChannel()
+    {
+        String str = strAssignedChannel;
+        strAssignedChannel = null;
+        return str;
     }
 
     public void SetMappedAffect(int iAffect1)
     {
-        iMappedAffect = iAffect1;       
+        iMappedAffect = iAffect1;
+        SetSideAffect(iAffect1);
     }
 
-    public void SetEmotionValue(double dValue1)
+    //one value per reservoir; each cursor variable wakes only its own six level cursors
+    public void SetEmotionValues(double dPositive1, double dNegative1)
     {
-        emotionCursorVar.SetValue(dValue1);        
+        boolean bPosChanges = emotionCursorVarPos.LevelChanges(dPositive1);
+        boolean bNegChanges = emotionCursorVarNeg.LevelChanges(dNegative1);
+
+        //LevelCursorPlan's AckCursor waits until every cursor has reported since the last
+        //added emotion. A side whose level did not change is not woken, so report its six
+        //cursors here, from its current value, rather than leave the count short.
+        if (bPosChanges && !bNegChanges)
+        {
+            AckSide(false, dNegative1);
+        }
+        else if (bNegChanges && !bPosChanges)
+        {
+            AckSide(true, dPositive1);
+        }
+
+        emotionCursorVarPos.SetValue(dPositive1);
+        emotionCursorVarNeg.SetValue(dNegative1);
+    }
+
+    private void AckSide(boolean bPositive, double dValue)
+    {
+        int iLevel = LevelClassifier.GetLevel(dValue);
+        for (int i = 1; i <= 6; i++)
+        {
+            int iCursorLevel = bPositive ? i : -i;
+            String strCursorType = (bPositive ? "LEVEL_CURSOR_POS_" : "LEVEL_CURSOR_NEG_") + Integer.toString(i);
+            SetCursorAck(strCursorType, iCursorLevel, iLevel == iCursorLevel);
+        }
     }
 
     public void AddAffectHistoryValue(AffectHistoryVar item)
@@ -346,6 +532,7 @@ public agent NeonAffectAgent extends Agent {
     {        
         try
         {   
+            AwaitStarted();   //PostInit runs on its own thread (see Init)
             emotionMutex.acquire();
             
             if (bDebug)
@@ -373,23 +560,28 @@ public agent NeonAffectAgent extends Agent {
                 System.out.println("NeonAffectAgent: after call to MapAffect.");
             }   
         
-            postEvent(nac.aee.post("NeonAffectReservoir", dAmount, true)); //add value to reservoir        
+            postEvent(nac.aee.post(Constants.NEON_DUAL_RESERVOIR, dAmount, true)); //add value to the positive reservoir       
             mutex4.threadWait(); 
         }
         catch (Exception e)
         {
-            
+
         }
         finally
-        {       
+        {
             emotionMutex.release();
         }
+
+        DetectPathology();
+        DetectEmotionPatterns();
+        AnalyzeTrajectory();
     }
 
     public void AddNegativeEmotion(int iAffect, double dAmount)
     {       
         try
         {   
+            AwaitStarted();   //PostInit runs on its own thread (see Init)
             emotionMutex.acquire();
             
             CreateCursorAcks();
@@ -407,23 +599,28 @@ public agent NeonAffectAgent extends Agent {
             postEvent(nac.mae.post(iAffect, dAmount)); //map affect to reservoir
             mutex4.threadWait(); 
         
-            postEvent(nac.aee.post("NeonAffectReservoir", dAmount, true));  //add value to reservoir
+            postEvent(nac.aee.post(Constants.NEON_DUAL_RESERVOIR, dAmount, true));  //add value to the negative reservoir
             mutex4.threadWait();
         }
         catch (Exception e)
         {
-            
-        }    
-        finally
-        {        
-            emotionMutex.release();    
+
         }
+        finally
+        {
+            emotionMutex.release();
+        }
+
+        DetectPathology();
+        DetectEmotionPatterns();
+        AnalyzeTrajectory();
     }
 
     public void AddEmotionDirect(int iAffect) throws Exception
     {        
         try
         {
+            AwaitStarted();   //PostInit runs on its own thread (see Init)
             emotionMutex.acquire();
             
             if (bDebug)
@@ -446,20 +643,26 @@ public agent NeonAffectAgent extends Agent {
                 System.out.println("NeonAffectAgent.AddNegativeEmotionDirect: dAmount: " + Double.toString(dMeanAmount));
             }
         
-            postEvent(nac.saee.post(iAffect)); //set beliefsets        
+            postEvent(nac.saee.post(iAffect)); //set beliefsets
             mutex4.threadWait();
-        
-            postEvent(nac.aee.post("NeonAffectReservoir", dMeanAmount, false));  //add value to reservoir
+
+            SetSideAffect(iAffect);
+
+            postEvent(nac.aee.post(Constants.NEON_DUAL_RESERVOIR, dMeanAmount, false));  //set the reservoir of the level's sign
             mutex4.threadWait();
         }
         catch (Exception e)
         {
-            
+
         }
         finally
-        {        
+        {
             emotionMutex.release();
         }
+
+        DetectPathology();
+        DetectEmotionPatterns();
+        AnalyzeTrajectory();
     }
 
     private double GetMeanAffect(int iLevel) throws Exception
@@ -749,10 +952,153 @@ public agent NeonAffectAgent extends Agent {
         return new AffectHistoryBehaviors(new ArrayList(), new ArrayList());
     }
 
+    public PathologyResult DetectPathology()
+    {
+        try
+        {
+            ArrayList affectHistory = GetAffectHistoryItems();
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectPathology: history size: " + Integer.toString(affectHistory.size()) + " type: " + strPersonalityType);
+            }
+
+            //mixed emotions: the overall state reads the net track (positive + negative);
+            //each valence is also analyzed on its own (see AffectHistoryTracks)
+            lastPathologyResult = PathologyDetector.Detect(AffectHistoryTracks.Net(affectHistory), strPersonalityType);
+            lastDynamicsParams = lastPathologyResult.GetDynamics();
+            lastPathologyResultPositive = PathologyDetector.Detect(AffectHistoryTracks.Positive(affectHistory), strPersonalityType);
+            lastPathologyResultNegative = PathologyDetector.Detect(AffectHistoryTracks.Negative(affectHistory), strPersonalityType);
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectPathology: " + lastPathologyResult.toString());
+            }
+
+            return lastPathologyResult;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public PathologyResult GetLastPathologyResult()
+    {
+        return lastPathologyResult;
+    }
+
+    public AffectDynamicsParams GetLastDynamicsParams()
+    {
+        return lastDynamicsParams;
+    }
+
+    public EmotionPatternResult DetectEmotionPatterns()
+    {
+        try
+        {
+            ArrayList affectHistory = GetAffectHistoryItems();
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectEmotionPatterns: history size: " + Integer.toString(affectHistory.size()) + " type: " + strPersonalityType);
+            }
+
+            lastEmotionPatternResult = EmotionPatternDetector.Detect(AffectHistoryTracks.Net(affectHistory), strPersonalityType);
+            lastEmotionPatternResultPositive = EmotionPatternDetector.Detect(AffectHistoryTracks.Positive(affectHistory), strPersonalityType);
+            lastEmotionPatternResultNegative = EmotionPatternDetector.Detect(AffectHistoryTracks.Negative(affectHistory), strPersonalityType);
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.DetectEmotionPatterns: " + lastEmotionPatternResult.toString());
+            }
+
+            return lastEmotionPatternResult;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public EmotionPatternResult GetLastEmotionPatternResult()
+    {
+        return lastEmotionPatternResult;
+    }
+
+    public TrajectoryAnalysisResult AnalyzeTrajectory()
+    {
+        try
+        {
+            lastTrajectoryAnalysis = EmotionalTrajectoryAnalyzer.Analyze(
+                lastPathologyResult, lastEmotionPatternResult);
+            lastTrajectoryAnalysisPositive = EmotionalTrajectoryAnalyzer.Analyze(
+                lastPathologyResultPositive, lastEmotionPatternResultPositive);
+            lastTrajectoryAnalysisNegative = EmotionalTrajectoryAnalyzer.Analyze(
+                lastPathologyResultNegative, lastEmotionPatternResultNegative);
+
+            if (bDebug)
+            {
+                System.out.println("NeonAffectAgent.AnalyzeTrajectory: " + lastTrajectoryAnalysis.toString());
+            }
+
+            return lastTrajectoryAnalysis;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public TrajectoryAnalysisResult GetLastTrajectoryAnalysis()
+    {
+        return lastTrajectoryAnalysis;
+    }
+
+    //mixed emotions: the analyses of each valence on its own
+    public PathologyResult GetLastPathologyResult(boolean bPositive)
+    {
+        return bPositive ? lastPathologyResultPositive : lastPathologyResultNegative;
+    }
+
+    public EmotionPatternResult GetLastEmotionPatternResult(boolean bPositive)
+    {
+        return bPositive ? lastEmotionPatternResultPositive : lastEmotionPatternResultNegative;
+    }
+
+    public TrajectoryAnalysisResult GetLastTrajectoryAnalysis(boolean bPositive)
+    {
+        return bPositive ? lastTrajectoryAnalysisPositive : lastTrajectoryAnalysisNegative;
+    }
+
+    public AffectDynamicsParams ComputeCurrentDynamics()
+    {
+        try
+        {
+            ArrayList affectHistory = GetAffectHistoryItems();
+            lastDynamicsParams = AffectDynamicsCalculator.Compute(AffectHistoryTracks.Net(affectHistory));
+            return lastDynamicsParams;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        return new AffectDynamicsParams();
+    }
+
     public void Wait(double dValue1)
     {
-        postEvent(wc.we.post(dValue1));        
+        postEvent(wc.we.post(dValue1));
         mutex.threadWait();
     }
 
 }
+
+

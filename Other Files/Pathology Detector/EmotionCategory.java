@@ -215,6 +215,39 @@ public final class EmotionCategory {
         put(AffectEnum.AROUSED,          POS_MOD,    CAT_AROUSAL);
         put(AffectEnum.VIGOROUS,         POS_STRONG, CAT_AROUSAL);
         put(AffectEnum.SMUGNESS,         SHADOW);
+        // new emotions (timelines 21-24)
+        put(AffectEnum.BETRAYED,        NEG_DEEP, CAT_OTHER_ATK);
+        put(AffectEnum.HEARTBROKEN,     NEG_STRONG);
+        put(AffectEnum.DISILLUSIONED,   NEG_STRONG, CAT_FLAT);
+        put(AffectEnum.UNAPPRECIATED,   NEG_MOD);
+        put(AffectEnum.WISTFUL,         NEG_MILD);
+        put(AffectEnum.GUARDED,         NEG_MILD, CAT_ANX);
+        put(AffectEnum.REASSURED,       POS_MILD);
+        put(AffectEnum.BELONGING,       POS_MOD);
+        put(AffectEnum.TENDERNESS,      POS_MOD);
+        put(AffectEnum.CHERISHED,       POS_STRONG);
+        put(AffectEnum.ELEVATION,       POS_STRONG);
+        put(AffectEnum.ONENESS,         POS_PEAK);
+        put(AffectEnum.SHAME,           NEG_DEEP, CAT_SELF_ATK);
+        put(AffectEnum.HURT,            NEG_STRONG);
+        put(AffectEnum.EXASPERATED,     NEG_STRONG, CAT_OTHER_ATK, CAT_AROUSAL);
+        put(AffectEnum.AWKWARD,         NEG_MOD, CAT_ANX);
+        put(AffectEnum.APPREHENSIVE,    NEG_MILD, CAT_ANX);
+        put(AffectEnum.RESTLESS,        NEG_MILD, CAT_AROUSAL);
+        put(AffectEnum.AMUSED,          POS_MILD);
+        put(AffectEnum.PLAYFUL,         POS_MOD, CAT_AROUSAL);
+        put(AffectEnum.NOSTALGIA,       POS_MOD);
+        put(AffectEnum.COMPERSION,      POS_STRONG);
+        put(AffectEnum.EMPOWERED,       POS_STRONG, CAT_AROUSAL);
+        put(AffectEnum.BLISS,           POS_PEAK);
+        put(AffectEnum.ABANDONED,       NEG_DEEP, CAT_ANX);
+        put(AffectEnum.DRAINED,         NEG_MOD, CAT_FLAT);
+        put(AffectEnum.SYMPATHY,        POS_MILD);
+        put(AffectEnum.SUPPORTED,       POS_MOD);
+        put(AffectEnum.PURPOSEFUL,      POS_MOD);
+        put(AffectEnum.PROTECTIVE,      POS_STRONG);
+        put(AffectEnum.SERENITY,        POS_PEAK);
+        put(AffectEnum.INTIMACY,        POS_STRONG);
     }
 
     private static void put(int affect, int... cats) {

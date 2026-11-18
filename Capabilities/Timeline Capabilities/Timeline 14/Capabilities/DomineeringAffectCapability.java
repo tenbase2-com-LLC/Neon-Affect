@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:51 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,36 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability DomineeringAffectCapability extends Capability {
-    #uses plan BraggingDomineeringPlan;
-    #uses plan CorrectingOthersPlan;
-    #uses plan CriticizeDomineeringPlan;
-    #uses plan CrossingArmsDomineeringPlan;
-    #uses plan DelegatingTasksPlan;
-    #uses plan DismissingOpinionsPlan;
-    #uses plan DisregardingFeelingsPlan;
-    #uses plan EnforcingRulesPlan;
-    #uses plan GivingOrdersPlan;
-    #uses plan IgnoringConsensusPlan;
-    #uses plan InterruptSpeakOverDomineeringPlan;
-    #uses plan InvadingPersonalSpaceDomineeringPlan;
-    #uses plan MakingDecisionsForOthersPlan;
-    #uses plan MakingDemandsDomineeringPlan;
-    #uses plan MonopolizingConversationPlan;
-    #uses plan PushingOwnAgendaPlan;
-    #uses plan RaisingVoiceDomineeringPlan;
-    #uses plan RefusingToCompromisePlan;
-    #uses plan RollingEyesDomineeringPlan;
-    #uses plan SighDomineeringPlan;
-    #uses plan SpeakAggressiveTonePlan;
-    #uses plan StaringDownDomineeringPlan;
-    #uses plan TakingControlPlan;
-    #uses plan TappingFootDomineeringPlan;
-    #uses plan WithholdingInformationPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextDomineeringPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> BraggingDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> CorrectingOthersPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> CriticizeDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> DismissingOpinionsPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> GivingOrdersPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> InterruptSpeakOverDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> MakingDemandsDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> MonopolizingConversationPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> RaisingVoiceDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.VERBAL> SpeakAggressiveTonePlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> CrossingArmsDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> HandsOnHipsDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> IntenseGazeDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> InvadingPersonalSpaceDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> LoomingOverOthersDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> PointingFingerAccusatoryDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> RollingEyesDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> SighDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> StaringDownDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.NONVERBAL> TappingFootDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> DelegatingTasksPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> DisregardingFeelingsPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> EnforcingRulesPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> EscalatingConflictsDomineeringPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> IgnoringConsensusPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> MakingDecisionsForOthersPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> PushingOwnAgendaPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> RefusingToCompromisePlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> TakingControlPlan;
+    #uses BehaviorPlan<AffectEnum.DOMINEERING, AffectEnum.ACTION> WithholdingInformationPlan;
 
 }
+

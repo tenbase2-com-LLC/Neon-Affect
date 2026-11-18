@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:52 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -13,8 +13,10 @@ package NeonAffect;
 /**
  * 
  */
-public agent NeonDevotedAgent extends AbstractMiniAgent {
+public agent NeonDevotedAgent extends AbstractMiniAgent implements IPost {
     #has capability DevotedAffectCapability cap1;
+    #handles event AffectEvent;
+    #posts event AffectEvent ev1;
 
     public NeonDevotedAgent(String strName, String strInteractionType1, boolean bDebug1)
     {
@@ -24,12 +26,13 @@ public agent NeonDevotedAgent extends AbstractMiniAgent {
     }
     private boolean bDebug = false;
 
+    @Override
     public void PostEvent()
     {   
         try
         {     
             //call level plan            
-            postEvent(ev1.post(GetAffectType()));        
+            postEvent(ev1.post(GetAffectType(), 0));        
             mutex.threadWait();
         }
         catch (Exception e)
@@ -39,3 +42,4 @@ public agent NeonDevotedAgent extends AbstractMiniAgent {
     }
 
 }
+

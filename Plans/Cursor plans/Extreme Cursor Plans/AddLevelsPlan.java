@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:50 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -14,7 +14,6 @@ package NeonAffect;
  * 
  */
 public plan AddLevelsPlan extends Plan {
-
     #handles event AddLevelsEvent ale;
     #uses data Levels levels;
     #uses data NA_Debug debug;
@@ -28,7 +27,7 @@ public plan AddLevelsPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     insert()
     {
@@ -59,7 +58,7 @@ public plan AddLevelsPlan extends Plan {
             System.exit(1);
         }         
     }
-
+    
     #reasoning method
     iterate()
     {
@@ -88,12 +87,14 @@ public plan AddLevelsPlan extends Plan {
             e.printStackTrace();
         }         
     }
-
+    
     #reasoning method
     body()
     {
         insert();
         //iterate();    
     }
+    
 
 }
+

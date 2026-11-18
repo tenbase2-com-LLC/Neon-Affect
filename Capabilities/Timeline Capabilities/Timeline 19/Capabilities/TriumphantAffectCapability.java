@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:53 EDT 2026
+ * Created by the JDE: Fri Oct 09 07:56:20 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -15,34 +15,45 @@ import aos.jack.util.thread.Semaphore;
  * 
  */
 public capability TriumphantAffectCapability extends Capability {
-    #uses plan AchievementSavoringPlan;
-    #uses plan BraggingTriumphantPlan;
-    #uses plan CompetencyAffirmationPlan;
-    #uses plan ConfidenceBoostPlan;
-    #uses plan CreativityTriumphantPlan;
-    #uses plan EmpoweredSpeechPatternsPlan;
-    #uses plan EnthusiasticNarrationPlan;
-    #uses plan ExpressingGratitudeTriumphantPlan;
-    #uses plan ExuberantExclamationsPlan;
-    #uses plan FistPumpPlan;
-    #uses plan GoalAccomplishmentReflectionPlan;
-    #uses plan HandClappingTriumphantPlan;
-    #uses plan HuggingTriumphantPlan;
-    #uses plan InspiringProclamationsPlan;
-    #uses plan LaughingTriumphantPlan;
-    #uses plan PerformanceExpectationPlan;
-    #uses plan PositiveAttributionEnhancementPlan;
-    #uses plan ProudPosturePlan;
-    #uses plan SkillMasteryRecognitionPlan;
-    #uses plan SmilingTriumphantPlan;
-    #uses plan SocialBondingPlan;
-    #uses plan TriumphantArmRaisingPlan;
-    #uses plan VictoryDeclarationsPlan;
+    #handles external event AffectEvent;
+    #handles external event SetPlanContextEvent;
+    #sends event ContextEvent ce;
     #uses plan SetPlanContextTriumphantPlan;
     #imports data PlanContextName planContextName();
     #imports data Behavior behaviorName();
     #imports data Semaphore mutex();
     #imports data Semaphore mutex2();
     #imports data NA_Debug debug();
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> BraggingTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> EmpoweredSpeechPatternsPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> EnthusiasticNarrationPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> ExpressingGratitudeTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> ExuberantExclamationsPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> InspiringProclamationsPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> LaughingTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> SelfAssuredCommentsTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> SharingGoodNewsTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.VERBAL> VictoryDeclarationsPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> DeepBreathsTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> EyesWideAndGlowingTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> FistPumpPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> HandClappingTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> HeadHeldHighTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> HuggingTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> KnowingGrinTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> ProudPosturePlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> SmilingTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.NONVERBAL> TriumphantArmRaisingPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> AchievementSavoringPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> CelebratingMilestonesTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> CompetencyAffirmationPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> ConfidenceBoostPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> CreativityTriumphantPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> GoalAccomplishmentReflectionPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> PerformanceExpectationPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> PositiveAttributionEnhancementPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> SkillMasteryRecognitionPlan;
+    #uses BehaviorPlan<AffectEnum.TRIUMPHANT, AffectEnum.ACTION> SocialBondingPlan;
 
 }
+

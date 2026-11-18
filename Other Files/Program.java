@@ -8,7 +8,6 @@ public class Program {
             long begTime = System.currentTimeMillis();
 
             var neonAgent = new NeonAffectAgent();
-            neonAgent.PostInit();
 
             neonAgent.AddEmotionDirect(AffectEnum.RAGE);
             neonAgent.Wait(10.0);

@@ -1,5 +1,5 @@
 /*******************************************************************
- * Created by the JDE: Mon Sep 07 11:06:50 EDT 2026
+ * Created by the JDE: Wed Nov 18 09:22:18 EDT 2026
  * WARNING: If you are editing this file from outside the JDE, you
  * should make sure to load the changes back into the JDE by setting
  * the preference "Check for outside changes..." in the "Text Editor"
@@ -17,6 +17,7 @@ import aos.jack.util.thread.Semaphore;
  */
 public plan AddEmotionPlan extends Plan {
 
+    private boolean bDebug = false;
     #handles event AddEmotionEvent aee;
     #modifies data Emotion emotion;
     #uses data Semaphore mutex4;
@@ -31,7 +32,7 @@ public plan AddEmotionPlan extends Plan {
     {
         true;
     }
-
+    
     #reasoning method
     body()
     {   
@@ -60,34 +61,42 @@ public plan AddEmotionPlan extends Plan {
     
             long lTime = agent.timer.getTime();
     
-            //compute the value of the moderator reservoir at this very moment
-        
-            double dReservoir = Configuration.moderatorCurrentReservoir(agent.getId(), strModerator, lTime);
-    
-            //add the event amount to the current reservoir and update the moderator
-             
-            if (bDebug)
+            //mixed emotions: route by sign to the two valence reservoirs (see DualReservoir)
+            if (strModerator.equals(Constants.NEON_DUAL_RESERVOIR))
             {
-                System.out.println("Injecting " + dValue + "+" + dReservoir + " @ " + lTime+"\n");
-            }
-       
-            if (aee.bIncremental)
-            {       
-                dReservoir = dReservoir + dValue;
+                DualReservoir.Apply(agent.getId(), dValue, aee.bIncremental, lTime);
             }
             else
             {
-                dReservoir = dValue;
-            }
-            
-            Configuration.moderatorReservoirAgentUpdate(agent.getId(), strModerator, dReservoir, lTime);
-            
-            dReservoir = Configuration.moderatorCurrentReservoir(agent.getId(), strModerator, lTime);
+                //compute the value of the moderator reservoir at this very moment
+        
+                double dReservoir = Configuration.moderatorCurrentReservoir(agent.getId(), strModerator, lTime);
+    
+                //add the event amount to the current reservoir and update the moderator
              
-            if (bDebug)
-            {
-                System.out.println(dReservoir + " is the amount for affect emotion " + dValue + "\n");
-            }            
+                if (bDebug)
+                {
+                    System.out.println("Injecting " + dValue + "+" + dReservoir + " @ " + lTime+"\n");
+                }
+       
+                if (aee.bIncremental)
+                {       
+                    dReservoir = dReservoir + dValue;
+                }
+                else
+                {
+                    dReservoir = dValue;
+                }
+            
+                Configuration.moderatorReservoirAgentUpdate(agent.getId(), strModerator, dReservoir, lTime);
+            
+                dReservoir = Configuration.moderatorCurrentReservoir(agent.getId(), strModerator, lTime);
+             
+                if (bDebug)
+                {
+                    System.out.println(dReservoir + " is the amount for affect emotion " + dValue + "\n");
+                }            
+            }
         }
         catch (Exception e)
         {
@@ -98,6 +107,7 @@ public plan AddEmotionPlan extends Plan {
             mutex4.signal();
         }
     }
-    private boolean bDebug = false;
+    
 
 }
+

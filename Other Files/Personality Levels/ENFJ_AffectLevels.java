@@ -10,6 +10,11 @@ public class ENFJ_AffectLevels
     public ENFJ_AffectLevels()
     {
          // Level -6 (Deepest negative emotions - ENFJ focus on social disconnection)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.BETRAYED)); // Trust broken by someone close (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.HEARTBROKEN)); // Loss of a cherished bond (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.SHAME)); // Whole self judged bad (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.HURT)); // Wounded by another (new)
+        affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.ABANDONED)); // Left alone by those relied on (new)
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.SCORN));         // Complete rejection of others
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.CONTEMPT));      // Deep disapproval
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.GRIEF));         // Loss of connection
@@ -23,6 +28,9 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -6, AffectEnum.DOMINEERING));   // Control over others
 
         // Level -5 (Very negative emotions - ENFJ focus on emotional pain)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DISILLUSIONED)); // Ideals collapse (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.UNAPPRECIATED)); // Efforts go unrecognised (new)
+        affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DRAINED)); // Exhausted from giving (new)
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.STUNNED));       // Emotional shock
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.DESPERATION));   // Intense need
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.ANGUISH));       // Deep emotional pain
@@ -39,6 +47,8 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -5, AffectEnum.SEXUALLY_EXCITED)); // Physical desire
 
         // Level -4 (Strong negative emotions - ENFJ focus on interpersonal conflict)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.EXASPERATED)); // Patience exhausted (new)
+        affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.AWKWARD)); // Socially out of step (new)
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.PITY));          // Condescending sympathy
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.DISAPPOINTMENT)); // Failed expectations
         affectTimelineList.add(new AffectLevel(-1, -4, AffectEnum.REMORSE));       // Hurting others
@@ -78,6 +88,8 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -3, AffectEnum.DEFEATED));      // Given up
 
         // Level -2 (Mild negative emotions - ENFJ focus on relational uncertainty)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.WISTFUL)); // Longing for the unreachable (new)
+        affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.APPREHENSIVE)); // Unease about what is coming (new)
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.SURPRISED));     // Unexpected situations
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.LONELY));        // Social isolation
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.DOUBT));         // Uncertainty
@@ -93,6 +105,8 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -2, AffectEnum.CONFUSION));     // Unclear
 
         // Level -1 (Slight negative emotions - ENFJ focus on social hesitation)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.GUARDED)); // Holding back to avoid hurt (new)
+        affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.RESTLESS)); // Unable to settle (new)
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.SHY));           // Social reserve
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.CONFLICTED));    // Inner tension
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.HUMBLED));       // Lowered pride
@@ -108,6 +122,7 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, -1, AffectEnum.FATIGUED));     // Tired
 
         // Level 1 (Slight positive emotions - ENFJ focus on social connection)
+        affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.AMUSED)); // Finding something funny (new)
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.ACCEPTANCE));     // Basic openness
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.IMPRESSED));      // Positive assessment
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.EMPATHY));        // Understanding others
@@ -124,6 +139,9 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 1, AffectEnum.SELF_SATISFIED)); // Content
 
         // Level 2 (Moderate positive emotions - ENFJ focus on harmony)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.REASSURED)); // Doubt eased by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.PLAYFUL)); // Light teasing spontaneity (new)
+        affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.SYMPATHY)); // Feeling for another's trouble (new)
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.FRIENDLY));       // Warm relations
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.COOPERATIVE));    // Working together
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.GRATITUDE));      // Appreciation
@@ -138,6 +156,8 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 2, AffectEnum.AROUSED));        // Stimulated
 
         // Level 3 (Strong positive emotions - ENFJ focus on meaningful connection)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.NOSTALGIA)); // Fondness for the past (new)
+        affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.SUPPORTED)); // Backed by others (new)
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.DESIRE));         // Strong want
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.LONGING));        // Deep yearning
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.LUST));           // Physical attraction
@@ -153,6 +173,9 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CAPABLE));        // Competent
         affectTimelineList.add(new AffectLevel(-1, 3, AffectEnum.CURIOUS));        // Interested
     // Level 4 (Very positive emotions - ENFJ focus on deep bonds)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.BELONGING)); // Accepted by the group (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.TENDERNESS)); // Gentle protective warmth (new)
+        affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.PURPOSEFUL)); // Acting toward meaning (new)
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.CONNECTEDNESS));  // Deep bonding
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.AFFECTIONATE));   // Caring deeply
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.DEVOTED));        // Committed
@@ -163,6 +186,12 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 4, AffectEnum.EXCITED));        // Enthusiastic
 
         // Level 5 (Extremely positive emotions - ENFJ focus on transcendent connection)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.CHERISHED)); // Deeply valued by another (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.COMPERSION)); // Joy in another's joy (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.EMPOWERED)); // Able to effect change (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.PROTECTIVE)); // Drive to keep others safe (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.SERENITY)); // Deep untroubled calm (new)
+        affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.INTIMACY)); // Mutual closeness and openness (new)
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.WANDERLUST));     // Desire for new experiences
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.LOYALTY));        // Unwavering faith
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.IN_LOVE));        // Deep attachment
@@ -178,6 +207,9 @@ public class ENFJ_AffectLevels
         affectTimelineList.add(new AffectLevel(-1, 5, AffectEnum.FASCINATED));     // Captivated
 
         // Level 6 (Peak positive emotions - ENFJ focus on ultimate fulfillment)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.ELEVATION)); // Uplifted by human goodness (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.ONENESS)); // Union with something larger (new)
+        affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.BLISS)); // Effortless happiness (new)
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.LOVE));           // Ultimate connection
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.WONDER));         // Pure amazement
         affectTimelineList.add(new AffectLevel(-1, 6, AffectEnum.AWE));            // Transcendent
